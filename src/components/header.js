@@ -1,5 +1,5 @@
 import React from 'react'
-//import { Link } from 
+import { Link } from 'gatsby' 
 import styled from  '@emotion/styled'
 //import { css } from '@emotion/react'
 
@@ -36,10 +36,10 @@ const Header = () =>{
         <HeaderContainer>
             <Logo>Logo</Logo>
                 <Ul>
-                    <Li>About us</Li>
-                    <Li>Program</Li>
-                    <Li>Emission</Li>
-                    <Li>Contact</Li>
+                    <Li><Link to='#aboutUs'>About us</Link></Li>
+                    <Li><Link to="#program">Program</Link></Li>
+                    <Li><Link to="#emission">Emission</Link></Li>
+                    <Li><Link to="#contact">Contact </Link></Li>
                 </Ul>
                 <div>Eng</div>
         </HeaderContainer>
