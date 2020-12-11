@@ -1,9 +1,9 @@
 import React from 'react'
 
-import '../styles/index.scss'
+import '../styles/reset.scss'
 import layoutStyle from './layout.module.scss'
 
-import Header from './header'
+import Header from './header/header'
 import Footer from './footer'
 
 const Layout = props =>{
