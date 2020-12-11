@@ -5,12 +5,11 @@ import Logo from "./logo"
 import Lang from "./lang"
 
 const Navigation = Styled.nav`
-  height: 14vh;
+  height: 19vh;
   display: flex;
   background-color: #fff;
   position: relative;
   justify-content: space-between;
-  text-transform: uppercase;
   border-bottom: 2px solid #fff;
   margin: 0 auto;
   padding: 0 5vw;
