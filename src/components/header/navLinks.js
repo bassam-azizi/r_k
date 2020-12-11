@@ -5,7 +5,7 @@ import Styled from '@emotion/styled'
 
 const NavItem = Styled(Link)`
   font-family: 'Poppins';
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: none;
   color: #111;
   display: inline-block;
