@@ -4,10 +4,12 @@ import Styled from '@emotion/styled'
 const LangWrapper = Styled.div`
     display: flex;
     flex-direction: row;
+    font-size: 14px;
+    align-self: center;
 `
 
 const LangP = Styled.p`
-    padding: .4rem;
+    padding: .3rem;
     border: 1px solid #33333320;
     cursor: pointer;
 `
