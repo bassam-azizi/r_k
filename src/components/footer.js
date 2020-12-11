@@ -7,9 +7,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between ;
-    padding: 0 2rem;
+    padding: 2rem 2rem;
     margin: 0;
-    background-color: red;
+    background-color: #373737;
+    color: #FFF;
 `
 const FooterP = styled.div`
     margin: 0;  
