@@ -2,12 +2,13 @@ import React from "react"
 
 import Layout from '../components/layout'
 
+import Cta from '../components/index/cta'
+
 
 const Home = () =>{
   return(
     <Layout>
-      <h1>Hello World</h1>
-      <p> this is a hello world page </p>
+      <Cta />
     </Layout>
   )
 }
