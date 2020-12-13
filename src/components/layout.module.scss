@@ -5,6 +5,10 @@
     min-height: 100vh;
 }
 
-.main{
+.wrapper{
     flex-grow : 1;
+}
+.main{
+    margin: 10vh auto;
+    width: 80%;
 }
