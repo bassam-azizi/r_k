@@ -10,7 +10,7 @@ const NavItem = Styled(Link)`
   color: #111;
   display: inline-block;
   white-space: nowrap;
-  margin: 0 1vw;
+  margin: 0 3vw;
   transition: all 200ms ease-in;
   position: relative;
 
@@ -49,6 +49,7 @@ const NavLinks = () =>{
         <NavItem to='/aboutUs'>About us</NavItem>
         <NavItem to="/program">Program</NavItem>
         <NavItem to="/emission">Emission</NavItem>
+        <NavItem to="/blog">Blog</NavItem>
         <NavItem to="/contact">Contact </NavItem>
         </>
     )
