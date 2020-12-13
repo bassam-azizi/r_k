@@ -5,7 +5,9 @@ import Logo from "./logo"
 import Lang from "./lang"
 
 const Navigation = Styled.nav`
-  height: 19vh;
+  color: ##333;
+  background: transparent;
+  height: 14vh;
   display: flex;
   background-color: #fff;
   position: relative;
@@ -19,7 +21,7 @@ const Navigation = Styled.nav`
 
   @media (max-width: 768px) {
     position: sticky;
-    height: 8vh;
+    //height: 8vh;
     top: 0;
     left: 0;
     right: 0;
@@ -41,8 +43,8 @@ const Toggle = Styled.div`
 const Navbox = Styled.div`
   display: flex;
   height: 100%;
-  justify-content: flex-end;
-  align-items: center;
+  //justify-content: flex-end;
+  align-items: end;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -103,13 +105,14 @@ const Header = () => {
       {navbarOpen ? (
         <Navbox>
           <NavLinks />
+          <Lang />
         </Navbox>
       ) : (
         <Navbox open>
           <NavLinks />
+          <Lang />
         </Navbox>
       )}
-      <Lang />
     </Navigation>
   )
 }
