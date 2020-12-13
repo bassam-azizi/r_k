@@ -9,9 +9,11 @@ import Footer from './footer'
 const Layout = props =>{
     return(
         <div className={layoutStyle.container}>
-            <div className={layoutStyle.main}>
+            <div className={layoutStyle.wrapper}>
                 <Header />
-                {props.children}
+                <div className={layoutStyle.main}>
+                    {props.children}
+                </div>
             </div>
             <Footer />
         </div>
