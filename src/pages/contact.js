@@ -2,10 +2,12 @@ import React from 'react'
 
 import Layout from '../components/layout'
 
+import ContactC from '../components/contact/contactC'
+
 const Contact = () =>{
     return(
         <Layout>
-            <h3>This is a contact page</h3>
+            <ContactC />
         </Layout>
     )
 }
