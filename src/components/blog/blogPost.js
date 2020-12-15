@@ -7,6 +7,7 @@ const Wrapper = Styled.div`
     border: .5px solid #cfcfcf;
     width: 319px;
     height: 252px;
+    position: relative;
 `
 const Picture = Styled.picture`
     width: 100%;
@@ -16,7 +17,7 @@ const Picture = Styled.picture`
 const Title = Styled.div`
     width: 100%;
     height: 73px;
-    position: absolute:
+    position: absolute;
     left: 0;
     bottom: 0;
     padding: 4px 1px;
