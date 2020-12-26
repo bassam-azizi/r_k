@@ -6,7 +6,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -22,6 +22,8 @@
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-sass": "^2.7.0",
     "gatsby-plugin-sharp": "^2.10.1",
+    "gatsby-source-anchor": "^0.5.1",
+    "gatsby-source-contentful": "^4.3.0",
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-sharp": "^2.8.0",
     "node-sass": "^4.14.1",
@@ -30,6 +32,7 @@
     "react-icons": "^4.1.0"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "prettier": "2.1.2"
   },
   "repository": {

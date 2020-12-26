@@ -9,6 +9,12 @@ module.exports = {
   /* Your site config here */
   plugins: [
     {
+      resolve: `gatsby-source-anchor`,
+      options:{
+        rss: 'https://anchor.fm/s/455bf438/podcast/rss'
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
