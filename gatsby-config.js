@@ -9,6 +9,17 @@ module.exports = {
   /* Your site config here */
   plugins: [
     {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: "https://radiokhemir.herokuapp.com/",
+        contentTypes: [
+          "Blogpost",
+          "Categories"
+        ],
+        queryLimit: 1000,
+      },
+    },    
+    {
       resolve: `gatsby-source-anchor`,
       options:{
         rss: 'https://anchor.fm/s/455bf438/podcast/rss'
