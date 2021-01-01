@@ -11,12 +11,13 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "https://radiokhemir.herokuapp.com/",
+        apiURL: "https://radiokhemir.herokuapp.com",
         contentTypes: [
-          "Blogpost",
-          "Categories"
+          "blogpost",
+          "categories",
+          "schedule"
         ],
-        queryLimit: 1000,
+        queryLimit: 5000,
       },
     },    
     {
