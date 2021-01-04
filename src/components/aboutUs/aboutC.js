@@ -5,7 +5,6 @@ import Styled from '@emotion/styled'
 
 
 const Wrapper = Styled.div`
-    margin: 0 10vw;
     display: flex;
     flex-direction: row;
     padding: 6px;
