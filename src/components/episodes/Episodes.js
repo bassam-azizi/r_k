@@ -22,7 +22,6 @@ const Episodes = () =>{
       }
   `)
   return(
-    // <Podcast data={data.allAnchorEpisode.edges.node} />
     <div>{data.allAnchorEpisode.edges.map(edge =>(
       <Podcast data={edge.node} key={edge.node.id}/>
     ))}</div>
