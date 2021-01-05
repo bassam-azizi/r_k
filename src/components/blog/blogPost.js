@@ -1,5 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 
 import Styled from '@emotion/styled'
 
@@ -26,7 +27,7 @@ const Title = Styled.div`
     padding: 4px 1px;
     text-align: center;
     border-top: .5px solid #fff;
-    background-color: #ffffffbb;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,13 +42,15 @@ const H1 = Styled.h1`
 
 const Blogpost = props =>{
     return(
-            <Wrapper key={props.data.node.id}>
-                <Picture>
-                <Img fixed={props.data.node.featuredImg.childImageSharp.fixed} alt="anythings " />
-                </Picture>
-                <Title>
-                    <H1>{props.data.node.name}</H1>
-                </Title>
+            <Wrapper key={props.data.node.Slug}>
+                <Link to={`/blog/${props.data.node.Slug}`}>
+                    <Picture>
+                    <Img fixed={props.data.node.featuredImg.childImageSharp.fixed} alt="anythings " />
+                    </Picture>
+                    <Title>
+                        <H1>{props.data.node.name}</H1>
+                    </Title>
+                </Link>
             </Wrapper>
     )
 }
