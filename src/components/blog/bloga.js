@@ -19,7 +19,10 @@ const Wrapper = Styled.div`
 const Bloga = () =>{
     const data = useStaticQuery(graphql`
         query{
-            allStrapiBlogpost{
+            allStrapiBlogpost(
+                sort: { order: DESC, fields: [pubdate] }
+                limit: 1000
+              ){
                 edges{
                     node{
                         name
