@@ -38,7 +38,9 @@ const H1 = Styled.h1`
     text-indent: 3px;
     text-align: center;
 `
-
+const Lin = Styled(Link)`
+    
+` 
 
 const Blogpost = props =>{
     return(
