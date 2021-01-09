@@ -7,22 +7,22 @@ import Podcast from './podcast'
 const Episodes = () =>{
   const data = useStaticQuery(graphql`
       query{
-        allAnchorEpisode{
+        allPodcastRssFeedEpisode{
           edges{
             node{
-              title
-              enclosure{
-                url
-              }
-              pubDate
               id
+              item{
+                pubDate
+                title
+                enclosure{url}
+              }
             }
           }
         }
       }
   `)
   return(
-    <div>{data.allAnchorEpisode.edges.map(edge =>(
+    <div>{data.allPodcastRssFeedEpisode.edges.map(edge =>(
       <Podcast data={edge.node} key={edge.node.id}/>
     ))}</div>
   )
