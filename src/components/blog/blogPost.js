@@ -39,20 +39,20 @@ const H1 = Styled.h1`
     text-align: center;
 `
 const Lin = Styled(Link)`
-    
+    text-decoration: none;
 ` 
 
 const Blogpost = props =>{
     return(
             <Wrapper key={props.data.node.Slug}>
-                <Link to={`/blog/${props.data.node.Slug}`}>
+                <Lin to={`/blog/${props.data.node.Slug}`}>
                     <Picture>
                     <Img fixed={props.data.node.featuredImg.childImageSharp.fixed} alt="anythings " />
                     </Picture>
                     <Title>
                         <H1>{props.data.node.name}</H1>
                     </Title>
-                </Link>
+                </Lin>
             </Wrapper>
     )
 }
