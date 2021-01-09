@@ -9,6 +9,13 @@ module.exports = {
   /* Your site config here */
   plugins: [
     {
+      resolve: `gatsby-source-podcast-rss-feed`,
+      options: {
+        feedURL: `https://feed.podbean.com/radiokhemir/feed.xml`,
+        id: 'guid',
+      },
+  },
+    {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: "https://radiokhemir.herokuapp.com",
