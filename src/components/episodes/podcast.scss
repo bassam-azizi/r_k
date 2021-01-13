@@ -1,0 +1,52 @@
+.rhap_container {
+  padding: 0;
+  width: 619px;
+  height: 71px;
+  border: 0.7px solid #222;
+}
+.rhap_main {
+  justify-content: normal;
+}
+.rhap_controls-section {
+  flex: 1 1 auto;
+  margin: 0;
+}
+.rhap_main-controls {
+  height: 100%;
+  padding: 0 10px;
+  background-color: #222;
+  width: 87px;
+}
+.rhap_play-pause-button {
+  font-size: 0;
+}
+.rhap_main-controls svg {
+  width: 29px;
+  height: 29px;
+}
+.rhap_button-clear {
+  overflow: visible;
+}
+// the volume section controls  **********
+.rhap_volume-controls {
+  justify-content: flex-start;
+  flex: 0 0 none;
+  margin-left: 22px;
+}
+.rhap_volume-button {
+  width: 40px;
+  // height: 40px;
+  padding-left: 7px;
+  color: #444;
+}
+.rhap_progress-section {
+  flex: 0 0 auto;
+}
+.rhap_time {
+  width: 81px;
+  text-align: center;
+}
+.rhap_volume-indicator {
+  width: 4px;
+  background: #444;
+}

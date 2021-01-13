@@ -14,7 +14,7 @@ const Episodes = () =>{
               item{
                 pubDate
                 title
-                enclosure{url}
+                enclosure{url length(formatString:"MMMM Do, YYYY")}
               }
             }
           }
