@@ -102,15 +102,19 @@ const Header = () => {
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
       </Toggle>
       {navbarOpen ? (
-        <Navbox>
-          <NavLinks />
+        <>
+          <Navbox>
+            <NavLinks />
+          </Navbox>
           <Lang />
-        </Navbox>
+        </>
       ) : (
-        <Navbox open>
-          <NavLinks />
+        <>
+          <Navbox open>
+            <NavLinks />
+          </Navbox>
           <Lang />
-        </Navbox>
+        </>
       )}
     </Navigation>
   )
