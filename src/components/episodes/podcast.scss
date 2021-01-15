@@ -10,12 +10,13 @@
 .rhap_controls-section {
   flex: 1 1 auto;
   margin: 0;
+  position: relative;
 }
 .rhap_main-controls {
   height: 100%;
   padding: 0 10px;
   background-color: #222;
-  width: 87px;
+  width: 85px;
 }
 .rhap_play-pause-button {
   font-size: 0;
@@ -42,6 +43,20 @@
 .rhap_progress-section {
   flex: 0 0 auto;
 }
+// the bar progress
+.rhap_progress-container {
+  position: absolute;
+  left: 150px;
+  width: 65%;
+}
+.rhap_progress-indicator {
+  display: none;
+}
+.rhap_progress-bar {
+  opacity: 0.2;
+  height: 71px;
+}
+
 .rhap_time {
   width: 81px;
   text-align: center;
