@@ -1,36 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Styled from '@emotion/styled'
-
 import { GoTriangleRight } from 'react-icons/all'
-
-
-
-const Icon = Styled(GoTriangleRight)`
-    box-sizing: content-box;
-    position: absolute;
-    left: 1.9rem;
-    top: 26.5%;
-    font-size: 2.09rem;
-    color: #fff;
-    padding: 0 1.2rem 0 0;
-    
-`
+import Liveplayer from './livePlayer'
 
 const Wrapper = Styled.div`
     padding: 2rem;
     width: 35vw;
     margin: auto;
-`   
+`
 const H1 = Styled.h1`
     line-height: 120px;
     font-size: 40px;
     font-weight: 300;
     color: #373737;
-`
-const H1span = Styled.span`
-    color: #7F8A64;
-    font-style: italic;
+
+    span{
+        color: #7F8A64;
+        font-style: italic;
+    }
 `
 const Button = Styled.button`
     width: 363px;
@@ -46,6 +34,16 @@ const Button = Styled.button`
     font-size: 24px;
     position: relative;
 `
+const Icon = Styled(GoTriangleRight)`
+    box-sizing: content-box;
+    position: absolute;
+    left: 1.9rem;
+    top: 26.5%;
+    font-size: 2.09rem;
+    color: #fff;
+    padding: 0 1.2rem 0 0;
+    
+`
 const P = Styled.p`
     font-size: 14px;
     line-height: 60px;
@@ -55,13 +53,14 @@ const P = Styled.p`
 `
 
 
-
 const Cta = () =>{
+    const [cast, castOn] = useState(false)
     return(
         <Wrapper>
-        <H1>We deliver <H1span>News</H1span></H1>
-        <Button name="cta" types="button"><Icon />Launch Live Radio</Button>
-        <P>13h-14h One Hour Sport with Fedi Arfaoui</P>
+            <H1>We deliver <span>News</span></H1>
+            <Button onClick={()=>castOn(!cast)} name="cta" types="button"><Icon />Launch Live Radio</Button>
+            <Liveplayer cast={cast}/>
+            <P>13h-14h One Hour Sport with Fedi Arfaoui</P>
         </Wrapper>
     )
 }
