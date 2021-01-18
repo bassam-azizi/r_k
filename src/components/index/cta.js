@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 
 import Styled from '@emotion/styled'
 import { GoTriangleRight } from 'react-icons/all'
+import { IoMdPause } from 'react-icons/all'
 import Liveplayer from './livePlayer'
 
 const Wrapper = Styled.div`
     padding: 2rem;
-    width: 35vw;
+    width: 390px;
     margin: auto;
 `
 const H1 = Styled.h1`
@@ -42,14 +43,22 @@ const Icon = Styled(GoTriangleRight)`
     font-size: 2.09rem;
     color: #fff;
     padding: 0 1.2rem 0 0;
-    
+`
+const Pauseicon = Styled(IoMdPause)`
+    box-sizing: content-box;
+    position: absolute;
+    left: 1.9rem;
+    top: 26.5%;
+    font-size: 1.70rem;
+    color: #fff;
+    padding: 0 1.2rem 0 0;
 `
 const P = Styled.p`
     font-size: 14px;
     line-height: 60px;
     color: #373737;
     font-weight: 200;
-    text-indent: 20px;
+    text-align: left;
 `
 
 
@@ -58,7 +67,7 @@ const Cta = () =>{
     return(
         <Wrapper>
             <H1>We deliver <span>News</span></H1>
-            <Button onClick={()=>castOn(!cast)} name="cta" types="button"><Icon />Launch Live Radio</Button>
+            <Button onClick={()=>castOn(!cast)} name="cta" types="button">{cast?<Pauseicon />:<Icon />}{cast? "Close Live Radio" : "Launch Live Radio" }</Button>
             <Liveplayer cast={cast}/>
             <P>13h-14h One Hour Sport with Fedi Arfaoui</P>
         </Wrapper>
