@@ -3,57 +3,50 @@ import { graphql , useStaticQuery } from 'gatsby'
 import Timer from './timer'
 import AudioPlayer , {RHAP_UI} from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
-import { IoMdPause } from 'react-icons/all'
+import { CgMediaLive } from 'react-icons/all'
 
-// import './livePlayer.scss' 
 
 import Styled from '@emotion/styled'
 
 
-// display: ${({cast}) => (cast? "flex": "none")};   
 const Wrapper = Styled.div`
         transition: display 2s linear 1s;
        display: ${(props) => (props.cast? "flex": "none")};
        flex-direction: column;
+       align-items: end;
        padding: 20px;
        margin-left: 20px;
+       width: 362px;
 `
 
 
 const Progress_bar = Styled.div`
     display: flex;
     align-items: center;
-`
-// const Pause = Styled(IoMdPause)`
-//     color: green;
-// ` 
+    svg{
+        color: #C52127;
+        margin-right: 15px;
+        font-size: 1.2em;
+    }
+    
+` 
 const BarContainer = Styled.div`
     height: 25px;
-    background-color: green;
-    width: 220px;
+    background-color: #7F8A64;
+    width: 279px;
     border-radius: 0 50px 50px 0;
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: #fff;
 `
 const Bar = Styled.div`
     height: 2px;
-    background-color: #fff;
-    width: 180px;
+    background-color: #C52127;
+    width: 195px;
 `
-// const Timer = Styled.p`
-//     overflow: hidden;
-// `
 
 const Liveplayer = ({ cast }) =>{
-    // var Date, h , m, s ;
-    // const currentTime = function(){
-    //      Date = new Date();
-    //      h = Date.getHours();
-    //      m = Date.getMunites();
-    //      s = Date.getSeconds();
-    //     return h + ":" + m + ":" + s ;
-    //     }
     const data= useStaticQuery(graphql`
     query{
         podcastRssFeedEpisode{
@@ -73,18 +66,34 @@ const Liveplayer = ({ cast }) =>{
                     padding: 0;
                     height: 0;
                     width: 150px;
+                    margin: 10px 0;
+                }
+                .rhap_volume-controls{
+                    justify-content: flex-end;
+                    margin: 0;
+                }
+                .rhap_volume-button{
+                    color: #C52127;
                     }
+                .rhap_volume-bar{
+                        background: #C52127;
+                        height: 2px;
+                }
                 `}
             </style>
+            {/* #7F8A64; */}
             <Progress_bar>
-                <IoMdPause />
+                <CgMediaLive />
                 <BarContainer>
                     <Bar></Bar>
-                    <p><Timer /></p>
+                    <Timer />
                 </BarContainer>
             </Progress_bar>
             <AudioPlayer  
-                src={data.podcastRssFeedEpisode.item.enclosure.url} 
+                preload
+                autoPlayAfterSrcChange
+                src={cast? data.podcastRssFeedEpisode.item.enclosure.url : "" } 
+                // src={cast? "//emp.bbc.co.uk/emp/SMPj/2.36.7/iframe.html" : ""}
                 customProgressBarSection={[]}
                 customControlsSection={[RHAP_UI.VOLUME_CONTROLS]}
                 customAdditionalControls={[]}
