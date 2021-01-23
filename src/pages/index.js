@@ -2,13 +2,13 @@ import React from "react"
 
 import Layout from '../components/layout'
 
-import Cta from '../components/index/cta'
+import IndexBody from '../components/index/indexBody'
 
 
 const Home = () =>{
   return(
     <Layout>
-      <Cta />
+      <IndexBody />
     </Layout>
   )
 }
