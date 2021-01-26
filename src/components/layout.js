@@ -1,23 +1,36 @@
 import React from 'react'
 
 import '../styles/reset.scss'
+import Styled from '@emotion/styled'
 import layoutStyle from './layout.module.scss'
 
 
 import Header from './header/header'
 import Footer from './footer'
 
+
+const Meta_container = Styled.div`
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+`
+const Wrapper = Styled.div`
+  flex-grow: 1;
+`
+const Body_Wrapper = Styled.div`
+    color: #222;
+`
 const Layout = props =>{
     return(
-        <div className={layoutStyle.container}>
-            <div className={layoutStyle.wrapper}>
+        <Meta_container>
+            <Wrapper>
                 <Header />
-                <div className={layoutStyle.main}>
+                <Body_Wrapper>
                     {props.children}
-                </div>
-            </div>
+                </Body_Wrapper>
+            </Wrapper>
             <Footer />
-        </div>
+        </Meta_container>
     )
 }
 
