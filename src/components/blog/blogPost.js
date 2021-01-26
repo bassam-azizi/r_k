@@ -40,6 +40,7 @@ const H1 = Styled.h1`
 `
 const Lin = Styled(Link)`
     text-decoration: none;
+    color: #222;
 ` 
 
 const Blogpost = props =>{
