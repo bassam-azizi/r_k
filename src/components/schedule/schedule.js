@@ -7,16 +7,16 @@ import Styled from "@emotion/styled"
 
 
 const Wrapper = Styled.div`
-    position: relative;
-    font-family: Roboto;
-    background-color: #e5e5E5 ;
-    border: 1px solid #373737 ;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     width : 400px;
     margin: 0 auto;
     padding: 4rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family: Roboto;
+    background-color: #e5e5E5 ;
+    border: 1px solid #373737 ;
     & > div > h1{
         padding: 2rem 0;
     }
