@@ -12,6 +12,8 @@ import Styled from '@emotion/styled'
 const Wrapper = Styled.div`
         transition: display 2s linear 1s;
        display: ${(props) => (props.cast? "flex": "none")};
+       position: absolute;
+       bottom: 20px;
        flex-direction: column;
        align-items: end;
        padding: 20px;
@@ -23,8 +25,9 @@ const Wrapper = Styled.div`
 const Progress_bar = Styled.div`
     display: flex;
     align-items: center;
+    margin: 27px 0 0;
     svg{
-        color: #C52127;
+        color: #7F8A64;
         margin-right: 15px;
         font-size: 1.2em;
     }
@@ -42,8 +45,17 @@ const BarContainer = Styled.div`
 `
 const Bar = Styled.div`
     height: 2px;
-    background-color: #C52127;
+    background-color: #fff;
     width: 195px;
+`
+const P = Styled.p`
+    font-size: 14px;
+    line-height: 60px;
+    color: #373737;
+    font-weight: 200;
+    text-align: left;
+    align-self: stretch;
+    text-transform: capitalize;
 `
 
 const Liveplayer = ({ cast }) =>{
@@ -51,6 +63,7 @@ const Liveplayer = ({ cast }) =>{
     query{
         podcastRssFeedEpisode{
             item{
+                title
                 enclosure{
                     url}
                 }
@@ -66,22 +79,31 @@ const Liveplayer = ({ cast }) =>{
                     padding: 0;
                     height: 0;
                     width: 150px;
-                    margin: 10px 0;
+                    margin: 0 0 10px 0;
                 }
                 .rhap_volume-controls{
                     justify-content: flex-end;
                     margin: 0;
                 }
                 .rhap_volume-button{
-                    color: #C52127;
+                    color: #7F8A64;
                     }
                 .rhap_volume-bar{
-                        background: #C52127;
+                        background: #7F8A64;
                         height: 2px;
                 }
                 `}
             </style>
             {/* #7F8A64; */}
+            <AudioPlayer  
+                autoPlayAfterSrcChange
+                src={cast? data.podcastRssFeedEpisode.item.enclosure.url : "" } 
+                customProgressBarSection={[]}
+                customControlsSection={[RHAP_UI.VOLUME_CONTROLS]}
+                customAdditionalControls={[]}
+                showJumpControls={false}
+                layout="horizontal-reverse"
+            />
             <Progress_bar>
                 <CgMediaLive />
                 <BarContainer>
@@ -89,17 +111,8 @@ const Liveplayer = ({ cast }) =>{
                     <Timer />
                 </BarContainer>
             </Progress_bar>
-            <AudioPlayer  
-                autoPlayAfterSrcChange
-                src={cast? data.podcastRssFeedEpisode.item.enclosure.url : "" } 
-                // src={cast? "//emp.bbc.co.uk/emp/SMPj/2.36.7/iframe.html" : ""}
-                customProgressBarSection={[]}
-                customControlsSection={[RHAP_UI.VOLUME_CONTROLS]}
-                customAdditionalControls={[]}
-                showJumpControls={false}
-                layout="horizontal-reverse"
-            />
-
+            {/* <P>{data.podcastRssFeedEpisode.item.title}</P> */}
+            <P>13h-14h One Hour Sport with Fedi Arfaoui</P>
         </Wrapper>
         ) 
 }
