@@ -5,8 +5,8 @@ import Styled from '@emotion/styled'
 
 const Wrapper = Styled.div`
     display: flex;
-    margin: 0 -5vw;
-    width: auto;
+    justify-content: space-between;
+    // width: auto;
 `
 
 const IndexBody = () => {
