@@ -5,9 +5,15 @@ import Styled from '@emotion/styled'
 
 // Component Style
 const Wrapper = Styled.div`
+    display: inline-block;
+    position: relative;
+    // width:fit-content;
+    width: 62.5%;
+`
+const Container = Styled.div`
     display: flex;
+    flex-direction: row-reverse;
     flex-wrap:  wrap;
-    width: auto;
     position: relative;
 `
 const Triangle = Styled.div`
@@ -18,7 +24,9 @@ const Triangle = Styled.div`
     position: absolute;
     transform: rotateZ(0deg);
     top: 0;
+    left: 0;
 `
+
 
 
 // The Component
@@ -76,9 +84,11 @@ const FeaturedNews = () =>{
     
     return(
         <Wrapper>
-            {posts.map(post=>(
-                <Post data={post} key={post.node.id} />
-            ))}
+            <Container>
+                {posts.map(post=>(
+                    <Post data={post} key={post.node.id} />
+                ))}
+            </Container>
             <Triangle />
         </Wrapper>
     )
