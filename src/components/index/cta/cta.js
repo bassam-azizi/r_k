@@ -34,6 +34,7 @@ const Button = Styled.button`
     font-weight: 600;
     font-size: 24px;
     position: relative;
+    opacity: ${(props) => (props.cast? '0.6' : '1')};
 `
 const Icon = Styled(GoTriangleRight)`
     box-sizing: content-box;
@@ -59,6 +60,9 @@ const P = Styled.p`
     color: #373737;
     font-weight: 200;
     text-align: left;
+    display: ${(props) => (props.cast? 'none' : 'block')};
+    align-self: stretch;
+    text-transform: capitalize;
 `
 
 
@@ -67,9 +71,9 @@ const Cta = () =>{
     return(
         <Wrapper>
             <H1>We deliver <span>News</span></H1>
-            <Button onClick={()=>castOn(!cast)} name="cta" types="button">{cast?<Pauseicon />:<Icon />}{cast? "Close Live Radio" : "Launch Live Radio" }</Button>
+            <Button onClick={()=>castOn(!cast)} name="cta" types="button" cast={cast}>{cast?<Pauseicon />:<Icon />}{cast? "Close Live Radio" : "Launch Live Radio" }</Button>
             <Liveplayer cast={cast}/>
-            <P>13h-14h One Hour Sport with Fedi Arfaoui</P>
+            <P cast={cast}>13h-14h One Hour Sport with Fedi Arfaoui</P>
         </Wrapper>
     )
 }
