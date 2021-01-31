@@ -8,10 +8,12 @@ import Liveplayer from './livePlayer'
 const Wrapper = Styled.div`
     padding: 2rem;
     width: 390px;
+    height: 380px;
     margin: auto;
+    align-self: center;
 `
 const H1 = Styled.h1`
-    line-height: 120px;
+    margin-bottom: 30px;
     font-size: 40px;
     font-weight: 300;
     color: #373737;
