@@ -4,13 +4,9 @@ import Img from 'gatsby-image'
 import Styled from '@emotion/styled'
 
 const Deck  = Styled.div`
-    opacity: .8;
     margin: 0;
     padding: 0;
     height: 331px;
-    &:hover{
-        opacity: .4;
-    }
     &:nth-of-type(1){
         width: 433px;
     } 
@@ -30,22 +26,42 @@ const Deck  = Styled.div`
         height: 331px;
     }
     position: relative;
-`
-const Lin = Styled(Link)`
+    `
+    const Lin = Styled(Link)`
+    opacity: .8;
     text-decration: none;
     color: #222;
-`
-const Span = Styled.p`
+    &:hover{
+        opacity: .9;
+    }
+    `
+    const Span = Styled.span`
+    font-family: 'Rhodium Libre';
     border-radius: 50%;
-    padding: 4px 10px;
-    background-color: #fff;
-    color: #222;
+    padding: 4px 13px;
+    background-color: #f2f2f2;
+    color: #7F8A64;
     position: absolute;
     top: 50%;
     right: 50%;
-    font-family: Roboto;
-    font-weight: bold;
-    opacity: .6;
+    font-weight: 400;
+    font-size: 22px;
+    opacity: 1;
+    cursor: pointer;
+    z-index: 5;
+    &:hover{
+        display: none;
+    }
+`
+const Title = Styled.div`
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: #fff;
+    padding: 3px 0;
+    opacity: 1;
+    display: none;
 `
 
 
@@ -56,6 +72,9 @@ const Post = props =>{
             <Img fluid={props.data.node.featuredImg.childImageSharp.fluid} alt={props.data.node.name} />
             </Lin>
             <Span>i</Span>
+            <Title>
+                <p>{props.data.node.name}</p>
+            </Title>
         </Deck>
     )
 }
