@@ -13,7 +13,6 @@ const Wrapper = Styled.div`
         transition: display 2s linear 1s;
        display: ${(props) => (props.cast? "flex": "none")};
        position: absolute;
-       bottom: 20px;
        flex-direction: column;
        align-items: end;
        padding: 20px;
@@ -53,7 +52,8 @@ const P = Styled.p`
     line-height: 60px;
     color: #373737;
     font-weight: 200;
-    text-align: left;
+    text-align: right;
+    font-style: italics;
     align-self: stretch;
     text-transform: capitalize;
 `
