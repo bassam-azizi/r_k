@@ -3,6 +3,11 @@ import {Link} from 'gatsby'
 import Styled from '@emotion/styled'
 
 
+const Wrapper = Styled.div`
+  align-self: end;
+  padding: 0 0 22px;
+  letter-spacing: 0.2px;
+`
 const NavItem = Styled(Link)`
   font-family: 'Poppins';
   font-size: 15px;
@@ -10,9 +15,11 @@ const NavItem = Styled(Link)`
   color: #111;
   display: inline-block;
   white-space: nowrap;
-  margin: 0 3vw;
+  // margin: 0 3vw;
+  margin: 0 35px;
   transition: all 200ms ease-in;
   position: relative;
+  
 
   :after {
     position: absolute;
@@ -22,13 +29,13 @@ const NavItem = Styled(Link)`
     width: 0%;
     content: ".";
     color: transparent;
-    background: goldenrod;
+    background: #7F8A64;
     height: 1px;
     transition: all 0.4s ease-in;
   }
 
   :hover {
-    color: goldenrod;
+    color: #7F8A64;
     ::after {
       width: 100%;
     }
@@ -45,13 +52,13 @@ const NavItem = Styled(Link)`
 
 const NavLinks = () =>{
     return(
-        <>
-        <NavItem to='/aboutUs'>About us</NavItem>
-        <NavItem to="/program">Program</NavItem>
-        <NavItem to="/emission">Emission</NavItem>
-        <NavItem to="/blog">Blog</NavItem>
-        <NavItem to="/contact">Contact </NavItem>
-        </>
+        <Wrapper>
+          <NavItem to='/aboutUs'>About us</NavItem>
+          <NavItem to="/program">Program</NavItem>
+          <NavItem to="/emission">Emission</NavItem>
+          <NavItem to="/blog">Blog</NavItem>
+          <NavItem to="/contact">Contact </NavItem>
+        </Wrapper>
     )
 }
 export default NavLinks
