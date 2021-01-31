@@ -19,7 +19,7 @@ const Container = Styled.div`
 const Triangle = Styled.div`
     width: 0;
     height: 0;
-    border-right: 300px solid transparent;
+    border-right: 130px solid transparent;
     border-top: 660px solid #fff;
     position: absolute;
     transform: rotateZ(0deg);
