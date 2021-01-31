@@ -38,7 +38,8 @@ module.exports = {
       options: {
         fonts: [
           `Poppins`,
-          `Roboto`
+          `Roboto`,
+          'Rhodium Libre'
         ],
         display: 'swap'
       }
