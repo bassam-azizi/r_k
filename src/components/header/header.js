@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Styled from "@emotion/styled"
 import NavLinks from "./navLinks"
 import Logo from "./logo"
