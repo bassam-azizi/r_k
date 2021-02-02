@@ -1,24 +1,23 @@
 import React from 'react'
 import {useStaticQuery, graphql} from 'gatsby'
 import Reactmarkdown from 'react-markdown'
-import styled, {keyframes} from '@emotion/react'
+import {keyframes} from '@emotion/react'
+import Styled from '@emotion/styled'
 
 
 const movingText = keyframes`
-    0%{translateX(0)}
-    50%{translateX: -80vw;}
-    100%{translateX: 0}
+    0%{margin-left: 100%;}
+    100%{margin-left: -300% ;}
 `
-const Wrapper = styled.div`
-    width: 100vw;
+const Wrapper = Styled.div`
+    width: 100%;
     background-color: #51965722;
     font-size: 14px;
     font-weight: 200;
     color: #373737;
     ul{
-        animation-name: ${movingText};
-        animation-duration: 9s;
-        animation-iteration-count: infinite;
+        animation: ${movingText} 35s linear infinite;
+        // margin-left: 100%;
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
