@@ -4,7 +4,7 @@ import Styled from '@emotion/styled'
 
 
 const Wrapper = Styled.div`
-  align-self: end;
+  align-self: flex-end;
   padding: 0 0 22px;
   letter-spacing: 0.2px;
 `
