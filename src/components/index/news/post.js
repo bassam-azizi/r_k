@@ -38,7 +38,7 @@ const Deck  = Styled.div`
     const Span = Styled.span`
     font-family: 'Rhodium Libre';
     border-radius: 50%;
-    padding: 4px 13px;
+    padding: 1px 14px;
     background-color: #f2f2f2;
     color: #7F8A64;
     position: absolute;
