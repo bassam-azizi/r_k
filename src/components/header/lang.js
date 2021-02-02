@@ -6,7 +6,7 @@ const LangWrapper = Styled.div`
     display: flex;
     flex-direction: row;
     font-size: 14px;
-    align-self: end;
+    align-self: flex-end;
     margin-bottom: 19px;
     `
     
