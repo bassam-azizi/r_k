@@ -8,7 +8,7 @@ const Wrapper = Styled.div`
     display: inline-block;
     position: relative;
     // width:fit-content;
-    width: 62.5%;
+    width: 62.6%;
 `
 const Container = Styled.div`
     display: flex;
