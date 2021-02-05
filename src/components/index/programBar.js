@@ -16,7 +16,7 @@ const Wrapper = Styled.div`
     font-weight: 200;
     color: #373737;
     ul{
-        animation: ${movingText} 35s linear infinite;
+        animation: ${movingText} 45s linear infinite;
         // margin-left: 100%;
         display: flex;
         flex-wrap: nowrap;
