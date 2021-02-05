@@ -10,7 +10,7 @@ const Wrapper = Styled.div`
 `
 const NavItem = Styled(Link)`
   font-family: 'Poppins';
-  font-size: 15px;
+  font-size: 16px;
   text-decoration: none;
   color: #111;
   display: inline-block;
