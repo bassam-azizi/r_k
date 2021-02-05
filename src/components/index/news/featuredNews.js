@@ -42,7 +42,7 @@ const FeaturedNews = () =>{
                         name
                         Slug
                         id
-                        pubdate
+                        pubdate(formatString:"MMMM Do, YYYY")
                         featuredImg{
                             childImageSharp{
                                 fluid(maxWidth: 600){
