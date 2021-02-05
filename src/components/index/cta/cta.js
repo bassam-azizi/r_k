@@ -11,7 +11,8 @@ const Wrapper = Styled.div`
     height: 380px;
     margin: auto;
     align-self: center;
-`
+    position: relative;
+    `
 const H1 = Styled.h1`
     margin-bottom: 30px;
     font-size: 40px;
@@ -24,24 +25,56 @@ const H1 = Styled.h1`
     }
 `
 const Button = Styled.button`
-    width: 363px;
+    z-index: 20;
+    overflow: hidden;
+    position: relative;
+    width: ${(props) => (props.cast ? '71px' : '363px')};
     height: 71px;
-    background: #C52127;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0px 1px 4px 3px rgba(0, 0, 0, 0.25) ;
+    background: ${(props) => (props.cast ? '#C52127' : '#C52127')};
+    border-radius: ${(props) => (props.cast ? "50%" : "10px")};
+    box-shadow: ${(props) => (props.cast? 'none' : '0px 8px 15px rgba(0, 0, 0, 0.1)')};
     color: #fff;
     cursor: pointer;
-    line-height: 36px;
-    font-weight: 600;
-    font-size: 24px;
-    position: relative;
-    opacity: ${(props) => (props.cast? '0.6' : '1')};
-`
+    transform: ${(props) => (props.cast ? 'translateY(-7px)' : 'translateY(-.1px)')} ;
+    &:hover{
+        box-shadow: ${(props) =>(props.cast? 'none' : '0px 15px 20px rgba(127, 138, 100, 0.4)')};
+        transform: translateY(-7px);
+    }
+    transition: ${(props)=>(props.cast? 'border-radius .7s linear, width .1s linear' : 'border-radius .1s linear, width .5s linear ')};
+    border: ${(props)=> (props.cast? 'none' : '1px solid #c5c5c5')};
+    p{
+        text-indent: ${(props) => ( props.cast? '0':'5px')};
+        line-height: ${(props) =>( props.cast? '0' : '36px')};
+        font-weight: 600;
+        font-size: 24px;
+        text-align: ${(props) => (props.cast? 'default' : 'left')};
+        opacity: ${(props) =>(props.cast? '0' : '1')};
+        visibility: ${(props) => (props.cast? 'hidden':'visible')};
+        // transform: ${(props)=>(props.cast? 'translateY(-11em)' : 'translateY(0)')};
+        position: absolute;
+        top: 23%;
+        transition:  ${(props)=>(props.cast? 'opacity: .1s ease, visibility .1s ease':'opacity .2s ease .3s , visibility .3s ease')};
+    }
+    :focus{
+        outline: none;
+    }
+    `
+    // div{
+    //     width: 70px;
+    //     height: 70px;
+    //     background-color: #C52127;
+    //     border-radius: 50%;
+    //     position: absolute;
+    //     right: 1.9rem;
+    //     // top: 32.5%;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
 const Icon = Styled(GoTriangleRight)`
     box-sizing: content-box;
     position: absolute;
-    left: 1.9rem;
+    right: 1.9rem;
     top: 26.5%;
     font-size: 2.09rem;
     color: #fff;
@@ -49,12 +82,9 @@ const Icon = Styled(GoTriangleRight)`
 `
 const Pauseicon = Styled(IoMdPause)`
     box-sizing: content-box;
-    position: absolute;
-    left: 1.9rem;
-    top: 26.5%;
     font-size: 1.70rem;
     color: #fff;
-    padding: 0 1.2rem 0 0;
+    // padding: 0 1.2rem 0 0;
 `
 const P = Styled.p`
     font-size: 14px;
@@ -62,19 +92,19 @@ const P = Styled.p`
     color: #373737;
     font-weight: 200;
     text-align: left;
-    display: ${(props) => (props.cast? 'none' : 'block')};
+    display: ${(props) => (props.cast ? 'none' : 'block')};
     align-self: stretch;
     text-transform: capitalize;
 `
 
 
-const Cta = () =>{
+const Cta = () => {
     const [cast, castOn] = useState(false)
-    return(
+    return (
         <Wrapper>
             <H1>We deliver <span>News</span></H1>
-            <Button onClick={()=>castOn(!cast)} name="cta" types="button" cast={cast}>{cast?<Pauseicon />:<Icon />}{cast? "Close Live Radio" : "Launch Live Radio" }</Button>
-            <Liveplayer cast={cast}/>
+            <Button onClick={() => castOn(!cast)} name="cta" types="button" cast={cast}>{cast ? <Pauseicon /> : <Icon />}<p>Launch Live Radio</p></Button>
+            <Liveplayer cast={cast} />
             <P cast={cast}>13h-14h One Hour Sport with Fedi Arfaoui</P>
         </Wrapper>
     )
