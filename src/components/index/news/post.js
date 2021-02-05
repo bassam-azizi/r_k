@@ -35,10 +35,14 @@ const Deck  = Styled.div`
         opacity: .9;
     }
     `
-    const Span = Styled.span`
+    const Info = Styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
     font-family: 'Rhodium Libre';
     border-radius: 50%;
-    padding: 1px 14px;
     background-color: #f2f2f2;
     color: #7F8A64;
     position: absolute;
@@ -49,8 +53,57 @@ const Deck  = Styled.div`
     opacity: 1;
     cursor: pointer;
     z-index: 5;
-    &:hover{
+    &:hover {
+        right: 0;
+        top: 0;
+        width: 60%;
+        height: 100%;
+        border-radius: 0;
+        transition: .4s linear;
+        background-color: #f2f2f2cc;
+        cursor: default;
+
+    }
+    span{
+        margin-left: 27px;
+    }
+    &:hover span{
         display: none;
+    }
+    a{
+        list-style: none;
+        position: relative;
+        align-self: flex-start;
+        width: 100%;
+        margin: 14px 14px;
+        color: #373737;
+    }
+    a h4{
+        opacity:0;
+        visibility: hidden;
+        padding: 10px 2px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &:hover a h4{
+        opacity: 1;
+        visibility:  visible;
+        transition: .7s linear;
+        display: block;
+    }
+    &:hover a p{
+        opacity: 1;
+        visibility: visible;
+    }
+    a p{
+        position: absolute;
+        font-size: 12px;
+        color: #373737cc;
+        opacity: 0;
+        visibility: hidden;
+        transition: .9s linear;
     }
 `
 const Title = Styled.div`
@@ -71,7 +124,13 @@ const Post = props =>{
             <Lin to ={`/blog/${props.data.node.Slug}`}>
             <Img fluid={props.data.node.featuredImg.childImageSharp.fluid} alt={props.data.node.name} />
             </Lin>
-            <Span>i</Span>
+            <Info>
+                <span>i</span>
+                <Link to={`/blog/${props.data.node.Slug}`}>
+                    <h4>{props.data.node.name}</h4>
+                    <p>{props.data.node.pubdate}</p>
+                </Link>
+            </Info>
             <Title>
                 <p>{props.data.node.name}</p>
             </Title>
