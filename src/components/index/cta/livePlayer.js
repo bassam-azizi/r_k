@@ -3,21 +3,22 @@ import { graphql , useStaticQuery } from 'gatsby'
 import Timer from './timer'
 import AudioPlayer , {RHAP_UI} from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
-import { CgMediaLive } from 'react-icons/all'
 
 
 import Styled from '@emotion/styled'
 
 
 const Wrapper = Styled.div`
-        transition: display 2s linear 1s;
-       display: ${(props) => (props.cast? "flex": "none")};
-       position: absolute;
-       flex-direction: column;
-       align-items: end;
-       padding: 20px;
-       margin-left: 20px;
-       width: 362px;
+    display: flex;
+    opacity: ${(props) => (props.cast? "1" : "0")};
+    visibility: ${(props) => (props.cast? "visible" : "hidden")};
+    flex-direction: column;
+    align-items: flex-end;
+    // width: 362px;
+    position: absolute;
+    right: 0;
+    bottom: 9.9rem;
+    transition: ${(props)=>(props.cast? 'opacity 2s linear 1s' : 'opacity .1s linear')};
 `
 
 
@@ -105,7 +106,6 @@ const Liveplayer = ({ cast }) =>{
                 layout="horizontal-reverse"
             />
             <Progress_bar>
-                <CgMediaLive />
                 <BarContainer>
                     <Bar></Bar>
                     <Timer />
