@@ -1,29 +1,19 @@
-import React from "react"
-import Styled from "@emotion/styled"
+import React, {useState} from "react"
 import NavLinks from "./navLinks"
 import Logo from "./logo"
 import Lang from "./lang"
+import {Wrapper, Container, Hamburger} from './headerStyle'
 
 
-const Wrapper = Styled.nav`
-  width: 100vw;
-`
-const Container = Styled.div`
-  max-width: 1320px;
-  margin: 28px auto;
-  height: 104px;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  align-items: center;
-`
 
 const Header = () =>{
+  const [navbarOpen, setNavbarOpen] = useState(false)
   return(
     <Wrapper>
         <Container>
           <Logo />
           <NavLinks />
+          <Hamburger navbarOpen/>
           <Lang />
         </Container>
     </Wrapper>
@@ -123,7 +113,6 @@ export default Header
 //   }
 // `
 // const Header = () => {
-//   const [navbarOpen, setNavbarOpen] = useState(false)
 
 //   return (
 //     <Navigation>
