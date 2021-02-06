@@ -1,46 +1,9 @@
 import React from 'react'
+import { graphql , useStaticQuery } from 'gatsby'
 import { Link } from 'gatsby'
 import Reactmarkdown from 'react-markdown'
-import { graphql , useStaticQuery } from 'gatsby'
-import Styled from "@emotion/styled"
+import {Wrapper, Title, Bars, Bar, Footer} from './scheduleStyle'
 
-
-
-const Wrapper = Styled.div`
-    width : 400px;
-    margin: 0 auto;
-    padding: 4rem;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    font-family: Roboto;
-    background-color: #e5e5E5 ;
-    border: 1px solid #373737 ;
-    & > div > h1{
-        padding: 2rem 0;
-    }
-    & > ul > li{
-        line-height: 40px;
-    }
-`
-const Title = Styled.div`
-    padding: 20px 0;
-`
-const Bars = Styled.div`
-    position: absolute;
-    top: -36px;
-    height: 60px;
-    display: flex;
-`
-const Bar = Styled.div`
-    background-color: red;
-    width: 3px;
-    margin-right: 16px;
-`
-const Footer = Styled.div`
-    padding: 30px 0;
-`
 
 const Schedule = () =>{
     const data = useStaticQuery(graphql`
