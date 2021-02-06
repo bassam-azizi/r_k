@@ -1,6 +1,7 @@
 import React from 'react'
 
-import '../styles/reset.scss'
+// import '../styles/reset.scss'
+import Global from '../styles/reset.scss'
 import Styled from '@emotion/styled'
 
 
@@ -12,24 +13,25 @@ const Meta_container = Styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
 `
 const Wrapper = Styled.div`
-  flex-grow: 1;
+  flex: 1 0 100vh;
 `
-// const Body_Wrapper = Styled.div`
-//     color: #222;
-// `
+
 const Layout = props =>{
     return(
-        <Meta_container>
-            <Wrapper>
-                <Header />
-                {/* <Body_Wrapper> */}
+        <>
+            <Global />
+            <Meta_container>
+                <Wrapper>
+                    <Header />
                     {props.children}
-                {/* </Body_Wrapper> */}
-            </Wrapper>
-            <Footer />
-        </Meta_container>
+                </Wrapper>
+                <Footer />
+            </Meta_container>
+        </>
     )
 }
 
