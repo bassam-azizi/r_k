@@ -3,61 +3,12 @@ import { graphql , useStaticQuery } from 'gatsby'
 import Timer from './timer'
 import AudioPlayer , {RHAP_UI} from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
+import { P , Bar, BarContainer, Progress_Bar , Wrapper} from './livePlayerStyle'
 
 
-import Styled from '@emotion/styled'
 
 
-const Wrapper = Styled.div`
-    display: flex;
-    opacity: ${(props) => (props.cast? "1" : "0")};
-    visibility: ${(props) => (props.cast? "visible" : "hidden")};
-    flex-direction: column;
-    align-items: flex-end;
-    // width: 362px;
-    position: absolute;
-    right: 0;
-    bottom: 9.9rem;
-    transition: ${(props)=>(props.cast? 'opacity 2s linear 1s' : 'opacity .1s linear')};
-`
 
-
-const Progress_bar = Styled.div`
-    display: flex;
-    align-items: center;
-    margin: 27px 0 0;
-    svg{
-        color: #7F8A64;
-        margin-right: 15px;
-        font-size: 1.2em;
-    }
-    
-` 
-const BarContainer = Styled.div`
-    height: 25px;
-    background-color: #7F8A64;
-    width: 279px;
-    border-radius: 0 50px 50px 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: #fff;
-`
-const Bar = Styled.div`
-    height: 2px;
-    background-color: #fff;
-    width: 195px;
-`
-const P = Styled.p`
-    font-size: 14px;
-    line-height: 60px;
-    color: #373737;
-    font-weight: 200;
-    text-align: right;
-    font-style: italics;
-    align-self: stretch;
-    text-transform: capitalize;
-`
 
 const Liveplayer = ({ cast }) =>{
     const data= useStaticQuery(graphql`
