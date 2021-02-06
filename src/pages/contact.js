@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 
-import ContactC from '../components/contact/contactC'
+import Contact from '../components/contact/contactBody'
 
 const Contact = () =>{
     return(
