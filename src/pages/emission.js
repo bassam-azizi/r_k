@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Episodes from '../components/episodes/Episodes'
+import Episodes from '../components/episodes/episodesBody'
 import Layout from '../components/layout'
 
 
