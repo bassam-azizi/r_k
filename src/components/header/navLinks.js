@@ -7,6 +7,9 @@ const Wrapper = Styled.div`
   align-self: flex-end;
   padding: 0 0 22px;
   letter-spacing: 0.2px;
+  @media (max-width: 768px){
+    display: none;
+  }
 `
 const NavItem = Styled(Link)`
   font-family: 'Poppins';
@@ -15,7 +18,6 @@ const NavItem = Styled(Link)`
   color: #111;
   display: inline-block;
   white-space: nowrap;
-  // margin: 0 3vw;
   margin: 0 35px;
   transition: all 200ms ease-in;
   position: relative;
