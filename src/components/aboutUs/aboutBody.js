@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper , LeftColumn, H1, Li, Seprator } from './aboutStyle'
+import { Wrapper , LeftColumn, H1, Li, Separator } from './aboutStyle'
 
 
 
