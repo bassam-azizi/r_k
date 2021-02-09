@@ -1,4 +1,4 @@
-import Styled from '@styled/emotion'
+import Styled from '@emotion/styled'
 
 
 export const Container = Styled.div`
