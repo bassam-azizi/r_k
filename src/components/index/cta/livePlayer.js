@@ -3,7 +3,7 @@ import { graphql , useStaticQuery } from 'gatsby'
 import Timer from './timer'
 import AudioPlayer , {RHAP_UI} from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
-import { P , Bar, BarContainer, Progress_Bar , Wrapper} from './livePlayerStyle'
+import { P , Bar, BarContainer, Progress_bar , Wrapper} from './livePlayerStyle'
 
 
 
