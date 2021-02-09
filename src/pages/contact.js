@@ -2,12 +2,12 @@ import React from 'react'
 
 import Layout from '../components/layout'
 
-import Contact from '../components/contact/contactBody'
+import Contact_Body from '../components/contact/contactBody'
 
 const Contact = () =>{
     return(
         <Layout>
-            <ContactC />
+            <Contact_Body />
         </Layout>
     )
 }
