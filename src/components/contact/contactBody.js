@@ -12,7 +12,7 @@ const Wrapper = Styled.div`
 `
 
 
-const ContactC = () =>{
+const Contact_Body = () =>{
     return(
     <Wrapper>
         <Info />
@@ -22,4 +22,4 @@ const ContactC = () =>{
     )
 }
 
-export default ContactC
+export default Contact_Body
