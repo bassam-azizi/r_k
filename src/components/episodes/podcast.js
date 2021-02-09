@@ -1,9 +1,9 @@
 import React from 'react'
 import AudioPlayer , {RHAP_UI} from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
-import Global from './globalPodcastStyle'
+import PlayerStyle from './globalPodcastStyle'
 import PlayBtn from '../../utils/playbtn.js'
-import {Wrapper , Info} from '@emotion/styled'
+import {Wrapper , Info} from './podcastStyle'
 
 
 const Play = <PlayBtn />
@@ -13,7 +13,7 @@ const Podcast = props =>{
   return(
     <Wrapper>
       {/* Global Style for the audio player  */}
-      <Global />
+      <PlayerStyle />
       <AudioPlayer 
         src={mp3} 
         customIcons={{
