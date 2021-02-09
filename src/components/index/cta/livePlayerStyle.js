@@ -7,8 +7,8 @@ export const Wrapper = Styled.div`
     flex-direction: column;
     align-items: flex-end;
     position: absolute;
-    right: 0;
-    bottom: 9.9rem;
+    right: -.9rem;
+    top: 5.72rem;
     transition: ${(props)=>(props.cast? 'opacity 2s linear 1s' : 'opacity .1s linear')};
 `
 
