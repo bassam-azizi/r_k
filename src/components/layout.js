@@ -1,7 +1,6 @@
 import React from 'react'
 
-// import '../styles/reset.scss'
-import Global from '../styles/reset.scss'
+import Global_style from '../styles/global'
 import Styled from '@emotion/styled'
 
 
@@ -23,7 +22,7 @@ const Wrapper = Styled.div`
 const Layout = props =>{
     return(
         <>
-            <Global />
+            <Global_style />
             <Meta_container>
                 <Wrapper>
                     <Header />
