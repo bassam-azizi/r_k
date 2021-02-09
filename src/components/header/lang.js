@@ -11,14 +11,17 @@ const LangWrapper = Styled.div`
     `
     
     const LangP = Styled(Link)`
-    padding: .2rem .4rem;
-    border: 1px solid #33333320;
-    cursor: pointer;
-    color: #fff;
-    background-color: #7F8A64;
-    &:nth-of-type(3){
-        background: #C52127;
-    }
+        padding: .2rem .4rem;
+        border: 1px solid #33333320;
+        cursor: pointer;
+        color: #fff;
+        background-color: #7F8A64;
+        &:nth-of-type(3){
+            background: #C52127;
+        }
+        :hover{
+            color: Gold;
+        }
     `
 
 
