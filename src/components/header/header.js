@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import NavLinks from "./navLinks"
 import Logo from "./logo"
 import Lang from "./lang"
@@ -7,13 +7,14 @@ import {Wrapper, Container, Hamburger} from './headerStyle'
 
 
 const Header = () =>{
-  const [navbarOpen, setNavbarOpen] = useState(false)
+  // const [navbarOpen, setNavbarOpen] = useState(false)
+  // navbarOpen
   return(
     <Wrapper>
         <Container>
           <Logo />
           <NavLinks />
-          <Hamburger navbarOpen/>
+          <Hamburger />
           <Lang />
         </Container>
     </Wrapper>
