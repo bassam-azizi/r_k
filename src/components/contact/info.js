@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper, Adress, H1, Sponsored} from '@emotion/styled'
+import { Wrapper, Adress, H1, Sponsored} from './infoStyle'
 
 
 const Info = () =>{
