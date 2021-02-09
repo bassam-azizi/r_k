@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'gatsby'
 import Img from 'gatsby-image'
-import { Deck , Title} from './postStyle'
+import { Deck , Title, Lin, Info} from './postStyle'
 
 
 const Post = props =>{
