@@ -4,7 +4,7 @@ import { IoMdPause } from 'react-icons/all'
 
 export const Wrapper = Styled.div`
             padding: 2rem;
-            width: 390px;
+            /* width: 390px; */
             height: 380px;
             margin: auto;
             align-self: center;
