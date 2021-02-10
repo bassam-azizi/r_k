@@ -10,13 +10,15 @@ export const Deck  = Styled.div`
             width: 433px;
         } 
         &:nth-of-type(2){
-            width: 558px;
+            /* width: 558px; */
+            width: 529px
         }   
         &:nth-of-type(3){
             width: 529px;
         } 
         &:nth-of-type(4){
-            width: 463px;
+            /* width: 463px; */
+            width: 433px;
         }      
         Img {
             object-fit: cover;
