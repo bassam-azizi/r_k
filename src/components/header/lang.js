@@ -2,13 +2,21 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Styled from '@emotion/styled'
 
-const LangWrapper = Styled.div`
-    display: flex;
-    flex-direction: row;
-    font-size: 14px;
-    align-self: flex-end;
-    margin-bottom: 19px;
-    `
+    const LangWrapper = Styled.div`
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+        align-self: flex-end;
+        margin-bottom: 19px;
+        @media (max-width: 1188px){
+            margin-bottom: 10px;
+        }
+        @media (max-width: 1078px){
+            position: absolute;
+            top: 0;
+            right: 53px;
+        }
+        `
     
     const LangP = Styled(Link)`
         padding: .2rem .4rem;

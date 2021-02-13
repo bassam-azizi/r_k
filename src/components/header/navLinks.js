@@ -7,7 +7,11 @@ const Wrapper = Styled.div`
   align-self: flex-end;
   padding: 0 0 22px;
   letter-spacing: 0.2px;
-  display: none;
+  @media (max-width: 1188px){
+    padding: 0 0 10px;
+    letter-spacing: 0;
+    padding: 0;
+  }
   @media (max-width: 768px){
     display: none;
   }
