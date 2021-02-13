@@ -1,6 +1,6 @@
 import React from 'react'
-import Cta from './cta/cta'
-import Posts_Collection from './posts/featuredPosts'
+// import Cta from './cta/cta'
+// import Posts_Collection from './posts/featuredPosts'
 import ProgramBar from './programBar'
 import Styled from '@emotion/styled'
 
@@ -11,7 +11,6 @@ const Wrapper = Styled.div`
 `
 const Container = Styled.div`
     display: flex;
-    // margin-top: 64px;
     justify-content: flex-end;
 `
 
@@ -19,10 +18,10 @@ const IndexBody = () => {
     return(
         <Wrapper>
             <Container>
-                <Cta />
-                <Posts_Collection />
+                {/* <Cta />
+                <Posts_Collection /> */}
             </Container>
-            <ProgramBar />
+            {/* <ProgramBar /> */}
         </Wrapper>
     )
 }
