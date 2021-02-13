@@ -8,6 +8,9 @@ import Styled from '@emotion/styled'
         font-size: 14px;
         align-self: flex-end;
         margin-bottom: 19px;
+
+
+
         @media (max-width: 1188px){
             margin-bottom: 10px;
         }
@@ -15,6 +18,39 @@ import Styled from '@emotion/styled'
             position: absolute;
             top: 0;
             right: 53px;
+        }
+        @media (max-width: 916px){
+            bottom: 0;
+            top: auto;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px){
+            // position: relative;
+            padding: 0 0 17px;
+
+        }
+
+        .balls{
+            width: 100%;
+            position: absolute;
+            left: 4px;
+            bottom: 0;
+            display: block;
+            display: none   ;
+            text-align: center;
+
+            @media (max-width: 768px){
+                display: block;
+            }
+        }
+        .ball{
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #222;
+            margin-right: 8px;
+            display: inline-block;;
         }
         `
     
@@ -41,6 +77,11 @@ const Lang = () =>{
             <LangP>AR</LangP>
             <LangP>FR</LangP>
             <LangP>EN</LangP>
+            <div className="balls">
+                <div className="ball"></div>
+                <div className="ball"></div>
+                <div className="ball"></div>
+            </div>
         </LangWrapper>
     )
 }
