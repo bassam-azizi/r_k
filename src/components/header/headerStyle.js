@@ -11,12 +11,13 @@ export const Container = Styled.div`
         justify-content: space-between;
         position: relative;
         align-items: center;
+
         @media (max-width: 1188px){
                 padding : 0 20px;
         }
-        @media (max-width: 906px){
+        @media (max-width: 916px){
                 flex-direction: column;
-                justify-content: flex-start;
+                align-items: flex-start;
   }
         `
 export const Hamburger = Styled.div`
