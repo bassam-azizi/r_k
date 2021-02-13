@@ -10,8 +10,8 @@ const LogoWrap = Styled(Link)`
   min-height:104px;
   margin: 0 0 10px 20px;
 
-  @media (max-width: 908px){
-
+  @media (max-width: 916px){
+    
   }
   
 
