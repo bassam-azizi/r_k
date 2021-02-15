@@ -22,10 +22,9 @@ const Bar = Styled.div`
 `
 
 
-
-const Hamburger = () => {
+const Hamburger = props => {
     return(
-        <Wrapper>
+        <Wrapper onClick={()=>props.toggleMenu()} >
             <Bar></Bar>
             <Bar></Bar>
             <Bar></Bar>
