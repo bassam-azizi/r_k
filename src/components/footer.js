@@ -1,14 +1,15 @@
 import React from 'react'
-import { Container , P} from './footerStyle'
+import { Container} from './footerStyle'
 
 const Footer = () =>{
     return(
         <Container>
+            <p className='footerItem contact'>contact@radiokhemir.fr</p>
             <div>
-                <P>contact@radiokhemir.fr</P>
-                <P>made with <span style={{color: '#C52127'}}>♥</span> by Bassem Azizi</P>
-                <P>All right are reserved</P>
-            </div>
+                <p className="footerItem firstItem">contact@radiokhemir.fr</p>
+                <p className="footerItem">made with <span style={{color: '#C52127'}}>♥</span> by Bassem Azizi</p>
+                <p className="footerItem">All right are reserved</p>
+            </div> 
         </Container>
     )
 }
