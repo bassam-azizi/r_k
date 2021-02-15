@@ -76,9 +76,9 @@ import Styled from '@emotion/styled'
 const Lang = () =>{
     return(
         <LangWrapper>
-            <LangP>AR</LangP>
-            <LangP>FR</LangP>
-            <LangP>EN</LangP>
+            <LangP to="/">AR</LangP>
+            <LangP to="/">FR</LangP>
+            <LangP to="/">EN</LangP>
             <div className="balls">
                 <div className="ball"></div>
                 <div className="ball"></div>
