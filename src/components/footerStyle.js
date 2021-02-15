@@ -10,13 +10,50 @@ export const Container = Styled.div`
     color: #FFF;
     font-size: 14px;
     flex-shrink:0;
+
+    @media (max-width: 768px){
+        padding: 37px 46px;
+        height: auto;
+    }
+    @media (max-width: 550px){
+        padding: 20px 46px;
+    }
+
     div{
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 100%;
+        @media( max-width: 550px){
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
-`
-export const P = Styled.div`
-    margin: 0;  
+
+   
+    div .footerItem{
+        margin: 0;  
+        @media (max-width : 550px){
+            line-height: 35px;
+        }
+    }
+
+    div .firstItem{
+        @media (max-width: 768px){
+            display: none;
+        }
+        @media (max-width: 550px){
+            display: block;
+        }
+    }
+    .contact{
+        display: none;
+        @media (max-width: 768px){
+            display: block;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 550px){
+            display: none;
+        }
+    }
 `
