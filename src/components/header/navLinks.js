@@ -5,19 +5,23 @@ import Styled from '@emotion/styled'
 
 const Wrapper = Styled.div`
   align-self: flex-end;
-  padding: 0 0 22px;
+  padding: 0 0 10px;
   letter-spacing: 0.2px;
 
   @media (max-width: 1188px){
-    padding: 0 0 10px;
     letter-spacing: 0;
     padding: 0;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 1079px) {
+    margin-bottom: 0;
   }
   @media (max-width: 916px){
     margin-top: 30px;
     align-self: center;
   }
   @media (max-width: 768px){
+    display: none;
   }
 `
 const NavItem = Styled(Link)`
