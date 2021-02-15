@@ -1,15 +1,16 @@
 import React from 'react'
-import {Wrapper, Close, Lin} from './style_hamburger_menu'
+import {Wrapper, Lin} from './style_hamburger_menu'
 
-const Hamburger_menu = () =>{
+const Hamburger_menu = props =>{
     return(
-        <Wrapper>
-            <Close>X</Close>
-            <Lin>About us</Lin>
-            <Lin>Program</Lin>
-            <Lin>Emission</Lin>
-            <Lin>Blog</Lin>
-            <Lin>Contact</Lin>
+        <Wrapper menu={props.menu_open}>
+        {console.log(props.menu_open)}
+            <span onClick={ () => props.toggleMenu() }>X</span>
+            <Lin to="/aboutus">About us</Lin>
+            <Lin to="/program">Program</Lin>
+            <Lin to="/emission">Emission</Lin>
+            <Lin to="/blog">Blog</Lin>
+            <Lin to="/contact">Contact</Lin>
         </Wrapper>
     )
 }
