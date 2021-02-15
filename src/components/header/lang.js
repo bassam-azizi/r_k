@@ -7,7 +7,7 @@ import Styled from '@emotion/styled'
         flex-direction: row;
         font-size: 14px;
         align-self: flex-end;
-        margin-bottom: 19px;
+        margin-bottom: 9px;
 
 
 
@@ -26,8 +26,10 @@ import Styled from '@emotion/styled'
         }
 
         @media (max-width: 768px){
-            // position: relative;
             padding: 0 0 17px;
+            top: 0;
+            bottom: auto;
+            right: 4px;
 
         }
 
