@@ -39,7 +39,8 @@ export const Hamburger = Styled.div`
         align-self: center;
         position: relative;
         transform: ${props => (props.open ? "rotate(-45deg)" : "inherit")};
+
         @media (max-width: 768px){
-        display: block;
+            display: block;
         }
         `
