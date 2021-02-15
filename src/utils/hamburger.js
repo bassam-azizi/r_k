@@ -3,8 +3,15 @@ import Styled from '@emotion/styled'
 
 
 const Wrapper = Styled.div`
-    display: block;
+    display: none;
     cursor: pointer;
+    margin-top: 58px;
+    margin-left: 49px;
+
+    @media (max-width: 768px){
+        display: block;
+    }
+
 `
 const Bar = Styled.div`
     width: 45px;
