@@ -1,24 +1,28 @@
-import React from "react"
+import React , { useState } from "react"
 import NavLinks from "./navLinks"
 import Logo from "./logo"
 import Lang from "./lang"
 import Hamburger from '../../utils/hamburger'
 // import Lang_menu from './lang_menu'
 import {Wrapper, Container} from './headerStyle'
-// import Hamburger_menu from "./hamburger_menu"
+import Hamburger_menu from "./hamburger_menu"
 
 
 
 const Header = () =>{
   // const [navbarOpen, setNavbarOpen] = useState(false)
   // navbarOpen
+  const [menuOpen, toggleMenu] = useState(false);
+  const toggle= () => {
+    toggleMenu(!menuOpen);
+  }
   return(
     <Wrapper>
         <Container>
           <Logo />
           <NavLinks />
-          <Hamburger />
-          {/*<Hamburger_menu />}*/}
+          <Hamburger toggleMenu={toggle} />
+          <Hamburger_menu menu_open={menuOpen} toggleMenu={toggle} />
           <Lang />
           {/*{<Lang_menu />}*/}
         </Container>
