@@ -6,9 +6,9 @@ const Lang_menu = () =>{
     return(
         <Wrapper>
             <Close>^</Close>
-            <Lin>English</Lin>
-            <Lin>Francais</Lin>
-            <Lin>العربية</Lin>
+            <Lin to="/">English</Lin>
+            <Lin to="/">Francais</Lin>
+            <Lin to="/">العربية</Lin>
         </Wrapper>
     )
 }
