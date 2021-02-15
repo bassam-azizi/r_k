@@ -6,6 +6,7 @@ export const Wrapper = Styled.nav`
 export const Container = Styled.div`
         max-width: 1320px;
         margin: 28px auto;
+        padding: 0 27px;
         height: 104px;
         display: flex;
         justify-content: space-between;
@@ -18,8 +19,14 @@ export const Container = Styled.div`
         @media (max-width: 916px){
                 flex-direction: column;
                 align-items: flex-start;
-  }
-        `
+                width: 700px;
+        }
+        @media (max-width: 768px){
+            padding: 0; 
+            position: static;
+            width: 100%;
+        }
+    `
 export const Hamburger = Styled.div`
         position: fixed;
         top: 2em;
