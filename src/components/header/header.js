@@ -2,7 +2,7 @@ import React from "react"
 import NavLinks from "./navLinks"
 import Logo from "./logo"
 import Lang from "./lang"
-// import Hamburger from '../../utils/hamburger'
+import Hamburger from '../../utils/hamburger'
 // import Lang_menu from './lang_menu'
 import {Wrapper, Container} from './headerStyle'
 // import Hamburger_menu from "./hamburger_menu"
@@ -17,8 +17,8 @@ const Header = () =>{
         <Container>
           <Logo />
           <NavLinks />
-          {/*<Hamburger />
-          <Hamburger_menu />*/}
+          <Hamburger />
+          {/*<Hamburger_menu />}*/}
           <Lang />
           {/*{<Lang_menu />}*/}
         </Container>
