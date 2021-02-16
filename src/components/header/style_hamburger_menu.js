@@ -8,15 +8,13 @@ export const Wrapper = Styled.div`
     background-color: #373737;
     color: #fff;
     padding: 51px 0 0;
-    display: ${ (props) => ( props.menu ? 'none' : 'block')};
+    z-index: 20;
 
     position: absolute;
     top: 150px;
-    transform: ${ (props) => ( props.menu ? 'translateX(-100px)' : 'translateX(0)' )};
-    transition: transform 2s linear;
+    transform: ${ (props) => ( props.menu ? 'translateX(0)' : 'translateX(-400px)' )};
+    transition: transform 1s linear;
 
-    /* width: 100%; */
-    /* height: 588px; */
 
     span{
         position: absolute;
@@ -36,10 +34,9 @@ export const Wrapper = Styled.div`
 export const Lin = Styled(Link)`
         display: block;
         width: 236px;
-        padding: 27px 0 27px 20px;
+        padding: 27px 0 27px 39px;
         font-size: 24px;
         color: #fff;
-        /* margin-left: 20px; */
         text-align: left;
         text-decoration: none;
         cursor: pointer;
