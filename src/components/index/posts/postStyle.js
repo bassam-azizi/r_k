@@ -7,18 +7,28 @@ export const Deck  = Styled.div`
         padding: 0;
         height: 331px;
         &:nth-of-type(1){
-            width: 433px;
+            width: 44%;
+            @media (max-width: 600px){
+                width: 100%;
+            }
         } 
         &:nth-of-type(2){
-            /* width: 558px; */
-            width: 529px
+            width: 56%;
+            @media (max-width: 600px){
+                width: 100%;
+            }
         }   
         &:nth-of-type(3){
-            width: 529px;
+            width: 56%;
+            @media (max-width: 600px){
+                width: 100%;
+            }
         } 
         &:nth-of-type(4){
-            /* width: 463px; */
-            width: 433px;
+            width: 44%;
+            @media (max-width: 600px){
+                width: 100%;
+            }
         }      
         Img {
             object-fit: cover;
@@ -27,6 +37,8 @@ export const Deck  = Styled.div`
             height: 331px;
         }
         position: relative;
+
+
         `
 export const Lin = Styled(Link)`
         opacity: .8;
@@ -37,6 +49,7 @@ export const Lin = Styled(Link)`
         }
     `
 export const Info = Styled.div`
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -54,6 +67,7 @@ export const Info = Styled.div`
         opacity: 1;
         cursor: pointer;
         z-index: 5;
+        outline: none;
         &:hover {
             right: 0;
             top: 0;
@@ -72,12 +86,18 @@ export const Info = Styled.div`
             display: none;
         }
         a{
+            outline: none;
             list-style: none;
             position: relative;
             align-self: flex-start;
             width: 100%;
             margin: 14px 14px;
             color: #373737;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
         a h4{
             opacity:0;
@@ -105,6 +125,8 @@ export const Info = Styled.div`
             opacity: 0;
             visibility: hidden;
             transition: .9s linear;
+            top: 0;
+            right: 0;
         }
     `
 export const Title = Styled.div`
