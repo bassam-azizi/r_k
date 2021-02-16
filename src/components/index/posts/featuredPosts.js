@@ -8,12 +8,22 @@ const Wrapper = Styled.div`
     position: relative;
     // width:fit-content;
     width: 62.6%;
+    padding: 2.4rem 0 0;
+
+    @media (max-width: 1028px){
+        width: 100%;
+    }
+
 `
 const Container = Styled.div`
     display: flex;
     flex-direction: row-reverse;
     flex-wrap:  wrap;
     position: relative;
+
+    @media (max-width: 600px){
+        flex-direction: column;
+    }
 `
 const Triangle = Styled.div`
     width: 0;
@@ -24,6 +34,10 @@ const Triangle = Styled.div`
     transform: rotateZ(0deg);
     top: 0;
     left: 0;
+
+    @media (max-width:1028px){
+        display: none;
+    }
 `
 
 
@@ -44,7 +58,7 @@ const Posts_Collection = () =>{
                         pubdate(formatString:"MMMM Do, YYYY")
                         featuredImg{
                             childImageSharp{
-                                fluid(maxWidth: 600){
+                                fluid(maxWidth: 650){
                                     ...GatsbyImageSharpFluid
                                 }
                             }
@@ -87,8 +101,8 @@ const Posts_Collection = () =>{
                 {posts.map(post=>(
                     <Post data={post} key={post.node.id} />
                 ))}
-            </Container>
             <Triangle />
+            </Container>
         </Wrapper>
     )
 }
