@@ -9,7 +9,7 @@ const Cta = () => {
     return (
         <Wrapper>
             <H1>We deliver <span>News</span></H1>
-            <Button onClick={() => castOn(!cast)} name="cta" types="button" cast={cast}>{cast ? <Pauseicon /> : <Icon />}<p>Launch Live Radio</p></Button>
+            <Button onClick={() => castOn(!cast)} name="cta" types="button" cast={cast}> <Pauseicon cast={cast}/>  <p>Launch Live Radio <Icon /> </p> </Button>
             <Liveplayer cast={cast} />
             <P cast={cast}>13h-14h One Hour Sport with Fedi Arfaoui</P>
         </Wrapper>
