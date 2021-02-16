@@ -3,12 +3,17 @@ import { GoTriangleRight } from 'react-icons/all'
 import { IoMdPause } from 'react-icons/all'
 
 export const Wrapper = Styled.div`
-            padding: 2rem;
-            /* width: 390px; */
-            height: 380px;
             margin: auto;
             align-self: center;
             position: relative;
+            z-index: 10;
+
+            @media (max-width: 1100px){
+                margin-right: -24px;
+            }
+            @media (max-width: 1028px){
+                margin: 121px auto 97px;
+            }
             `
 export const H1 = Styled.h1`
         margin-bottom: 30px;
@@ -25,7 +30,7 @@ export const Button = Styled.button`
         z-index: 20;
         overflow: hidden;
         position: relative;
-        width: ${(props) => (props.cast ? '71px' : '363px')};
+        width: ${(props) => (props.cast ? '71px' : '330px')};
         height: 71px;
         background: ${(props) => (props.cast ? '#C52127' : '#C52127')};
         border-radius: ${(props) => (props.cast ? "50%" : "10px")};
@@ -43,7 +48,7 @@ export const Button = Styled.button`
             outline: none;
         }
             p{
-                text-indent: ${(props) => ( props.cast? '0':'5px')};
+                text-indent: ${(props) => ( props.cast? '0':'15px')};
                 line-height: ${(props) =>( props.cast? '0' : '36px')};
                 font-weight: 600;
                 font-size: 24px;
@@ -53,35 +58,26 @@ export const Button = Styled.button`
                 // transform: ${(props)=>(props.cast? 'translateY(-11em)' : 'translateY(0)')};
                 position: absolute;
                 top: 23%;
-                transition:  ${(props)=>(props.cast? 'opacity: .1s ease, visibility .1s ease':'opacity .2s ease .3s , visibility .3s ease')};
+                transition:  ${(props)=>(props.cast? 'opacity: .1s ease, visibility .1s ease':'opacity .2s ease .3s , visibility .9s ease')};
             }
     `
-    // div{
-    //     width: 70px;
-    //     height: 70px;
-    //     background-color: #C52127;
-    //     border-radius: 50%;
-    //     position: absolute;
-    //     right: 1.9rem;
-    //     // top: 32.5%;
-    //     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
+    
 export const Icon = Styled(GoTriangleRight)`
         box-sizing: content-box;
         position: absolute;
-        right: 1.9rem;
-        top: 26.5%;
-        font-size: 2.09rem;
+        right: -50px;
+        top: 5px;
+        font-size: 30px;
         color: #fff;
-        padding: 0 1.2rem 0 0;
     `
 export const Pauseicon = Styled(IoMdPause)`
         box-sizing: content-box;
-        font-size: 1.70rem;
+        font-size: 30px;
         color: #fff;
-        // padding: 0 1.2rem 0 0;
+        opacity: ${(props) =>(props.cast? '1' : '0')};
+        visibility: ${(props) => (props.cast? 'visible' :'hidden')};
+        transition:  ${(props)=>(props.cast? 'opacity: .1s ease, visibility .1s ease':'opacity .2s ease .3s , visibility .3s ease')};
+
     `
 export const P = Styled.p`
         font-size: 14px;
