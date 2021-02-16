@@ -3,14 +3,14 @@ import px2vw from '../utils/px2vw'
 
 const Global_style = createGlobalStyle`
     :root {
-        font-size: ${px2vw(24)};
+        font-size: ${px2vw(16)};
 
         @media (min-width: 768px) {
             font-size: ${px2vw(18)};
         }
 
-        @media (min-width: 1024px) {
-            font-size: ${px2vw(16)};
+        @media (max-width: 768px) {
+            font-size: ${px2vw(24)};
         }
     }
     html {
@@ -51,8 +51,8 @@ const Global_style = createGlobalStyle`
     }
 
     img {
-    max-width: 100%;
-    height: auto;
+            max-width: 100%;
+            height: auto;
     } 
     `
 
