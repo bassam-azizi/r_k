@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import Styled from '@emotion/styled'
+import Lang_menu from './lang_menu'
 
     const LangWrapper = Styled.div`
         display: flex;
@@ -36,11 +37,13 @@ import Styled from '@emotion/styled'
         .balls{
             width: 100%;
             position: absolute;
-            left: 4px;
             bottom: 0;
+            top: 0;
             display: block;
             display: none   ;
             text-align: center;
+            height: auto;
+            z-index: 10;
 
             @media (max-width: 768px){
                 display: block;
@@ -51,7 +54,7 @@ import Styled from '@emotion/styled'
             height: 5px;
             border-radius: 50%;
             background: #222;
-            margin-right: 8px;
+            margin: 32px 8px 0 0; 
             display: inline-block;;
         }
         `
@@ -62,6 +65,8 @@ import Styled from '@emotion/styled'
         cursor: pointer;
         color: #fff;
         background-color: #7F8A64;
+        text-decoration: none;
+        color: #fff;
         &:nth-of-type(3){
             background: #C52127;
         }
@@ -74,17 +79,24 @@ import Styled from '@emotion/styled'
 
 
 const Lang = () =>{
+    const [openMenu, toggleMenu] = useState(false);
+    const toggle_menu = () =>{
+        toggleMenu(!openMenu)
+    }
     return(
-        <LangWrapper>
-            <LangP to="/">AR</LangP>
-            <LangP to="/">FR</LangP>
-            <LangP to="/">EN</LangP>
-            <div className="balls">
-                <div className="ball"></div>
-                <div className="ball"></div>
-                <div className="ball"></div>
-            </div>
-        </LangWrapper>
+        <>
+            <LangWrapper>
+                <LangP to="/">AR</LangP>
+                <LangP to="/">FR</LangP>
+                <LangP to="/">EN</LangP>
+                <div className="balls" onClick={toggle_menu}>
+                    <div className="ball"></div>
+                    <div className="ball"></div>
+                    <div className="ball"></div>
+                </div>
+            </LangWrapper>
+            <Lang_menu menu_open={openMenu} toggle={toggle_menu}/>
+        </>
     )
 }
 
