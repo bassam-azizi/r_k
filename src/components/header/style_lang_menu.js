@@ -7,7 +7,12 @@ export const Wrapper = Styled.div`
     width: 188px;
     color: #fff;
     font-family: Roboto;
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 20;
+    transform: ${ (props) => ( props.menu_open ? 'translateY(0)' : 'translateY(-700px)' )};
+    transition: transform 1s ease;
 `
 export const Close = Styled.span`
     display: block;
@@ -29,6 +34,8 @@ export const Lin = Styled(Link)`
     padding: 41px 0;
     text-align: center;
     cursor: pointer;
+    text-decoration: none;
+    color: #fff;
     border-bottom: 1px solid #cfcfcf12;
     :hover{
         color: #519657 ;
