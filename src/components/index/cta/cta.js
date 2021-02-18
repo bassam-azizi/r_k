@@ -5,7 +5,7 @@ import { P , Pauseicon , Icon , Button , H1, Wrapper } from './ctaStyle'
 
 
 const Cta = () => {
-    const [cast, castOn] = useState(false)
+    const [cast, castOn] = useState(false);
     return (
         <Wrapper>
             <H1>We deliver <span>News</span></H1>
