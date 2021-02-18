@@ -1,18 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
-import px2vw from '../utils/px2vw'
+// import px2vw from '../utils/px2vw'
 
 const Global_style = createGlobalStyle`
-    :root {
-        font-size: ${px2vw(16)};
-
-        @media (min-width: 768px) {
-            font-size: ${px2vw(18)};
-        }
-
-        @media (max-width: 768px) {
-            font-size: ${px2vw(24)};
-        }
-    }
+    
     html {
     box-sizing: border-box;
     font-family: "Poppins";
