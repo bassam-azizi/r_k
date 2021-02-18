@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper , H1, Li } from './aboutStyle'
+import { Wrapper } from './aboutStyle'
 
 
 
