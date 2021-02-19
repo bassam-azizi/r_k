@@ -35,7 +35,6 @@ const NavItem = Styled(Link)`
   transition: all 200ms ease-in;
   position: relative;
   
-
   :after {
     position: absolute;
     bottom: 0;
@@ -50,6 +49,13 @@ const NavItem = Styled(Link)`
   }
 
   :hover {
+    color: #7F8A64;
+    ::after {
+      width: 100%;
+    }
+  }
+
+  :active {
     color: #7F8A64;
     ::after {
       width: 100%;
