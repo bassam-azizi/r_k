@@ -6,6 +6,7 @@ export const Wrapper = Styled.div`
         outline: none;
         }
     background-color:  #aaa;
+    margin: 48px 0;
 `
 export const Info = Styled.div`
     position: relative;
