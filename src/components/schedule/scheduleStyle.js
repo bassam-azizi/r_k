@@ -2,37 +2,98 @@ import Styled from '@emotion/styled'
 
 
 export const Wrapper = Styled.div`
-            width : 400px;
-            margin: 0 auto;
-            padding: 4rem;
+            width : 50%;
+            margin: 125px auto 77px;
             position: relative;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            font-family: Roboto;
             background-color: #e5e5E5 ;
-            border: 1px solid #373737 ;
-            & > div > h1{
-                padding: 2rem 0;
+            border: .2px solid #37373745 ;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            @media (max-width: 1400px){
+                  width: 60%;
             }
-            & > ul > li{
-                line-height: 40px;
+
+            @media (max-width: 1078px){
+                  width: 70% ;
             }
-`
-export const Title = Styled.div`
-            padding: 20px 0;
+            @media (max-width: 916px){
+                  margin-top: 150px;
+            }
+
+            @media (max-width: 768px){
+                  width: 80%;
+                  margin-top: 170px;
+            }
+            @media (max-width: 460px){
+                  width: 100%;
+            }
+            
+
+
+            .container{
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  text-align: left;
+                  position: relative;
+                  
+                  & > ul > li{
+                      line-height: 40px;
+                      color: #222;
+                      margin-left: 100px;
+
+                      strong{
+                        position: absolute;
+                        left: 0;
+                        font-family: Roboto;
+                      }
+                  }
+
+            }
+
+            .title{
+                  padding: 20px 0;
+                  margin-bottom: 60px;
+
+                  h1{
+                        padding: 30px 0 0;
+                        color: #222;
+                  }
+
+                  p{
+                        color: #222;
+                        font-size: 14px;
+                  }
+
+            }
+            .footer{
+                  padding: 90px 0 40px;
+            }
 `
 export const Bars = Styled.div`
             position: absolute;
-            top: -36px;
-            height: 60px;
+            top: -30px;
+            left: 50px;
+            height: 90px;
             display: flex;
+
+            @media (max-width: 768px){
+                  height: 70px;
+                  left: auto;
+                  right: 50px;
+            }
+            @media (max-width: 600px){
+                  right: 20px;
+            }
+
+
+            .bar{
+                  background-color: #C52127;
+                  width: 3px;
+                  margin-right: 20px;
+
+            }
 `
-export const Bar = Styled.div`
-            background-color: red;
-            width: 3px;
-            margin-right: 16px;
-`
-export const Footer = Styled.div`
-            padding: 30px 0;
-`
+
