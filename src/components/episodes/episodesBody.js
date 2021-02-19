@@ -1,5 +1,7 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link , graphql, useStaticQuery } from 'gatsby'
+
+import { Wrapper } from './episodeBodyStyle'
 
 import Podcast from './podcast'
 
@@ -22,9 +24,15 @@ const Episodes = () =>{
       }
   `)
   return(
-    <div>{data.allPodcastRssFeedEpisode.edges.map(edge =>(
-      <Podcast data={edge.node} key={edge.node.id}/>
-    ))}</div>
+    <Wrapper>
+          <Link to="/">Audio Emission </Link>
+          <Link to="/">Video Emission</Link>
+          <div>
+            {data.allPodcastRssFeedEpisode.edges.map(edge =>(
+              <Podcast data={edge.node} key={edge.node.id}/>
+            ))}
+          </div>
+    </Wrapper>
   )
 }
 
