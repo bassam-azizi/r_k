@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql , useStaticQuery } from 'gatsby'
 import { Link } from 'gatsby'
 import Reactmarkdown from 'react-markdown'
-import {Wrapper, Title, Bars, Bar, Footer} from './scheduleStyle'
+import {Wrapper, Bars } from './scheduleStyle'
 
 
 const Schedule = () =>{
@@ -19,13 +19,20 @@ const Schedule = () =>{
     return(
         <Wrapper>
             <Bars>
-                <Bar></Bar>
-                <Bar></Bar>
-                <Bar></Bar>
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
             </Bars>
-            <Title><h1>{data.strapiSchedule.eng_day}</h1></Title>
-            <Reactmarkdown source={data.strapiSchedule.eng_body} />
-            <Footer>You can watch past shows <Link to='/emission'>here</Link></Footer>
+            <div className="container">
+                <div className="title">
+                    <h1>Program of Today</h1>
+                    <p>{data.strapiSchedule.eng_day}</p>
+                </div>
+                <Reactmarkdown source={data.strapiSchedule.eng_body} />
+                <div className="footer">
+                    You can watch past shows <Link to='/emission'>here</Link>
+                </div>
+            </div>
         </Wrapper>
 
     )
