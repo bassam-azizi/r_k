@@ -4,6 +4,7 @@ import Styled from '@emotion/styled'
 export const Wrapper = Styled.div`
 	margin: 109px auto 30px;
 	max-width: 1291px;
+	width: 90%;
 
 	a{
 		text-decoration: none;
