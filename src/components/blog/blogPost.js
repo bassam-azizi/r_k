@@ -11,8 +11,8 @@ const Blogpost = props =>{
             <Wrapper key={props.data.node.Slug}>
                 <Lin to={`/blog/${props.data.node.Slug}`}>
                     <Picture>
-                    <Img fixed={props.data.node.featuredImg.childImageSharp.fixed} alt="anythings " />
-                    </Picture>
+                        <Img fixed={props.data.node.featuredImg.childImageSharp.fixed} alt="anythings " />
+                    </Picture>  
                     <Title>
                         <H1>{props.data.node.name}</H1>
                     </Title>
