@@ -7,13 +7,23 @@ import Styled from '@emotion/styled'
 import Blogpost from './blogPost'
 
 const Wrapper = Styled.div`
-    margin: 0 10vw;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    font-family: Roboto;
-    font-size: 15px;
-    margin: -138px 0 0 -138px;
-    width: calc(100% + 138px);
+    width: 90%;
+    max-width: 1250px;
+    margin: 71px auto 101px;
+
+    @media (max-width:1194px){
+    	justify-content: center;
+    }
+
+    @media (max-width:858px){
+    	width: 96%;
+    }
+    @media (max-width: 350px){
+    	width: 100%;
+    }
 `
 
 const Bloga = () =>{
@@ -31,7 +41,7 @@ const Bloga = () =>{
                         pubdate
                         featuredImg{
                             childImageSharp{
-                                fixed(width: 300, height: 250){
+                                fixed(width: 464){
                                     ...GatsbyImageSharpFixed
                                 }
                             }
