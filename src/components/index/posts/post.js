@@ -8,7 +8,7 @@ const Post = props =>{
     return(
         <Deck>
             <Lin to ={`/blog/${props.data.node.Slug}`}>
-            <Img fluid={props.data.node.featuredImg.childImageSharp.fluid} alt={props.data.node.name} />
+                <Img fluid={props.data.node.featuredImg.childImageSharp.fluid} alt={props.data.node.name} />
             </Lin>
             <Info>
                 <span>i</span>
