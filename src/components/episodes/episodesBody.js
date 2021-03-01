@@ -14,9 +14,11 @@ const Episodes = () =>{
             node{
               id
               item{
-                pubDate
+                isoDate(formatString:"MMMM Do, YYYY")
                 title
-                enclosure{url length(formatString:"MMMM Do, YYYY")}
+                enclosure{
+                  url 
+              }
               }
             }
           }
@@ -27,7 +29,7 @@ const Episodes = () =>{
     <Wrapper>
           <Link to="/">Audio Emission </Link>
           <Link to="/">Video Emission</Link>
-          <div>
+          <div className="container">
             {data.allPodcastRssFeedEpisode.edges.map(edge =>(
               <Podcast data={edge.node} key={edge.node.id}/>
             ))}
