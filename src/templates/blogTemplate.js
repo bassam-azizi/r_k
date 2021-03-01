@@ -1,48 +1,27 @@
 import React from 'react'
 import Reactmarkdown from "react-markdown"
-import { graphql } from 'gatsby'
-import Styled from '@emotion/styled'
+import { graphql, Link } from 'gatsby'
+import Img from 'gatsby-image'
+import {Wrapper} from './styleBlogTemplate'
+
 
 import Layout from '../components/layout'
 
 
-
-const Container = Styled.div`
-    padding: 0 2rem;
-    cursor: pointer;
-`
-const Header = Styled.div`
-    padding: 2rem 0;
-    // text-align: center;
-    padding: 0 3rem 3rem;
-    & > p{
-        font-size: 12px;
-        color: #888;
-    }
-`
-const Body = Styled.div`
-    color: #444;
-    & > p{
-        line-height: 60px;
-        // color: #888;
-        font-weight: 500;
-        padding: 0 3rem;
-        font-size: 17px;
-    }
-`
-
 const Blog_template = ({data}) =>{
     return(
         <Layout>
-            <Container>
-                <Header>
+            <Wrapper>
+                <Link className='shareBtn' to='/'>Share</Link>
+                <div className='header'>
                     <h1>{data.strapiBlogpost.name}</h1>
-                    <p>{data.strapiBlogpost.pubdate}</p>
-                </Header>
-                <Body>
+                    <p className="pubdate">{data.strapiBlogpost.pubdate}</p>
+                </div>
+                <div className="body">
+                    <Img className='blogImg' fluid={data.strapiBlogpost.featuredImg.childImageSharp.fluid} alt='blog title' />
                     <Reactmarkdown source={data.strapiBlogpost.body} />
-                </Body>
-            </Container>
+                </div>
+            </Wrapper>
         </Layout>
     )
 }
@@ -59,6 +38,13 @@ export const pageQuery = graphql`
                 categories{
                     name
                 }
+                featuredImg{
+                            childImageSharp{
+                                fluid(maxWidth: 764){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
             }
         }
 `
