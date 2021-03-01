@@ -41,11 +41,11 @@ export const Deck  = Styled.div`
 
         `
 export const Lin = Styled(Link)`
-        opacity: .8;
+        opacity: .85;
         text-decration: none;
         color: #222;
         &:hover{
-            opacity: .9;
+            opacity: 1;
         }
     `
 export const Info = Styled.div`
