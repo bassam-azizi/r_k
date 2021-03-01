@@ -6,7 +6,6 @@ import Styled from '@emotion/styled'
 // Component Style
 const Wrapper = Styled.div`
     position: relative;
-    // width:fit-content;
     width: 62.6%;
     padding: 2.4rem 0 0;
 
