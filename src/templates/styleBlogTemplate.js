@@ -5,7 +5,7 @@ export const Wrapper = Styled.div`
 	position: relative;
 	width: 80%;
 	margin: 94px auto;
-    background: #e5e5e5;
+    // background: #e5e5e5;
 	border-radius: 10px;
 	.shareBtn{
 		text-decoration: none;
