@@ -16,9 +16,19 @@ export const Wrapper = Styled.form`
     }
 
     @media (max-width: 900px){
-        width: 90%;
+        width: 98%;
         border-radius: 10px;
         margin-top: 59px;
+    }
+
+    @media (max-width: 650px){
+        width: 100%;
+    }
+    @media (max-width: 500px){
+        padding: 78px 30px 45px;
+    }
+    @media (max-width: 350px){
+        padding: 78px 20px 45px;
     }
 
     h1{
@@ -32,7 +42,10 @@ export const Wrapper = Styled.form`
 
         @media (max-width: 1300px){
         width: 91%;
-    } 
+        } 
+        @media (max-width: 500px){
+            width: 100%;
+        }
 
         input{
             height: 58px;   
@@ -48,12 +61,22 @@ export const Wrapper = Styled.form`
             font-size: 15px;
             top: 32%;
         }
+        input:focus + label, input:valid + label{
+            opacity: 0;
+        }
+        // input:defined + label{
+        //     opacity: 0;
+        // }
 
         textarea{
             overflow: hidden;
             width: 100%;
             height: 100px;
         }
+        textarea:focus+label, textarea:valid + label{
+            opacity: 0;
+        }
+
 
         .btn{
             background-color: #C52127;
