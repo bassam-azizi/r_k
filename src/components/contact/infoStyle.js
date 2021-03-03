@@ -19,7 +19,7 @@ export const Wrapper = Styled.div`
 	}
 
 	@media (max-width: 900px){
-        width: 90%;
+        width: 98%;
         height: 278px;
         border-radius:10px;
         flex-direction: row;
@@ -28,6 +28,7 @@ export const Wrapper = Styled.div`
     }
 
     @media (max-width: 650px){
+    	width: 100%;
     	flex-direction: column;
     	height: 451px;
         padding: 51px 31px 51px 53px;
