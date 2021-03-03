@@ -9,7 +9,7 @@ export const Wrapper = Styled.div`
     margin: 48px 0;
 
     @media (max-width: 1330px){
-        width: 300px;
+        width: 40%;
     }
 `
 export const Info = Styled.div`
