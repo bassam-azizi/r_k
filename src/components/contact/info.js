@@ -1,22 +1,22 @@
 import React from 'react'
-import { Wrapper, Adress, H1, Sponsored} from './infoStyle'
+import {  Wrapper } from './infoStyle'
 
 
 const Info = () =>{
     return(
         <Wrapper>
-            <Adress>
-                <H1>Radio Web Khemir</H1>
-                <p>Radio Web Khmir _Maison des jeunes _Ain Draham_8730</p>
+            <div className="adress">
+                <h1>Radio Web Khemir</h1>
+                <p>Maison des jeunes, Ain Draham_8730</p>
                 <p>Tel:  00216 41 425 865</p>
                 <p>Fax: 00216 71 428 965</p>
-            </Adress>
-            <Sponsored>
-            <p>Fondeé par L’association</p>
-            <p>Femme Pour Developpment AFPD</p>
-            <p>Financeé par le GIZ</p>
-            </Sponsored>
-            </Wrapper>
+            </div>
+            <div className="sponsored">
+                <p>Fondeé par L’association</p>
+                <p><bold>Femme Pour Developpment AFPD</bold></p>
+                <p>Financeé par le <bold>GIZ</bold></p>
+            </div>
+        </Wrapper>
     )
 }
 
