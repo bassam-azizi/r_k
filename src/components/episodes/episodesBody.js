@@ -27,8 +27,9 @@ const Episodes = () =>{
   `)
   return(
     <Wrapper>
-          <Link to="/">Audio Emission </Link>
-          <Link to="/">Video Emission</Link>
+          
+          {/*<Link to="/">Audio Emission </Link>
+          <Link to="/">Video Emission</Link>*/}
           <div className="container">
             {data.allPodcastRssFeedEpisode.edges.map(edge =>(
               <Podcast data={edge.node} key={edge.node.id}/>
