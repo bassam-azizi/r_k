@@ -7,7 +7,14 @@ const path = require(`path`)
 
 module.exports = {
   /* Your site config here */
+
+  siteMetadata: {
+    title: 'Radio Khemir',
+    author: 'Bassem Azizi'
+  },
+  
   plugins: [
+  `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-podcast-rss-feed`,
       options: {
