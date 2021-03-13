@@ -1,36 +1,32 @@
 import React,  {useState, useEffect} from 'react'
 import AudioPlayer , {RHAP_UI} from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
-import PlayerStyleB from './globalPodcastStyle'
-import PlayerStyleS from './globalPodcastStyleS'
+import PlayerStyleA from './globalPodcastStyleA'
+import PlayerStyleB from './globalPodcastStyleB'
+import Share_Podcast from './sharePod'
 import PlayBtn from '../../utils/playbtn.js'
-import {Wrapper , Info} from './podcastStyle'
+import {Wrapper, Info } from './podcastStyle'
+
 
 
 const Play = <PlayBtn />
 
 
 const Podcast = props =>{
-		const [width , setWidth] = useState(window.innerWidth);
+	const [width , setWidth] = useState(window.innerWidth);
 
-		useEffect( () =>{
-			const handelWindowResize = () => setWidth(window.innerWidth);
-			window.addEventListener('resize', handelWindowResize);
-			return () => window.removeEventListener('resize', handelWindowResize);
-		}, [] )
-	
-	console.log(width);
+	useEffect( () =>{
+		const handelWindowResize = () => setWidth(window.innerWidth);
+		window.addEventListener('resize', handelWindowResize);
+		return () => window.removeEventListener('resize', handelWindowResize);
+	}, [] )
 
-  const mp3 = props.data.item.enclosure.url
-  return(
-    <Wrapper>
-      {/* Global Style for the audio player  */}
-
-      {
-      	width > 1330 ? 
-      		<>
-		      <PlayerStyleB />
-		      <AudioPlayer 
+		const mp3 = props.data.item.enclosure.url
+		let t;
+		let playerA = 
+		<>
+	      	<PlayerStyleA />
+		    <AudioPlayer 
 		        src={mp3} 
 		        customIcons={{
 		           play: Play
@@ -50,12 +46,14 @@ const Podcast = props =>{
 		        customAdditionalControls={[]}
 		        showJumpControls={false}
 		        layout="horizontal-reverse"
-		      />
-	      </>
-	      :
-	      <>
-		      <PlayerStyleS />
-		      <AudioPlayer 
+		    />
+      		<Share_Podcast props={props.data.item.title}/>
+		</>;
+
+      let playerB = 
+      	<>
+	      	<PlayerStyleB />
+	      	<AudioPlayer 
 		        src={mp3} 
 		        customIcons={{
 		           play: Play
@@ -68,17 +66,37 @@ const Podcast = props =>{
 		          RHAP_UI.PROGRESS_BAR,RHAP_UI.DURATION
 		        ]}
 		        customProgressBarSection={[
-		          RHAP_UI.VOLUME_CONTROLS,
 		          RHAP_UI.MAIN_CONTROLS,
-		          RHAP_UI.CURRENT_TIME
+		          RHAP_UI.CURRENT_TIME,
+		          RHAP_UI.VOLUME_CONTROLS,
 		        ]}
 		          
 		        customAdditionalControls={[]}
 		        showJumpControls={false}
-		        layout="stacked-reverse"
-		      />
-		    </>
-      }
+		        layout="stacked"
+	      	/>
+      		<Share_Podcast props={props.data.item.title}/>
+	    </>;
+
+
+
+      	if (width>1280 && width<1400){
+      		t = playerA;
+      	}
+      	else if (width>800 && width < 1280){
+      		t = playerB;
+      	}
+      	else if (width <600){
+      		t = playerB ;
+      	}
+      	else{
+      		t = playerA;
+      	}	;
+
+  return(
+    <Wrapper>
+
+      {t}
 
     </Wrapper>
   )
