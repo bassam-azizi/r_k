@@ -8,6 +8,23 @@ const Wrapper = Styled.div`
   padding: 0 0 10px;
   letter-spacing: 0.2px;
 
+  .activeLink{
+    color: #333915;
+
+    :after {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    content: ".";
+    color: #7F8A64;
+    background: #7F8A64;
+    height: 1.5px;
+    transition: all 0.4s ease-in;
+  }
+  }
+
   @media (max-width: 1188px){
     letter-spacing: 0;
     padding: 0;
@@ -28,7 +45,7 @@ const NavItem = Styled(Link)`
   font-family: 'Poppins';
   font-size: 16px;
   text-decoration: none;
-  color: #111;
+  color: #555;
   display: inline-block;
   white-space: nowrap;
   margin: 0 35px;
@@ -37,14 +54,14 @@ const NavItem = Styled(Link)`
   
   :after {
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
     right: 0;
     width: 0%;
     content: ".";
     color: transparent;
     background: #7F8A64;
-    height: 1px;
+    height: 1.5px;
     transition: all 0.4s ease-in;
   }
 
@@ -56,7 +73,7 @@ const NavItem = Styled(Link)`
   }
 
   :active {
-    color: #7F8A64;
+    color: #444;
     ::after {
       width: 100%;
     }
@@ -74,11 +91,11 @@ const NavItem = Styled(Link)`
 const NavLinks = () =>{
     return(
         <Wrapper>
-          <NavItem to='/aboutUs'>About us</NavItem>
-          <NavItem to="/program">Program</NavItem>
-          <NavItem to="/emission">Emission</NavItem>
-          <NavItem to="/blog">Blog</NavItem>
-          <NavItem to="/contact">Contact </NavItem>
+          <NavItem to='/aboutUs' activeClassName="activeLink">About us</NavItem>
+          <NavItem to="/program" activeClassName="activeLink">Program</NavItem>
+          <NavItem to="/emission" activeClassName="activeLink">Emission</NavItem>
+          <NavItem to="/blog" activeClassName="activeLink">Blog</NavItem>
+          <NavItem to="/contact" activeClassName="activeLink">Contact </NavItem>
         </Wrapper>
     )
 }
