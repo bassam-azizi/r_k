@@ -1,16 +1,13 @@
 import Styled from '@emotion/styled'
 
 export const Wrapper = Styled.div`
-    width: 600px;
+    /*width: 558px;*/
     *{
     outline: none;
     }
     background-color:  #aaa;
-    margin: 48px 0;
+    margin: 48px 20px 48px 0;
 
-    @media (max-width: 1330px){
-        width: 40%;
-    }
 `
 export const Info = Styled.div`
     position: relative;
