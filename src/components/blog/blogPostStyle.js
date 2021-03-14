@@ -85,6 +85,10 @@ export const H1 = Styled.h1`
     text-indent: 3px;
     text-align: center;
     padding-top: 5px;
+    color: #666;
+    :hover{
+        color: #222;
+    }
 `
 export const Lin = Styled(Link)`
     text-decoration: none;
