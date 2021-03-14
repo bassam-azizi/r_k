@@ -13,10 +13,11 @@ const Play = <PlayBtn />
 
 
 const Podcast = props =>{
-	const [width , setWidth] = useState(window.innerWidth);
+	let screenWidth = typeof window !== 'undefined' ? window.innerWidth : "1400";
+	const [width , setWidth] = useState(screenWidth);
 
 	useEffect( () =>{
-		const handelWindowResize = () => setWidth(window.innerWidth);
+		const handelWindowResize = () => setWidth(screenWidth);
 		window.addEventListener('resize', handelWindowResize);
 		return () => window.removeEventListener('resize', handelWindowResize);
 	}, [] )
