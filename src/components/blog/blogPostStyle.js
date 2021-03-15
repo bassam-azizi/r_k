@@ -54,6 +54,10 @@ export const Wrapper = Styled.div`
               color: lighten($red, 18%); 
               text-shadow: -1px -1px 0 darken($red, 9.5%);
               transition: all 250ms linear;}
+
+    :hover h1{
+        color: #222;
+    }
 `
 export const Picture = Styled.picture`
     width: 100%;
@@ -86,9 +90,6 @@ export const H1 = Styled.h1`
     text-align: center;
     padding-top: 5px;
     color: #666;
-    :hover{
-        color: #222;
-    }
 `
 export const Lin = Styled(Link)`
     text-decoration: none;

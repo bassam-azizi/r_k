@@ -15,9 +15,10 @@ const Share_Podcast = ({props}) =>{
     <Head title="past emission" url={"www.radiokhemir.com/emission"}></Head>
   			<p>Share</p>
   			<FacebookShareButton 
-                    url={`www.radiokhemire.com/${window.location.pathname}`}
+                    url={`www.radiokhemire.com/emission`}
   	                quote={`Radiokhemir - ${props}`}
   	                hashtag={`#${props}`}
+                    description={props}
   	                className='fb'>
                    <FiFacebook size={26}/>
         </FacebookShareButton>
