@@ -1,10 +1,6 @@
 import Styled from '@emotion/styled'
 
 export const Wrapper = Styled.div`
-    /*width: 558px;*/
-    *{
-    outline: none;
-    }
     background-color:  #aaa;
     margin: 48px 20px 48px 0;
 
