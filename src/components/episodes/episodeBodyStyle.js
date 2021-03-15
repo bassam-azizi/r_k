@@ -7,27 +7,6 @@ export const Wrapper = Styled.div`
 	max-width: 1291px;
 	width: 90%;
 
-	/*.circle1{
-		margin-left: 50px;
-		border-radius: 50%;
-		width: 30px;
-		height: 30px;
-		background: #C52127;
-		cursor: pointer;
-		position: relative;
-
-		.circle2{
-			width:25px;
-			height: 25px;
-			border-radius: 50%;
-			background: #7F8A64;
-			cursor: pointer;
-			position: absolute;
-			top:5px;
-			left: 5px;
-		}
-	}*/
-
 	a{
 		text-decoration: none;
 		color: #222;
@@ -39,7 +18,7 @@ export const Wrapper = Styled.div`
 	.container{
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: space-around;
 		margin-right: -5%;
 
 		@media (max-width:1380px){
