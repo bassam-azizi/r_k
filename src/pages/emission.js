@@ -11,7 +11,7 @@ const Emission = () =>{
 	const url = typeof window !== 'undefined' ? window.location.path : '/emission';
     return (
         <Layout>
-        	<Head title="Past emission" location={url}/>
+        	<Head title="Past emission"/>
             <Episodes  />
         </Layout>
 
