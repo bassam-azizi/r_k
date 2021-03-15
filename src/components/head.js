@@ -9,12 +9,13 @@ const Head = (props) =>{
 			site{
 				siteMetadata{
 					title
+					url
 				}
 			}
 		}
 		`);
-	let location = props.location === undefined ? "" : props.location.pathname;
-    let currentUrl = "http://www.radiokhemir.tn" + location;
+	// let location = props.location === undefined ? "" : props.location.pathname;
+    let currentUrl = data.site.siteMetadata.emissionUrl;
     let quote = props.quote !== undefined ? props.quote : "";
     let title = props.title !== undefined ? props.title : "Radio Khemir - From youth and to the youth";
     let image = props.image !== undefined ? props.image : "https://storage.googleapis.com/cmperstribe_storage_usha/Banner/IMG_3640.JPG";
