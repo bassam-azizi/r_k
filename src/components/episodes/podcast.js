@@ -99,7 +99,6 @@ const Podcast = props =>{
   return(
     <Wrapper>
 
-      		{console.log(window.location)}
       {t}
 
     </Wrapper>
