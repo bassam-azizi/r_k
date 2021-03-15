@@ -11,24 +11,26 @@ import Head from '../head'
 
 const Share_Podcast = ({props}) =>{
 	return(
-		<Wrapper>
-    <Head title="past emission"></Head>
-  			<p>Share</p>
-  			<FacebookShareButton 
-                    url="www.radiokhemire.com/emission"
-  	                quote={`Radiokhemir - ${props}`}
-  	                hashtag={`#${props}`}
-  	                className='fb'>
-                   <FiFacebook size={26}/>
-        </FacebookShareButton>
-        
-        <TwitterShareButton 
-                		url={'ttp://www.camperstribe.com'}
-                		title={'ttp://www.camperstribe.com'} 
-                		hashtags={'ain draham'}>
-                	<FiTwitter size={26} />
-        </TwitterShareButton>
-		</Wrapper>
+    <>
+      <Head title="past emission"></Head>
+  		<Wrapper>
+    			<p>Share</p>
+    			<FacebookShareButton 
+                      url="www.radiokhemire.com/emission"
+    	                quote={`Radiokhemir - ${props}`}
+    	                hashtag={`#${props}`}
+    	                className='fb'>
+                     <FiFacebook size={26}/>
+          </FacebookShareButton>
+          
+          <TwitterShareButton 
+                  		url={'ttp://www.camperstribe.com'}
+                  		title={'ttp://www.camperstribe.com'} 
+                  		hashtags={'ain draham'}>
+                  	<FiTwitter size={26} />
+          </TwitterShareButton>
+  		</Wrapper>
+    </>
 
 		)
 }
