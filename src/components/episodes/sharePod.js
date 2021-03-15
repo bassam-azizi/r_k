@@ -12,10 +12,10 @@ import Head from '../head'
 const Share_Podcast = ({props}) =>{
 	return(
 		<Wrapper>
-    <Head></Head>
+    <Head title="past emission" url={"www.radiokhemir.com/emission"}></Head>
   			<p>Share</p>
   			<FacebookShareButton 
-  	                url={"www.radiokhemir.com"}
+                    url={`www.radiokhemire.com/${window.location.pathname}`}
   	                quote={`Radiokhemir - ${props}`}
   	                hashtag={`#${props}`}
   	                className='fb'>
