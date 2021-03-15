@@ -33,9 +33,9 @@ const PlayerStyleB = createGlobalStyle`
                   border: 0.7px solid #22222245;
 
             }
-            // .rhap_play-pause-button {
-            //       font-size: 0;
-            // }
+            .rhap_play-pause-button {
+                  font-size: 0;
+            }
             .rhap_main-controls svg {
                   width: 29px;
                   height: 29px;
