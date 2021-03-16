@@ -15,22 +15,14 @@ const Head = (props) =>{
 			}
 		}
 		`);
-	const data2 = useStaticQuery(graphql`
-        query{
-            file(name: {eq: "logo"}, extension: {eq: "png"}){
-                childImageSharp{
-                    fluid(maxWidth: 200, pngQuality: 80){
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-        }
-    `)
+	
+
+ 
 	// let location = props.location === undefined ? "" : props.location.pathname;
     let currentUrl = data.site.siteMetadata.emissionUrl;
     let quote = props.quote !== undefined ? props.quote : "";
     let title = props.title !== undefined ? props.title : "Radio Khemir - From youth and to the youth";
-    let image = props.image !== undefined ? props.image : data2.file.childImageSharp.fluid ;
+    let image = props.image !== undefined ? props.image : "https://res.cloudinary.com/bassem-azizi/image/upload/v1615846566/william-iven-TMOeGZw9NY4-unsplash_rzgrlu.jpg" ;
     let description = props.description !== undefined ? props.description  : "Radio khemir lets you Have an eye on north west local news, opportunity, It's the voice of rural region and forgotten youth, We welcome you in our lives and here you are one of us." 
     
 	return(
