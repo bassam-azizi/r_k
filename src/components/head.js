@@ -10,6 +10,7 @@ const Head = (props) =>{
 				siteMetadata{
 					title
 					url
+					emissionUrl
 				}
 			}
 		}
