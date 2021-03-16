@@ -12,7 +12,7 @@ module.exports = {
     title: 'Radio Khemir',
     author: 'Bassem Azizi',
     url: "www.radiokhemir.tn",
-    emissionUrl: "http://www.radiokhemir.tn/emission"
+    emissionUrl: "https://604fdd9339a43c0008bea43e--jolly-mestorf-4c47b5.netlify.app/emission"
   },
   
   plugins: [
