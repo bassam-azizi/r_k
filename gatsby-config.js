@@ -10,7 +10,9 @@ module.exports = {
 
   siteMetadata: {
     title: 'Radio Khemir',
-    author: 'Bassem Azizi'
+    author: 'Bassem Azizi',
+    url: "www.radiokhemir.tn",
+    emissionUrl: "http://www.radiokhemir.tn/emission"
   },
   
   plugins: [
