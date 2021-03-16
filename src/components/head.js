@@ -30,7 +30,7 @@ const Head = (props) =>{
     let currentUrl = data.site.siteMetadata.emissionUrl;
     let quote = props.quote !== undefined ? props.quote : "";
     let title = props.title !== undefined ? props.title : "Radio Khemir - From youth and to the youth";
-    let image = props.image !== undefined ? props.image : data.file.childImageSharp.fluid ;
+    let image = props.image !== undefined ? props.image : data2.file.childImageSharp.fluid ;
     let description = props.description !== undefined ? props.description  : "Radio khemir lets you Have an eye on north west local news, opportunity, It's the voice of rural region and forgotten youth, We welcome you in our lives and here you are one of us." 
     
 	return(
