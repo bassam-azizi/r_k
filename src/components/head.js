@@ -43,9 +43,10 @@ const Head = (props) =>{
 		     <meta property="fb:app_id" content="281289809224344" />
 		     <meta property="title" content={title} />
 		     <meta property="quote" content={quote} />
-		     <meta name="description" content={description} />
+		     <meta Pname="description" content={description} />
 		     <meta property="image" content={image} />
-		 {/*Schema.org for OPENgRAPH*/}
+
+
 		     <meta property="og:locale" content="en_US" />
 		     <meta property="og:type" content={type} />
 		     <meta property="og:title" content={title} />
@@ -55,19 +56,21 @@ const Head = (props) =>{
 		     <meta content="image/*" property="og:image:type" />
 		     <meta property="og:url" content={currentUrl} />
 		     <meta property="og:site_name" content="radiokhemir" />
-		     <meta property="og:description" content={description} /> 	
-		      {/*Schema.org for Google*/}
-			<meta itemprop="name" content="radio khemir">
-			<meta itemprop="description" content="Radio khemir lets you Have an eye on north west local news, opportunity, It's the voice of rural region and forgotten youth, We welcome you in our lives and here you are one of us.">
-			<meta itemprop="image" content="https://res.cloudinary.com/bassem-azizi/image/upload/v1615846566/william-iven-TMOeGZw9NY4-unsplash_rzgrlu.jpg">
-			{/*Schema.org for tWITTER*/}
-		    <meta data-react-helmet="true" name="twitter:card" content="radio khemir news" />
+			<meta property="og:description" content={description} /> 
+
+			<meta itemprop="name" content="radio khemir" />
+			<meta itemprop="description" content={description}/>
+			<meta itemprop="image" content={image} />
+
+
+		     <meta data-react-helmet="true" name="twitter:card" content="radio khemir news" />
 			<meta data-react-helmet="true" name="twitter:site" content={`@${title}`} />
 			<meta data-react-helmet="true" name="twitter:title" content={`${title} | Radio Khemir`} />
 			<meta data-react-helmet="true" name="twitter:description" content={description} />
 			<meta data-react-helmet="true" name="twitter:image" content={image} />
+
 	    </Helmet>
-)
+	)
 }
 
 
