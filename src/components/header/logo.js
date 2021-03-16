@@ -21,15 +21,15 @@ const LogoWrap = Styled(Link)`
 
 const Logo = () =>{
     const data = useStaticQuery(graphql`
-    query{
-        file(name: {eq: "logo"}, extension: {eq: "png"}){
-            childImageSharp{
-                fluid(maxWidth: 200, pngQuality: 80){
-                    ...GatsbyImageSharpFluid
+        query{
+            file(name: {eq: "logo"}, extension: {eq: "png"}){
+                childImageSharp{
+                    fluid(maxWidth: 200, pngQuality: 80){
+                        ...GatsbyImageSharpFluid
+                    }
                 }
             }
         }
-    }
     `)
     return(
         <LogoWrap to='/'>
