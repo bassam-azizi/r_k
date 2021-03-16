@@ -19,7 +19,7 @@ const Head = (props) =>{
     let currentUrl = data.site.siteMetadata.emissionUrl;
     let quote = props.quote !== undefined ? props.quote : "";
     let title = props.title !== undefined ? props.title : "Radio Khemir - From youth and to the youth";
-    let image = props.image !== undefined ? props.image : "https://storage.googleapis.com/cmperstribe_storage_usha/Banner/IMG_3640.JPG";
+    let image = props.image !== undefined ? props.image : "https://ik.imagekit.io/7zlpykh864g/william-iven-TMOeGZw9NY4-unsplash_2tMBDu12F.jpg";
     let description = props.description !== undefined ? props.description  : "Radio khemir lets you Have an eye on north west local news, opportunity, It's the voice of rural region and forgotten youth, We welcome you in our lives and here you are one of us." 
     
 	return(
@@ -48,7 +48,7 @@ const Head = (props) =>{
 		     <meta property="og:image" content={image} />
 		     <meta content="image/*" property="og:image:type" />
 		     <meta property="og:url" content={currentUrl} />
-		     <meta property="og:site_name" content="CampersTribe" />
+		     <meta property="og:site_name" content="radiokhemir" />
 		     <meta property="og:description" content={description} /> 
 	    </Helmet>
 )
