@@ -1,4 +1,5 @@
 import React from 'react'
+import { useStaticQuery, graphql} from 'gatsby'
 // import { Link } from 'gatsby'
 import {FacebookShareButton, FacebookMessengerShareButton, TwitterShareButton} from "react-share";
 import { FiFacebook, RiMessengerLine, FiTwitter } from 'react-icons/all'
@@ -10,13 +11,21 @@ import Head from '../head'
 
 
 const Share_Podcast = ({props}) =>{
+  const data = useStaticQuery(graphql`
+    query{
+      site{
+        siteMetadata{
+          emissionUrl
+        }
+      }
+    }
+    `)
 	return(
-    <>
-      <Head title="past emission"></Head>
   		<Wrapper>
     			<p>Share</p>
+          <Head title="past emission"></Head>
     			<FacebookShareButton 
-                      url="www.radiokhemire.com/emission"
+                      url={data.site.siteMetadata.emissionUrl}
     	                quote={`Radiokhemir - ${props}`}
     	                hashtag={`#${props}`}
     	                className='fb'>
@@ -30,7 +39,6 @@ const Share_Podcast = ({props}) =>{
                   	<FiTwitter size={26} />
           </TwitterShareButton>
   		</Wrapper>
-    </>
 
 		)
 }
