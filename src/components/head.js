@@ -19,6 +19,7 @@ const Head = (props) =>{
 
  
 	// let location = props.location === undefined ? "" : props.location.pathname;
+	let type = props.type !== undefined ? props.type : "website";
     let currentUrl = data.site.siteMetadata.emissionUrl;
     let quote = props.quote !== undefined ? props.quote : "";
     let title = props.title !== undefined ? props.title : "Radio Khemir - From youth and to the youth";
@@ -31,7 +32,7 @@ const Head = (props) =>{
 		     <meta charset="utf-8" />
 		     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		     <meta name="csrf_token" content="" />
-		     <meta property="type" content="website" />
+		     <meta property="type" content={type} />
 		     <meta property="url" content={currentUrl} />
 		     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 		     <meta name="msapplication-TileColor" content="#ffffff" />
@@ -42,10 +43,11 @@ const Head = (props) =>{
 		     <meta property="fb:app_id" content="281289809224344" />
 		     <meta property="title" content={title} />
 		     <meta property="quote" content={quote} />
-		     <meta Pname="description" content={description} />
+		     <meta name="description" content={description} />
 		     <meta property="image" content={image} />
+		 {/*Schema.org for OPENgRAPH*/}
 		     <meta property="og:locale" content="en_US" />
-		     <meta property="og:type" content="website" />
+		     <meta property="og:type" content={type} />
 		     <meta property="og:title" content={title} />
 		     <meta property="og:quote" content={quote} />
 		     <meta property="og:hashtag" content="#radiokhemir" />
@@ -53,8 +55,13 @@ const Head = (props) =>{
 		     <meta content="image/*" property="og:image:type" />
 		     <meta property="og:url" content={currentUrl} />
 		     <meta property="og:site_name" content="radiokhemir" />
-		     <meta property="og:description" content={description} /> 
-		     <meta data-react-helmet="true" name="twitter:card" content="summary" />
+		     <meta property="og:description" content={description} /> 	
+		      {/*Schema.org for Google*/}
+			<meta itemprop="name" content="radio khemir">
+			<meta itemprop="description" content="Radio khemir lets you Have an eye on north west local news, opportunity, It's the voice of rural region and forgotten youth, We welcome you in our lives and here you are one of us.">
+			<meta itemprop="image" content="https://res.cloudinary.com/bassem-azizi/image/upload/v1615846566/william-iven-TMOeGZw9NY4-unsplash_rzgrlu.jpg">
+			{/*Schema.org for tWITTER*/}
+		    <meta data-react-helmet="true" name="twitter:card" content="radio khemir news" />
 			<meta data-react-helmet="true" name="twitter:site" content={`@${title}`} />
 			<meta data-react-helmet="true" name="twitter:title" content={`${title} | Radio Khemir`} />
 			<meta data-react-helmet="true" name="twitter:description" content={description} />
