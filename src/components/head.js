@@ -15,11 +15,22 @@ const Head = (props) =>{
 			}
 		}
 		`);
+	const data2 = useStaticQuery(graphql`
+        query{
+            file(name: {eq: "logo"}, extension: {eq: "png"}){
+                childImageSharp{
+                    fluid(maxWidth: 200, pngQuality: 80){
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `)
 	// let location = props.location === undefined ? "" : props.location.pathname;
     let currentUrl = data.site.siteMetadata.emissionUrl;
     let quote = props.quote !== undefined ? props.quote : "";
     let title = props.title !== undefined ? props.title : "Radio Khemir - From youth and to the youth";
-    let image = props.image !== undefined ? props.image : "https://ik.imagekit.io/7zlpykh864g/william-iven-TMOeGZw9NY4-unsplash_2tMBDu12F.jpg";
+    let image = props.image !== undefined ? props.image : data.file.childImageSharp.fluid ;
     let description = props.description !== undefined ? props.description  : "Radio khemir lets you Have an eye on north west local news, opportunity, It's the voice of rural region and forgotten youth, We welcome you in our lives and here you are one of us." 
     
 	return(
@@ -36,6 +47,7 @@ const Head = (props) =>{
 		     <meta name="theme-color" content="#ffffff" />
 		     <meta name="_token" content="" />
 		     <meta name="robots" content="noodp" />
+		     <meta property="fb:app_id" content="281289809224344" />
 		     <meta property="title" content={title} />
 		     <meta property="quote" content={quote} />
 		     <meta name="description" content={description} />
