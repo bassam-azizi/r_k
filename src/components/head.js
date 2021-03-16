@@ -42,7 +42,7 @@ const Head = (props) =>{
 		     <meta property="fb:app_id" content="281289809224344" />
 		     <meta property="title" content={title} />
 		     <meta property="quote" content={quote} />
-		     <meta name="description" content={description} />
+		     <meta Pname="description" content={description} />
 		     <meta property="image" content={image} />
 		     <meta property="og:locale" content="en_US" />
 		     <meta property="og:type" content="website" />
@@ -54,6 +54,11 @@ const Head = (props) =>{
 		     <meta property="og:url" content={currentUrl} />
 		     <meta property="og:site_name" content="radiokhemir" />
 		     <meta property="og:description" content={description} /> 
+		     <meta data-react-helmet="true" name="twitter:card" content="summary" />
+			<meta data-react-helmet="true" name="twitter:site" content={`@${title}`} />
+			<meta data-react-helmet="true" name="twitter:title" content={`${title} | Radio Khemir`} />
+			<meta data-react-helmet="true" name="twitter:description" content={description} />
+			<meta data-react-helmet="true" name="twitter:image" content={image} />
 	    </Helmet>
 )
 }
