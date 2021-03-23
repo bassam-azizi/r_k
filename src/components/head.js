@@ -1,10 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import { useStaticQuery, graphql} from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
-const Head = (props) =>{
-	const data = useStaticQuery(graphql`
+const Head = (props) => {
+    const data = useStaticQuery(graphql `
 		query{
 			site{
 				siteMetadata{
@@ -15,19 +15,19 @@ const Head = (props) =>{
 			}
 		}
 		`);
-	
 
- 
-	// let location = props.location === undefined ? "" : props.location.pathname;
-	let type = props.type !== undefined ? props.type : "website";
-    let currentUrl = data.site.siteMetadata.emissionUrl;
+
+
+    // let location = props.location === undefined ? "" : props.location.pathname;
+    let type = props.type !== undefined ? props.type : "website";
+    let currentUrl = props.path !== undefined ? props.path : data.site.siteMetadata.url;
     let quote = props.quote !== undefined ? props.quote : "";
     let title = props.title !== undefined ? props.title : "Radio Khemir - From youth and to the youth";
-    let image = props.image !== undefined ? props.image : "https://res.cloudinary.com/bassem-azizi/image/upload/v1615846566/william-iven-TMOeGZw9NY4-unsplash_rzgrlu.jpg" ;
-    let description = props.description !== undefined ? props.description  : "Radio khemir lets you Have an eye on north west local news, opportunity, It's the voice of rural region and forgotten youth, We welcome you in our lives and here you are one of us." 
-    
-	return(
-		<Helmet>
+    let image = props.image !== undefined ? props.image : "https://res.cloudinary.com/bassem-azizi/image/upload/v1615846566/william-iven-TMOeGZw9NY4-unsplash_rzgrlu.jpg";
+    let description = props.description !== undefined ? props.description : "Radio khemir lets you Have an eye on north west local news, opportunity, It's the voice of rural region and forgotten youth, We welcome you in our lives and here you are one of us."
+
+    return (
+        <Helmet>
 		     <title>{` ${props.title} | ${data.site.siteMetadata.title}`}</title>
 		     <meta charset="utf-8" />
 		     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -70,7 +70,7 @@ const Head = (props) =>{
 			<meta data-react-helmet="true" name="twitter:image" content={image} />
 
 	    </Helmet>
-	)
+    )
 }
 
 
