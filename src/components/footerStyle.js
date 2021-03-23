@@ -1,7 +1,7 @@
 import Styled from '@emotion/styled'
 
 
-export const Container = Styled.div`
+export const Container = Styled.div `
     display: block;
     height: 60px;
     padding: 7px 4.5rem;
