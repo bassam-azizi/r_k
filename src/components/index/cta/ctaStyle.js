@@ -8,9 +8,7 @@ export const Wrapper = Styled.div`
             position: relative;
             z-index: 10;
 
-            @media (max-width: 1100px){
-                margin-right: -24px;
-            }
+            
             @media (max-width: 1028px){
                 margin: 121px auto 97px;
             }
