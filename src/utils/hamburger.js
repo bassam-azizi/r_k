@@ -2,7 +2,7 @@ import React from 'react'
 import Styled from '@emotion/styled'
 
 
-const Wrapper = Styled.div`
+const Wrapper = Styled.div `
     display: none;
     cursor: pointer;
     margin-top: 58px;
@@ -14,7 +14,7 @@ const Wrapper = Styled.div`
     }
 
 `
-const Bar = Styled.div`
+const Bar = Styled.div `
     width: 45px;
     height: 4px;
     margin-bottom: 10px;
@@ -24,7 +24,7 @@ const Bar = Styled.div`
 
 
 const Hamburger = props => {
-    return(
+    return (
         <Wrapper onClick={()=>props.toggleMenu()} >
             <Bar></Bar>
             <Bar></Bar>
