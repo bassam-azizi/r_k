@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Styled from '@emotion/styled'
 import Lang_menu from './lang_menu'
 
-    const LangWrapper = Styled.div`
+const LangWrapper = Styled.div `
         display: flex;
         flex-direction: row;
         font-size: 14px;
@@ -58,8 +58,9 @@ import Lang_menu from './lang_menu'
             display: inline-block;;
         }
         `
-    
-    const LangP = Styled(Link)`
+
+const LangP = Styled(Link)
+`
         padding: .2rem .4rem;
         border: 1px solid #33333320;
         cursor: pointer;
@@ -78,14 +79,14 @@ import Lang_menu from './lang_menu'
 
 
 
-const Lang = () =>{
+const Lang = () => {
     const [openMenu, toggleMenu] = useState(false);
-    const toggle_menu = () =>{
+    const toggle_menu = () => {
         toggleMenu(!openMenu)
     }
-    return(
-        <>
-            <LangWrapper>
+    return ( <
+        >
+        <LangWrapper>
                 <LangP to="/">AR</LangP>
                 <LangP to="/">FR</LangP>
                 <LangP to="/">EN</LangP>
@@ -94,9 +95,9 @@ const Lang = () =>{
                     <div className="ball"></div>
                     <div className="ball"></div>
                 </div>
-            </LangWrapper>
-            <Lang_menu menu_open={openMenu} toggle={toggle_menu}/>
-        </>
+            </LangWrapper> <
+        Lang_menu menu_open = { openMenu } toggle = { toggle_menu }
+        /> < / >
     )
 }
 
