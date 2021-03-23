@@ -11,8 +11,9 @@ module.exports = {
   siteMetadata: {
     title: 'Radio Khemir',
     author: 'Bassem Azizi',
-    url: "www.radiokhemir.tn",
-    emissionUrl: "https://604fdd9339a43c0008bea43e--jolly-mestorf-4c47b5.netlify.app/emission"
+    url: "604fdd9339a43c0008bea43e--jolly-mestorf-4c47b5.netlify.app",
+    emissionUrl: "https://604fdd9339a43c0008bea43e--jolly-mestorf-4c47b5.netlify.app/emission",
+    blogUrl: "https://604fdd9339a43c0008bea43e--jolly-mestorf-4c47b5.netlify.app/blog"
   },
   
   plugins: [
