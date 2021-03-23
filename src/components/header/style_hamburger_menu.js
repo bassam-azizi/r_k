@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 
 
-export const Wrapper = Styled.div`
+export const Wrapper = Styled.div `
     position: relative;
     background-color: #373737;
     color: #fff;
@@ -31,7 +31,8 @@ export const Wrapper = Styled.div`
     }
 
     `
-export const Lin = Styled(Link)`
+export const Lin = Styled(Link)
+`
         display: block;
         width: 236px;
         padding: 27px 0 27px 39px;
