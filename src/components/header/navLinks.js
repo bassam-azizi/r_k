@@ -1,9 +1,9 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import Styled from '@emotion/styled'
 
 
-const Wrapper = Styled.div`
+const Wrapper = Styled.div `
   align-self: flex-end;
   padding: 0 0 10px;
   letter-spacing: 0.2px;
@@ -41,7 +41,8 @@ const Wrapper = Styled.div`
     display: none;
   }
 `
-const NavItem = Styled(Link)`
+const NavItem = Styled(Link)
+`
   font-family: 'Poppins';
   font-size: 16px;
   text-decoration: none;
@@ -88,8 +89,8 @@ const NavItem = Styled(Link)`
 
 
 
-const NavLinks = () =>{
-    return(
+const NavLinks = () => {
+    return (
         <Wrapper>
           <NavItem to='/aboutUs' activeClassName="activeLink">About us</NavItem>
           <NavItem to="/program" activeClassName="activeLink">Program</NavItem>
