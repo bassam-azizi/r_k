@@ -1,25 +1,29 @@
 import Styled from '@emotion/styled'
 
 
-export const Wrapper = Styled.div`
-	position: relative;
-	width: 80%;
-	margin: 94px auto;
-    // background: #e5e5e5;
-	border-radius: 10px;
-	.shareBtn{
-		text-decoration: none;
-		color: #222;
-		position: absolute;
-		top: 18px;
-		right: 22px;
-		:hover{
-			color: #7F8A64;
+export const Wrapper = Styled.div `
+	background: #11ff1f09; 
+	
+	.container{
+		background: #fff;
+		position: relative;
+		max-width: 770px;
+		padding: 94px 45px;
+		margin: 0 auto;
+		.shareBtn{
+			text-decoration: none;
+			color: #222;
+			position: absolute;
+			top: 18px;
+			right: 22px;
+			:hover{
+				color: #7F8A64;
+			}
 		}
 	}
 
 	.header{
-		padding: 83px 150px;
+		padding: 70px 0;
 		display: block;
 		text-align: left;
 	    font-size: 24px;
@@ -31,19 +35,19 @@ export const Wrapper = Styled.div`
 	}
 
 	.body{
-		padding: 0 98px 98px;
+		padding: 0 0 98px;
 	    color: #333;
 
 	    .blogImg{
-			max-width: 700px;
-			margin: 0 49px 70px;
+			max-width: 720px;
+			margin: 0 0 70px;
 			border-radius: 10px;
 		}
 
 	    & > p{
 	        line-height: 52px;
 	        font-weight: 400;
-	        padding: 0 3rem;
+	        padding: 0;
 	        font-size: 17px;
 	    }
 	  }
