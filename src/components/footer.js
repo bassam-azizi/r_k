@@ -1,8 +1,8 @@
 import React from 'react'
-import { Container} from './footerStyle'
+import { Container } from './footerStyle'
 
-const Footer = () =>{
-    return(
+const Footer = () => {
+    return (
         <Container>
             <p className='footerItem contact'>contact@radiokhemir.fr</p>
             <div>
