@@ -1,11 +1,13 @@
 import Styled from '@emotion/styled'
 
-export const Wrapper = Styled.nav`
+export const Wrapper = Styled.nav `
         width: 100%;
+        background: #11ff1f09;
+        padding: 28px 0 0;
         `
-export const Container = Styled.div`
+export const Container = Styled.div `
         max-width: 1320px;
-        margin: 28px auto;
+        margin: 0 auto 28px;
         padding: 0 27px;
         height: 104px;
         display: flex;
@@ -27,7 +29,7 @@ export const Container = Styled.div`
             width: 100%;
         }
     `
-export const Hamburger = Styled.div`
+export const Hamburger = Styled.div `
         position: fixed;
         top: 2em;
         right: 2em;
