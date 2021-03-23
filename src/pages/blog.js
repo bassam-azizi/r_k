@@ -6,8 +6,8 @@ import Head from '../components/head'
 
 import Bloga from '../components/blog/blogBody'
 
-const Blog = () =>{
-    return(
+const Blog = () => {
+    return (
         <Layout>
         	<Head title="Press" />
             <Bloga />
