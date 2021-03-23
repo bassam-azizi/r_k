@@ -3,6 +3,7 @@ import Styled from '@emotion/styled'
 export const Wrapper = Styled.div`
     background-color:  #aaa;
     margin: 48px 20px 48px 0;
+    position: relative;
 
 `
 export const Info = Styled.div`
