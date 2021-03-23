@@ -1,7 +1,7 @@
 import Styled from '@emotion/styled'
 
 
-export const Wrapper = Styled.div`
+export const Wrapper = Styled.div `
 	color: #333;
 	background: #fff;
 	display: flex;
@@ -15,6 +15,16 @@ export const Wrapper = Styled.div`
 		cursor: pointer;
 		:hover{
 			color:#222;
+		}
+	}
+	.SmContainer{
+		button{
+			margin-left: 20px;
+			opacity: .5;
+			outline: none;
+			:hover{
+				opacity: 1;
+			}
 		}
 	}
 `
