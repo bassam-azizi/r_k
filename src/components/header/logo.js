@@ -24,8 +24,8 @@ const Logo = () =>{
         query{
             file(name: {eq: "logo"}, extension: {eq: "png"}){
                 childImageSharp{
-                    fluid(maxWidth: 200, pngQuality: 80){
-                        ...GatsbyImageSharpFluid
+                    fixed(width: 160, quality: 80){
+                        ...GatsbyImageSharpFixed
                     }
                 }
             }
@@ -33,7 +33,7 @@ const Logo = () =>{
     `)
     return(
         <LogoWrap to='/'>
-            <Img fluid={data.file.childImageSharp.fluid} loading="eager" alt="Radio Khemir" />
+            <Img fixed={data.file.childImageSharp.fixed} loading="eager"  alt="Radio Khemir" />
         </LogoWrap>
     )
 }
