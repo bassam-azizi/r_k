@@ -8,7 +8,7 @@ const Post = props =>{
     return(
         <Deck>
             <Link className="postLink" to ={`/blog/${props.data.node.Slug}`}>
-                <Img fluid={props.data.node.featuredImg.childImageSharp.fluid} loading="eager" alt={props.data.node.name} />
+                <Img fluid={props.data.node.featuredImg.childImageSharp.fluid} loading="lazy" alt={props.data.node.name} />
             </Link>
             <div className='info'>
                 <span>i</span>
