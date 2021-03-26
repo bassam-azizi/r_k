@@ -8,9 +8,12 @@ export const Wrapper = Styled.div`
             position: relative;
             z-index: 10;
 
+            width: 300px;
+            height: 215px;
+
             
             @media (max-width: 1028px){
-                margin: 121px auto 97px;
+                margin: 191px auto 97px;
             }
             `
 export const H1 = Styled.h1`
@@ -18,13 +21,16 @@ export const H1 = Styled.h1`
         bottom: 164px;
         width: 420px;
         font-size: 40px;
-        font-weight: 300;
+        font-weight: 290;
         color: #373737;
 
             span{
                 color: #7F8A64ee;
 
             }
+        @media (max-width: 578px){
+            width: 300px;
+        }
 `
 export const Button = Styled.button`
         margin-top: 84px;
@@ -60,6 +66,8 @@ export const Button = Styled.button`
                 position: absolute;
                 top: 23%;
                 transition:  ${(props)=>(props.cast? 'opacity: .1s ease, visibility .1s ease':'opacity .2s ease .3s , visibility .9s ease')};
+
+                
             }
     `
     
