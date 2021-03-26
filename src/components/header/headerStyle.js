@@ -4,6 +4,13 @@ export const Wrapper = Styled.nav `
         width: 100%;
         background: #11ff1f09;
         padding: 28px 0 0;
+
+        @media (max-width: 1028px){
+            padding: 28px 0;
+        }
+        @media (max-width: 768px){
+            padding: 28px 0 46px;
+        }
         `
 export const Container = Styled.div `
         max-width: 1320px;
