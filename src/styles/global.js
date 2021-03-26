@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import "@fontsource/poppins"
 // import px2vw from '../utils/px2vw'
 
 const Global_style = createGlobalStyle`
