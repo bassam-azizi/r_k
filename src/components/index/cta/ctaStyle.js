@@ -14,17 +14,20 @@ export const Wrapper = Styled.div`
             }
             `
 export const H1 = Styled.h1`
-        margin-bottom: 30px;
+        position: absolute;
+        bottom: 164px;
+        width: 420px;
         font-size: 40px;
         font-weight: 300;
         color: #373737;
 
             span{
-                color: #7F8A64;
-                font-style: italic;
+                color: #7F8A64ee;
+
             }
 `
 export const Button = Styled.button`
+        margin-top: 84px;
         z-index: 20;
         overflow: hidden;
         position: relative;
