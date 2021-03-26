@@ -8,7 +8,7 @@ export const Wrapper = Styled.div`
     align-items: flex-end;
     position: absolute;
     left: 84px;
-    top: 67px;
+    top: 62px;
     transition: ${(props)=>(props.cast? 'opacity 2s linear 1s' : 'opacity .1s linear')};
 
     @media (max-width: 500px){
