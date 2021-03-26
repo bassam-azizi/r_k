@@ -43,17 +43,17 @@ module.exports = {
     //     rss: 'https://anchor.fm/s/46ce3a74/podcast/rss'
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Poppins`,
-          `Roboto`,
-          'Rhodium Libre'
-        ],
-        display: 'swap'
-      }
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       `Poppins`,
+    //       `Roboto`,
+    //       'Rhodium Libre'
+    //     ],
+    //     display: 'swap'
+    //   }
+    // },
     `gatsby-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
