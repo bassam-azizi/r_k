@@ -10,10 +10,15 @@ const LogoWrap = Styled(Link)`
   min-height:104px;
   margin: 0 0 10px 20px;
 
-  
+  @media (max-width: 768px){
+    align-self: center;
+  }
 
   @media (max-width: 768px) and (orientation: landscape) {
     flex: 0 1 75px;
+  }
+  @media (max-width: 440px){
+    margin: 20px 0 20px;
   }
 `
 
