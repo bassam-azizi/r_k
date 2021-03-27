@@ -15,6 +15,17 @@ export const Wrapper = Styled.div`
             @media (max-width: 1028px){
                 margin: 191px auto 97px;
             }
+
+            @media (max-width: 768px){
+                margin-top: 131px;
+            }
+            @media (max-width:580px){
+                width: 300px;
+                margin-top: 191px;
+            }
+            @media (max-width: 438px){
+                width: 270px;
+            }
             `
 export const H1 = Styled.h1`
         position: absolute;
@@ -26,10 +37,10 @@ export const H1 = Styled.h1`
 
             span{
                 color: #7F8A64ee;
-
             }
-        @media (max-width: 578px){
-            width: 300px;
+        @media (max-width: 580px){
+            width: 224px;
+            padding-left: 15px;
         }
 `
 export const Button = Styled.button`
@@ -47,6 +58,11 @@ export const Button = Styled.button`
         border: ${(props)=> (props.cast? 'none' : '1px solid #c5c5c5')};
         transform: ${(props) => (props.cast ? 'translateY(-7px)' : 'translateY(-.1px)')} ;
         transition: ${(props)=>(props.cast? 'border-radius .7s linear, width .1s linear' : 'border-radius .1s linear, width .5s linear ')};
+        
+        @media (max-width: 430px){
+            width: ${(props) => (props.cast ? '71px' : '265px')};
+        }
+
         &:hover{
             box-shadow: ${(props) =>(props.cast? 'none' : '0px 15px 20px rgba(127, 138, 100, 0.4)')};
             transform: translateY(-7px);
@@ -78,6 +94,10 @@ export const Icon = Styled(GoTriangleRight)`
         top: 5px;
         font-size: 30px;
         color: #fff;
+
+        @media (max-width: 438px){
+            display: none;
+        }
     `
 export const Pauseicon = Styled(IoMdPause)`
         box-sizing: content-box;
@@ -90,11 +110,20 @@ export const Pauseicon = Styled(IoMdPause)`
     `
 export const P = Styled.p`
         font-size: 14px;
-        line-height: 60px;
         color: #373737;
         font-weight: 200;
         text-align: left;
         display: ${(props) => (props.cast ? 'none' : 'block')};
         align-self: stretch;
         text-transform: capitalize;
+        padding-top: 15px;
+
+        @media (max-width: 350px){
+            width: 260px;
+            padding-left: 23px;
+        }
+
+        span{
+            display:block;
+        }
     `
