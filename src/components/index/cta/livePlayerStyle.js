@@ -27,6 +27,10 @@ export const Progress_bar = Styled.div`
         font-size: 1.2em;
     }
 
+    @media (max-width: 500px){
+        align-self: flex-start;
+    }
+
     ` 
 export const BarContainer = Styled.div`
     height: 25px;
@@ -38,7 +42,7 @@ export const BarContainer = Styled.div`
     align-items: center;
     color: #fff;
     @media (max-width:500px){
-        width: 219px;
+        width: 160px;
     }
 `
 export const Bar = Styled.div`
