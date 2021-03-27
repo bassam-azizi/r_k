@@ -15,14 +15,14 @@ const Header = () => {
     }
     return (
         <Wrapper>
-        <Container>
-          <Logo />
-          <NavLinks />
-          <Hamburger toggleMenu={toggle} />
-          <Hamburger_menu menu_open={menuOpen} toggleMenu={toggle} />
-          <Lang />
-        </Container>
-    </Wrapper>
+            <Container>
+                <Logo />
+                <NavLinks />
+                <Hamburger toggleMenu={toggle} />
+                <Hamburger_menu menu_open={menuOpen} toggleMenu={toggle} />
+                <Lang />
+            </Container>
+        </Wrapper>
     )
 }
 
