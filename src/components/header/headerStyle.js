@@ -4,6 +4,7 @@ export const Wrapper = Styled.nav `
         width: 100%;
         background: #11ff1f09;
         padding: 28px 0 0;
+        z-index: 10;
 
         @media (max-width: 1028px){
             padding: 28px 0;
