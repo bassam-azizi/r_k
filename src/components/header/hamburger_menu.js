@@ -4,7 +4,6 @@ import {Wrapper, Lin} from './style_hamburger_menu'
 const Hamburger_menu = props =>{
     return(
         <Wrapper menu={props.menu_open}>
-        {console.log(props.menu_open)}
             <span onClick={ () => props.toggleMenu() }>X</span>
             <Lin to="/aboutus">About us</Lin>
             <Lin to="/program">Program</Lin>
