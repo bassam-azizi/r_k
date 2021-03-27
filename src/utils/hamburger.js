@@ -5,7 +5,7 @@ import Styled from '@emotion/styled'
 const Wrapper = Styled.div `
     display: none;
     cursor: pointer;
-    margin-top: 58px;
+    margin-top: 28px;
     margin-left: 49px;
     z-index: 20;
 
@@ -18,8 +18,8 @@ const Bar = Styled.div `
     width: 45px;
     height: 4px;
     margin-bottom: 10px;
-    background: #000 ;
-    border-radius: 22%;
+    background: #222d ;
+    border-radius: 7px;
 `
 
 
