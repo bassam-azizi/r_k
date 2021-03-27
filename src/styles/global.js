@@ -7,12 +7,12 @@ const Global_style = createGlobalStyle`
     html {
     box-sizing: border-box;
     font-family: "Poppins";
-    font-weight: 300;
     font-style: normal;
     text-rendering: optimizeSpeed;
     outline: none;
     height: 100%;
     margin: 0;
+    outline: none;
     }
 
     *,
@@ -29,11 +29,13 @@ const Global_style = createGlobalStyle`
     h5,
     h6,
     p,
+    a,
     ol,
     ul {
     margin: 0;
     padding: 0;
     font-weight: normal;
+    outline: none;
     }
 
     ol,
