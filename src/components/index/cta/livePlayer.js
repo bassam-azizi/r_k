@@ -33,7 +33,8 @@ const Liveplayer = ({ cast }) =>{
                     width: 150px;
                     margin: 0 0 10px 0;
                     @media (max-width:500px){
-                        align-self;
+                        align-self: flex-start;
+                        margin-left: 20px;
                     }
                 }
                 .rhap_volume-controls{
