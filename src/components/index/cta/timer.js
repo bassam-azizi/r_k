@@ -7,6 +7,8 @@ const Time = Styled.div`
     font-weight: 200;
     font-size: 14px;
     padding: 0 15px;
+    opacity: ${(props) => (props.cast? '0' : '1')};
+    transition: all 4s ease-in;
 `
 
 const Timer = () =>{
