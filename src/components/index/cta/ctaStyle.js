@@ -26,6 +26,9 @@ export const Wrapper = Styled.div`
             @media (max-width: 438px){
                 width: 270px;
             }
+            @media (max-width: 358px){
+                width: ${(props) => (props.cast? "260px" : "auto;");
+            }
             `
 export const H1 = Styled.h1`
         position: absolute;
