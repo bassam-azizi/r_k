@@ -13,12 +13,13 @@ const LogoWrap = Styled(Link)`
   @media (max-width: 768px){
     align-self: center;
   }
+  @media (max-width: 470px){
+    align-self: left;
+    margin: 5px 0 40px 40px;
+  }
 
   @media (max-width: 768px) and (orientation: landscape) {
     flex: 0 1 75px;
-  }
-  @media (max-width: 440px){
-    margin: 20px 0 20px;
   }
 `
 
