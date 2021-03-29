@@ -27,7 +27,7 @@ export const Wrapper = Styled.div`
                 width: 270px;
             }
             @media (max-width: 358px){
-                width: ${(props) => (props.cast? "260px" : "auto;");
+                width: ${(props) => (props.cast? "260px" : "auto")};
             }
             `
 export const H1 = Styled.h1`
