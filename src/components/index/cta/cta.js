@@ -7,7 +7,7 @@ import Typical from 'react-typical'
 const Cta = () => {
     const [cast, castOn] = useState(false);
     return (
-        <Wrapper>
+        <Wrapper cast={cast}>
             <H1>We deliver{' '}
             <Typical 
             		steps={['News', 4000, 'Updates', 4000, 'Cultures', 4000, 'Business', 4000, 'Arts', 3500]}
