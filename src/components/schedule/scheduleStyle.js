@@ -28,6 +28,9 @@ export const Wrapper = Styled.div`
             }
             @media (max-width: 460px){
                   width: 100%;
+                  border-right: none;
+                  border-left: none;
+                  padding: 0 10px;
             }
             
 
@@ -85,7 +88,7 @@ export const Bars = Styled.div`
                   right: 50px;
             }
             @media (max-width: 600px){
-                  right: 20px;
+                  height: 50px;
             }
 
 
@@ -94,6 +97,10 @@ export const Bars = Styled.div`
                   width: 3px;
                   margin-right: 20px;
 
+                  @media (max-width: 600px){
+                        margin-right: 15px;
+                        border-radius: 30%;
+                  }
             }
 `
 
