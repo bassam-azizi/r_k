@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 
 export const Wrapper = Styled.div `
     position: relative;
-    background-color: #373737;
+    background-color: rgb(128, 138, 102);
     color: #fff;
     padding: 51px 0 0;
     z-index: 20;
@@ -22,11 +22,12 @@ export const Wrapper = Styled.div `
         right: 21px;
         color: #fff;
         font-size: 26px;
-        font-family: Roboto;
+        font-family: sans-serif;
         display: block;
         cursor: pointer;
         :hover{
-            color: #c52127 ;
+            color: #8B656D ;
+            // color: #c52127 ;
         }     
     }
 
@@ -45,8 +46,8 @@ export const Lin = Styled(Link)
 
         :hover{
             opacity: .7;
-            background: #303030ee;
-            color: #519657;
+            background: #2E3224;
+            color: #fff;
         }
 
     }
