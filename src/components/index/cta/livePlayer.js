@@ -48,10 +48,15 @@ const Liveplayer = ({ cast }) =>{
                 .rhap_volume-bar{
                         background: #7F8A64;
                         height: 2px;
+                        width: 40px;
                 }
                 .rhap_volume-indicator{
-                    width: 3px
+                    width: 3px;
                     background: #7F8A64 ;
+                    transform: rotate(10deg);
+                    height: 17px;
+                    top: -6px;
+                    margin-lef: -3px;
                 }
                 `}
             </style>
@@ -67,8 +72,8 @@ const Liveplayer = ({ cast }) =>{
             />
             <Progress_bar>
                 <BarContainer>
-                    <Bar></Bar>
-                    <Timer />
+                    <Bar cast={cast}></Bar>
+                    <Timer cast={cast}/>
                 </BarContainer>
             </Progress_bar>
             {/* <P>{data.podcastRssFeedEpisode.item.title}</P> */}
