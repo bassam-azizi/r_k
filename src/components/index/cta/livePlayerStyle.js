@@ -9,7 +9,7 @@ export const Wrapper = Styled.div`
     position: absolute;
     left: 84px;
     top: 62px;
-    transition: ${(props)=>(props.cast? 'opacity 2s linear 1s' : 'opacity .1s linear')};
+    transition: ${(props)=>(props.cast? 'opacity 1.4s linear 1s' : 'opacity .1s linear')};
 
     @media (max-width: 600px){
         align-items: flex-start;
@@ -39,6 +39,7 @@ export const BarContainer = Styled.div`
     border-radius: 0 50px 50px 0;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     color: #fff;
     @media (max-width:600px){
@@ -54,8 +55,8 @@ export const BarContainer = Styled.div`
 export const Bar = Styled.div`
     height: 2px;
     background-color: #fff;
-    width: ${(props) => (props.cast? "68%" : "0")};
-    transition: ${(props)=>(props.cast? 'width 2s linear 1s' : 'width .1s linear')}
+    width: ${(props) => (props.cast? "68%" : "2%")};
+    transition: width 3s linear ;
 `
 export const P = Styled.p`
     font-size: 14px;
