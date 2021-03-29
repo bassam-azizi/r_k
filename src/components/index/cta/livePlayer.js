@@ -17,7 +17,8 @@ const Liveplayer = ({ cast }) =>{
             item{
                 title
                 enclosure{
-                    url}
+                    url
+                }
                 }
             }
         }
@@ -47,6 +48,10 @@ const Liveplayer = ({ cast }) =>{
                 .rhap_volume-bar{
                         background: #7F8A64;
                         height: 2px;
+                }
+                .rhap_volume-indicator{
+                    width: 3px
+                    background: #7F8A64 ;
                 }
                 `}
             </style>
