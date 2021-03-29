@@ -25,7 +25,7 @@ const Schedule = () =>{
             </Bars>
             <div className="container">
                 <div className="title">
-                    <h1>Program of Today</h1>
+                    <h1>Today programme</h1>
                     <p>{data.strapiSchedule.eng_day}</p>
                 </div>
                 <Reactmarkdown source={data.strapiSchedule.eng_body} />
