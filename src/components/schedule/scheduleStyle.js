@@ -5,11 +5,12 @@ export const Wrapper = Styled.div`
             width : 50%;
             margin: 125px auto 77px;
             position: relative;
-            background-color: #e5e5E5 ;
-            border: .2px solid #37373745 ;
+            background-color: #EDEFE9 ;
+            border: .2px solid #D2D6C7 ;
             display: flex;
             align-items: center;
             flex-direction: column;
+            border-radius: 1px;
 
             @media (max-width: 1400px){
                   width: 60%;
