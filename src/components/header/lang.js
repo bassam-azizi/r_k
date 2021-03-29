@@ -31,32 +31,32 @@ const LangWrapper = Styled.div `
             top: 0;
             bottom: auto;
             right: 4px;
+            display: none;
 
         }
+        `
 
-        .balls{
-            width: 100%;
+const Lan = Styled.div`
             position: absolute;
-            bottom: 0;
-            top: 0;
-            display: block;
-            display: none   ;
-            text-align: center;
-            height: auto;
-            z-index: 10;
+            top: 10px;
+            right: 20px;
+            display: none;
+            padding: 5px;
+            color: #7C658B;
+            font-size: 14px;
+            cursor: pointer;
+
+            ::after{
+                content:"";
+                display: block;
+                width: 10px;
+                height: 1px;
+                background: #8A6D63;
+            }
 
             @media (max-width: 768px){
                 display: block;
             }
-        }
-        .ball{
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: #222;
-            margin: 32px 8px 0 0; 
-            display: inline-block;;
-        }
         `
 
 const LangP = Styled(Link)
@@ -84,20 +84,16 @@ const Lang = () => {
     const toggle_menu = () => {
         toggleMenu(!openMenu)
     }
-    return ( <
-        >
-        <LangWrapper>
+    return ( 
+        <>
+            <LangWrapper >
                 <LangP to="/">AR</LangP>
                 <LangP to="/">FR</LangP>
                 <LangP to="/">EN</LangP>
-                <div className="balls" onClick={toggle_menu}>
-                    <div className="ball"></div>
-                    <div className="ball"></div>
-                    <div className="ball"></div>
-                </div>
-            </LangWrapper> <
-        Lang_menu menu_open = { openMenu } toggle = { toggle_menu }
-        /> < / >
+            </LangWrapper> 
+            <Lan onClick={toggle_menu}><h3>En</h3></Lan>
+            <Lang_menu menu_open = { openMenu } toggle = { toggle_menu }/> 
+        </>
     )
 }
 
