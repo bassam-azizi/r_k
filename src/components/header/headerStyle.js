@@ -2,7 +2,8 @@ import Styled from '@emotion/styled'
 
 export const Wrapper = Styled.nav `
         width: 100%;
-        background: #11ff1f09;
+        // background: #11ff1f09;
+        background: #F6F7F488;
         padding: 28px 0 0;
         z-index: 10;
 
