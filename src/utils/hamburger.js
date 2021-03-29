@@ -18,7 +18,7 @@ const Bar = Styled.div `
     width: 45px;
     height: 4px;
     margin-bottom: 10px;
-    background: #222d ;
+    background: #83826F ;
     border-radius: 7px;
 `
 
