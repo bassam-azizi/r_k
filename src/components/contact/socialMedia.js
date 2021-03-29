@@ -10,7 +10,7 @@ const Social_Media = () => {
      backgroundColor: '#ffffff'
    };
  
-  const iconStyle = { color: '#373737' };
+  const iconStyle = { color: '#25281D' };
  
   return(
     <div>
