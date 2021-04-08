@@ -25,7 +25,7 @@ const Layout = props =>{
             <Global_style />
             <Meta_container>
                 <Wrapper>
-                    <Header />
+                    <Header location={props.location}/>
                     {props.children}
                 </Wrapper>
                 <Footer />
