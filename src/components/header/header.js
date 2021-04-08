@@ -8,7 +8,7 @@ import { Wrapper, Container } from './headerStyle'
 
 
 
-const Header = () => {
+const Header = ({location}) => {
     const [menuOpen, toggleMenu] = useState(false);
     const toggle = () => {
         toggleMenu(!menuOpen);
@@ -20,7 +20,7 @@ const Header = () => {
                 <NavLinks />
                 <Hamburger toggleMenu={toggle} />
                 <Hamburger_menu menu_open={menuOpen} toggleMenu={toggle} />
-                <Lang />
+                <Lang location={location}/>
             </Container>
         </Wrapper>
     )
