@@ -19,6 +19,19 @@ module.exports = {
   plugins: [
   `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`en`, `fr`, `ar`],
+        // language file path
+        defaultLanguage: `fr`,
+        // option to redirect to `/en` when connecting `/`
+        redirect: true,
+      },
+    },
+    {
       resolve: `gatsby-source-podcast-rss-feed`,
       options: {
         feedURL: `https://feed.podbean.com/radiokhemir/feed.xml`,
@@ -66,8 +79,8 @@ module.exports = {
         sourceMap: true,
         autoLabel: "dev-only",
         labelFormat: `[local]`,
-        cssPropOptimization: true,
-      },
+        cssPropOptimization: true
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
