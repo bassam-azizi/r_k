@@ -1,5 +1,5 @@
 import Styled from '@emotion/styled'
-import { Link } from 'gatsby'
+import { Link } from "gatsby-plugin-intl"
 
 export const Wrapper = Styled.div `
     background: rgb(128, 138, 102);
