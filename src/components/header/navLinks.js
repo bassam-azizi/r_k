@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { FormattedMessage , Link} from "gatsby-plugin-intl";
 import Styled from '@emotion/styled'
 
 
@@ -92,11 +92,11 @@ const NavItem = Styled(Link)
 const NavLinks = () => {
     return (
         <Wrapper>
-          <NavItem to='/aboutUs' activeClassName="activeLink">About us</NavItem>
-          <NavItem to="/program" activeClassName="activeLink">Program</NavItem>
-          <NavItem to="/emission" activeClassName="activeLink">Emission</NavItem>
-          <NavItem to="/blog" activeClassName="activeLink">Blog</NavItem>
-          <NavItem to="/contact" activeClassName="activeLink">Contact </NavItem>
+          <NavItem to='/aboutUs' activeClassName="activeLink"><FormattedMessage id="aboutUs" defaultMessage="About us" /></NavItem>
+          <NavItem to="/program" activeClassName="activeLink"><FormattedMessage id="program" defaultMessage="Program" /></NavItem>
+          <NavItem to="/emission" activeClassName="activeLink"><FormattedMessage id="emission" defaultMessage="Emission" /></NavItem>
+          <NavItem to="/blog" activeClassName="activeLink"><FormattedMessage id="blog" defaultMessage="Blog" /></NavItem>
+          <NavItem to="/contact" activeClassName="activeLink"><FormattedMessage id="contact" defaultMessage="Contact" /> </NavItem>
         </Wrapper>
     )
 }
