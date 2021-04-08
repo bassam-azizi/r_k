@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 
 
 
+
 export const Wrapper = Styled.div `
     position: relative;
     background-color: rgb(128, 138, 102);
