@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql , useStaticQuery } from 'gatsby'
-import { Link } from 'gatsby'
+import { Link } from "gatsby-plugin-intl";
 import Reactmarkdown from 'react-markdown'
 import {Wrapper, Bars } from './scheduleStyle'
 
