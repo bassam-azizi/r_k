@@ -1,7 +1,8 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import Styled from '@emotion/styled'
-import {Link, useStaticQuery, graphql} from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
+import { Link } from "gatsby-plugin-intl"
 
 
 const LogoWrap = Styled(Link)`

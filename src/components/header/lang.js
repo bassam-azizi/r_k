@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
+// import { Link } from "gatsby"
+import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 import Styled from '@emotion/styled'
 import Lang_menu from './lang_menu'
 
@@ -34,13 +35,28 @@ const LangWrapper = Styled.div `
             display: none;
 
         }
+        span{
+            padding: .2rem .4rem;
+            border: 1px solid #33333320;
+            cursor: pointer;
+            background-color: #7F8A64;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 30%;
+
+
+            :hover{
+                color: #C52127;
+            }
+
+        }
         `
 
 const Lan = Styled.div`
+            display: none;
             position: absolute;
             top: 10px;
             right: 20px;
-            display: none;
             padding: 5px;
             color: #7C658B;
             font-size: 14px;
@@ -59,27 +75,15 @@ const Lan = Styled.div`
             }
         `
 
-const LangP = Styled(Link)
-`
-        padding: .2rem .4rem;
-        border: 1px solid #33333320;
-        cursor: pointer;
-        color: #fff;
-        background-color: #7F8A64;
-        text-decoration: none;
-        color: #fff;
-        &:nth-of-type(3){
-            background: #C52127;
-        }
-        :hover{
-            color: Gold;
-        }
-    `
 
 
 
-
-const Lang = () => {
+const languageName = {
+  en: "En",
+  fr: "Fr",
+  ar: "Ar",
+}
+const Lang = ({location}) => {
     const [openMenu, toggleMenu] = useState(false);
     const toggle_menu = () => {
         toggleMenu(!openMenu)
@@ -87,9 +91,18 @@ const Lang = () => {
     return ( 
         <>
             <LangWrapper >
-                <LangP to="/">AR</LangP>
-                <LangP to="/">FR</LangP>
-                <LangP to="/">EN</LangP>
+                 <IntlContextConsumer>
+                    {  ({ languages, language: currentLocale }) =>
+                          languages.filter(language => (language!==currentLocale)).map(language => (
+                            <span
+                              key={language}
+                              onClick={() => changeLocale(language)}
+                            >
+                                {languageName[language]}
+                            </span>
+                             ))
+                    }
+                  </IntlContextConsumer>
             </LangWrapper> 
             <Lan onClick={toggle_menu}><h3>En</h3></Lan>
             <Lang_menu menu_open = { openMenu } toggle = { toggle_menu }/> 
