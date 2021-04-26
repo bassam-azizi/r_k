@@ -2,7 +2,7 @@ import React from 'react'
 import Reactmarkdown from "react-markdown"
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { Wrapper } from './styleBlogTemplate'
+import { Wrapper } from './blogTemplate_style'
 import Share_Blog from './shareBlog'
 import Head from "../components/head"
 
@@ -35,7 +35,7 @@ const Blog_template = ({ data }) => {
 export default Blog_template
 
 
-export const pageQuery = graphql `
+export const pageQuery = graphql`
         query ($slug:String!) {
             strapiBlogpost( Slug : { eq: $slug}){
                 name
