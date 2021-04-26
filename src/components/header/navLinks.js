@@ -40,11 +40,12 @@ const Wrapper = Styled.div `
   @media (max-width: 768px){
     display: none;
   }
-`
-const NavItem = Styled(Link)
-`
-  font-family: 'Poppins';
-  font-size: 16px;
+  `
+
+const Navlink = Styled(Link)`
+  font-family: ${({locale}) => (locale !=='ar' ? "Almarai" : 'Poppins')};
+  direction: ${({locale}) => (locale !=='ar' ? "rtl" : "ltr")};
+  font-size: ${({locale}) => (locale !=='ar' ? "18px" : "16px")};
   text-decoration: none;
   color: #555;
   display: inline-block;
@@ -89,14 +90,14 @@ const NavItem = Styled(Link)
 
 
 
-const NavLinks = () => {
+const NavLinks = ({locale}) => {
     return (
         <Wrapper>
-          <NavItem to='/aboutUs' activeClassName="activeLink"><FormattedMessage id="aboutUs" defaultMessage="About us" /></NavItem>
-          <NavItem to="/program" activeClassName="activeLink"><FormattedMessage id="program" defaultMessage="Program" /></NavItem>
-          <NavItem to="/emission" activeClassName="activeLink"><FormattedMessage id="emission" defaultMessage="Emission" /></NavItem>
-          <NavItem to="/blog" activeClassName="activeLink"><FormattedMessage id="blog" defaultMessage="Blog" /></NavItem>
-          <NavItem to="/contact" activeClassName="activeLink"><FormattedMessage id="contact" defaultMessage="Contact" /> </NavItem>
+          <Navlink local={locale} to='/aboutUs' activeClassName="activeLink"><FormattedMessage id="aboutUs" defaultMessage="About us" /></Navlink>
+          <Navlink local={locale} to="/program" activeClassName="activeLink"><FormattedMessage id="program" defaultMessage="Program" /></Navlink>
+          <Navlink local={locale} to="/emission" activeClassName="activeLink"><FormattedMessage id="emission" defaultMessage="Emission" /></Navlink>
+          <Navlink local={locale} to="/blog" activeClassName="activeLink"><FormattedMessage id="blog" defaultMessage="Blog" /></Navlink>
+          <Navlink local={locale} to="/contact" activeClassName="activeLink"><FormattedMessage id="contact" defaultMessage="Contact" /> </Navlink>
         </Wrapper>
     )
 }
