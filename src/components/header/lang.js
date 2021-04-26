@@ -37,16 +37,17 @@ const LangWrapper = Styled.div `
         }
         span{
             padding: .2rem .4rem;
-            border: 1px solid #33333320;
+            border: 1.1px solid #fff;
             cursor: pointer;
-            background-color: #7F8A64;
+            background-color: #7F8A64aa;
             text-decoration: none;
             color: #fff;
-            border-radius: 30%;
+            border-radius: 38%;
 
 
             :hover{
                 color: #C52127;
+                background-color: #7F8A64;
             }
 
         }
@@ -83,7 +84,7 @@ const languageName = {
   fr: "Fr",
   ar: "Ar",
 }
-const Lang = ({location}) => {
+const Lang = () => {
     const [openMenu, toggleMenu] = useState(false);
     const toggle_menu = () => {
         toggleMenu(!openMenu)
