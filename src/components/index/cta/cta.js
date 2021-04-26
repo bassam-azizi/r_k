@@ -15,19 +15,19 @@ const Cta = () => {
         // })};
     return (
         <Wrapper cast={cast}>
-            <H1>
-            <FormattedMessage id="deliver" defaultMessage="We deliver" />{' '}
-            <Typical 
-                    steps={[intl.formatMessage({id:"deliverableA"}), 4000,
-                    intl.formatMessage({id:"deliverableB"}), 4000,
-                    intl.formatMessage({id:"deliverableC"}), 4000,
-                    intl.formatMessage({id:"deliverableD"}), 4000,
-                    intl.formatMessage({id:"deliverableE"}), 3500]}
-            		loop={Infinity} 
-            		wrapper='span'
-            		/>
+            <H1 locale={intl.locale}>
+                <FormattedMessage id="deliver" defaultMessage="We deliver" />{' '}
+                <Typical 
+                        steps={[intl.formatMessage({id:"deliverableA"}), 4000,
+                        intl.formatMessage({id:"deliverableB"}), 4000,
+                        intl.formatMessage({id:"deliverableC"}), 4000,
+                        intl.formatMessage({id:"deliverableD"}), 4000,
+                        intl.formatMessage({id:"deliverableE"}), 3500]}
+                		loop={Infinity} 
+                		wrapper='span'
+                		/>
             </H1>
-            <Button onClick={() => castOn(!cast)} name="cta" types="button" cast={cast}> <Pauseicon cast={cast}/>  <p><FormattedMessage id="cta" defaultMessage="Launch Live Radio" /> <Icon /> </p> </Button>
+            <Button locale={intl.locale} onClick={() => castOn(!cast)} name="cta" types="button" cast={cast}> <Pauseicon cast={cast}/>  <p><FormattedMessage id="cta" defaultMessage="Launch Live Radio" /> <Icon locale={intl.locale}/> </p> </Button>
             <Liveplayer cast={cast} />
             <P cast={cast}><span>13h-14h </span>One Hour Sport with Fedi Arfaoui</P>
         </Wrapper>
