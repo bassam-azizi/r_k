@@ -27,7 +27,7 @@ export const Wrapper = Styled.div`
                 width: 270px;
             }
             @media (max-width: 358px){
-                width: ${(props) => (props.cast? "260px" : "auto")};
+                width: ${({cast}) => (cast? "260px" : "auto")};
             }
             `
 export const H1 = Styled.h1`
@@ -37,6 +37,10 @@ export const H1 = Styled.h1`
         font-size: 40px;
         font-weight: 290;
         color: #373737;
+        font-family: ${({locale}) => locale === "ar" ? "Almarai" : "Poppins"};
+        direction: ${({locale}) => locale === "ar" ? "rtl" : "ltr"};
+        right: ${({locale}) => locale === "ar" ? "0" : "auto"};
+
 
             span{
                 color: #7F8A64ee;
@@ -51,40 +55,43 @@ export const Button = Styled.button`
         z-index: 20;
         overflow: hidden;
         position: relative;
-        width: ${(props) => (props.cast ? '71px' : '330px')};
+        width: ${({cast}) => (cast ? '71px' : '330px')};
         height: 71px;
-        background: ${(props) => (props.cast ? '#C52127' : '#C52127')};
-        border-radius: ${(props) => (props.cast ? "50%" : "10px")};
-        box-shadow: ${(props) => (props.cast? 'none' : '0px 8px 15px rgba(0, 0, 0, 0.1)')};
+        background: ${({cast}) => (cast ? '#C52127' : '#C52127')};
+        border-radius: ${({cast}) => (cast ? "50%" : "10px")};
+        box-shadow: ${({cast}) => (cast? 'none' : '0px 8px 15px rgba(0, 0, 0, 0.1)')};
         color: #fff;
         cursor: pointer;
-        border: ${(props)=> (props.cast? 'none' : '1px solid #c5c5c5')};
-        transform: ${(props) => (props.cast ? 'translateY(-7px)' : 'translateY(-.1px)')} ;
-        transition: ${(props)=>(props.cast? 'border-radius .7s linear, width .1s linear' : 'border-radius .1s linear, width .5s linear ')};
+        border: ${({cast})=> (cast? 'none' : '1px solid #c5c5c5')};
+        transform: ${({cast}) => (cast ? 'translateY(-7px)' : 'translateY(-.1px)')} ;
+        transition: ${({cast})=>(cast? 'border-radius .7s linear, width .1s linear' : 'border-radius .1s linear, width .5s linear ')};
         
         @media (max-width: 430px){
-            width: ${(props) => (props.cast ? '71px' : '265px')};
+            width: ${({cast}) => (cast ? '71px' : '265px')};
         }
 
         &:hover{
-            box-shadow: ${(props) =>(props.cast? 'none' : '0px 15px 20px rgba(127, 138, 100, 0.4)')};
+            box-shadow: ${({cast}) =>(cast? 'none' : '0px 15px 20px rgba(127, 138, 100, 0.4)')};
             transform: translateY(-7px);
         }
         :focus{
             outline: none;
         }
             p{
-                text-indent: ${(props) => ( props.cast? '0':'15px')};
-                line-height: ${(props) =>( props.cast? '0' : '36px')};
+                right: ${({locale}) => ( locale === "ar" ? "17px" : "auto")};
+                font-family: ${({locale}) => (locale === "ar" ? "Almarai" : "Poppins")};
+                direction: ${({locale}) => (locale === "ar" ? "rtl" : "ltr")};
+                text-indent: ${({cast}) => ( cast? '0':'15px')};
+                line-height: ${({cast}) =>( cast? '0' : '36px')};
                 font-weight: 600;
                 font-size: 24px;
-                text-align: ${(props) => (props.cast? 'default' : 'left')};
-                opacity: ${(props) =>(props.cast? '0' : '1')};
-                visibility: ${(props) => (props.cast? 'hidden':'visible')};
-                // transform: ${(props)=>(props.cast? 'translateY(-11em)' : 'translateY(0)')};
+                text-align: ${({cast}) => (cast? 'default' : 'left')};
+                opacity: ${({cast}) =>(cast? '0' : '1')};
+                visibility: ${({cast}) => (cast? 'hidden':'visible')};
+                // transform: ${({cast})=>(cast? 'translateY(-11em)' : 'translateY(0)')};
                 position: absolute;
                 top: 23%;
-                transition:  ${(props)=>(props.cast? 'opacity: .1s ease, visibility .1s ease':'opacity .2s ease .3s , visibility .9s ease')};
+                transition:  ${({cast})=>(cast? 'opacity: .1s ease, visibility .1s ease':'opacity .2s ease .3s , visibility .9s ease')};
 
                 
             }
@@ -93,7 +100,7 @@ export const Button = Styled.button`
 export const Icon = Styled(GoTriangleRight)`
         box-sizing: content-box;
         position: absolute;
-        right: -50px;
+        right: ${({locale}) => ( locale === "ar" ? "242px" : "-50px")};
         top: 5px;
         font-size: 30px;
         color: #fff;
