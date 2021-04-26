@@ -37,7 +37,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     res.data.allStrapiSchedule.edges.forEach( ({node}) => {
         createPage({
             component: episodeTemplate,
-            path: `/schedule/${node.title_en}`,
+            path: `/schedule/${node.title_en.toLowerCase()}`,
             context: {
                 title: node.title_en
             }

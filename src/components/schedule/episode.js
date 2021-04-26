@@ -7,9 +7,11 @@ import { Wrapper } from './episode_style'
 
 
 const Episode = ({data}) =>{
+	let episode_path = data.title_en.toLowerCase() ;
 	return(
 			<Wrapper key={data.id}>
-				<Link to={`/schedule/${data.title_en}`}>
+				<Link to={`/schedule/${episode_path}`}>
+				{console.log(data.title_en.toLowerCase())}
 					<div className="image-container">
 						<Img fluid={data.picture.childImageSharp.fluid} alt={data.title_en}/>
 					</div>
