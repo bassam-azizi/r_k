@@ -6,11 +6,10 @@ import Head from '../components/head'
 import Aboutus from '../components/aboutUs/aboutBody'
 
 
-const AboutUs = ({location}) =>{
+const AboutUs = () =>{
     return(
-        <Layout location={location}>
+        <Layout>
         	<Head title="About us" />
-        	{console.log(location)}
             <Aboutus />
         </Layout> 
     )
