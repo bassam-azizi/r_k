@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql , useStaticQuery } from 'gatsby'
-import Timer from './timer'
+import Timer from '../../../utils/timer'
 import AudioPlayer , {RHAP_UI} from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
 import { P , Bar, BarContainer, Progress_bar , Wrapper} from './livePlayerStyle'
