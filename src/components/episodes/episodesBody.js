@@ -1,42 +1,53 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-
-import { Wrapper } from './episodeBodyStyle'
-
-import Podcast from './podcast'
+import {useStaticQuery, graphql} from 'gatsby'
+import { Wrapper } from './episodesBody_style'
+import Episode from './episode'
 
 
-const Episodes = () =>{
-  const data = useStaticQuery(graphql`
-      query{
-        allPodcastRssFeedEpisode{
-          edges{
-            node{
-              id
-              item{
-                isoDate(formatString:"MMMM Do, YYYY")
-                title
-                enclosure{
-                  url 
-              }
-              }
-            }
-          }
-        }
-      }
-  `)
-  return(
-    <Wrapper>
-          
-          {/*<Link to="/">Audio Emission </Link>
-          <Link to="/">Video Emission</Link>*/}
-          <div className="container">
-            {data.allPodcastRssFeedEpisode.edges.map(edge =>(
-              <Podcast data={edge.node} key={edge.node.id}/>
-            ))}
-          </div>
-    </Wrapper>
-  )
+const Episodes_body = () =>{
+	const data = useStaticQuery(graphql`
+		query{
+			allStrapiEpisode{
+				edges{
+					node{
+						id
+						slug
+						title_en
+						title_fr
+						title_ar
+						serie_en
+						serie_fr
+						serie_ar
+						description_en
+						description_fr
+						description_ar
+						picture{
+							childImageSharp{
+								fluid(maxWidth:700){
+									...GatsbyImageSharpFluid
+								}
+							}
+						}
+						author{
+							name
+						}
+						contributors_en
+						contributors_ar
+						published_at(formatString:"dd/mm/yyyy")
+					}
+				}
+			}
+			
+
+		}
+	`)
+	return(
+		<Wrapper>
+			{data.allStrapiEpisode.edges.map(edge=>
+					<Episode data={edge} />
+				)}
+		</Wrapper>
+		)
 }
 
-export default Episodes
+export default Episodes_body
