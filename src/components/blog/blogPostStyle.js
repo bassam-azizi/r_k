@@ -6,10 +6,9 @@ import { Link } from "gatsby-plugin-intl";
 export const Wrapper = Styled.div`
     padding: 0;
     border: .5px solid #fff;
-    max-width: 319px;
     height: 252px;
     position: relative;
-    margin: 68px 0 0 38px;
+    margin-top: 70px;
     overflow: hidden;
 
     @media (max-width: 1194px){
