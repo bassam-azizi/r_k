@@ -42,10 +42,12 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: "https://radiokhemir.herokuapp.com",
+        // contentTypes must be lowercase and in singular
         contentTypes: [
           "blogpost",
-          "categories",
-          "schedule"
+          "schedule",
+          "episode",
+          "author"
         ],
         queryLimit: 5000,
       },
