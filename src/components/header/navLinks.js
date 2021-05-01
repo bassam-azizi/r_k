@@ -9,7 +9,7 @@ const Wrapper = Styled.div `
   letter-spacing: 0.2px;
 
   .activeLink{
-    color: #333915;
+    color: #33391589;
 
     :after {
     position: absolute;
@@ -20,7 +20,7 @@ const Wrapper = Styled.div `
     content: ".";
     color: #7F8A64;
     background: #7F8A64;
-    height: 1.5px;
+    height: 1px;
     transition: all 0.4s ease-in;
   }
   }
@@ -63,7 +63,7 @@ const Navlink = Styled(Link)`
     content: ".";
     color: transparent;
     background: #7F8A64;
-    height: 1.5px;
+    height: 1px;
     transition: all 0.4s ease-in;
   }
 
