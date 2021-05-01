@@ -3,6 +3,7 @@ const path = require("path")
 module.exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
     const blogTemplate = path.resolve('./src/templates/blogTemplate.js');
+    const programTemplate = path.resolve('./src/templates/programTemplate.js');
     const episodeTemplate = path.resolve('./src/templates/episodeTemplate.js');
 
     const res = await graphql(`
@@ -22,6 +23,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
             }
 
         }
+        allStrapiEpisode{
+            edges{
+                node{
+                    slug
+                }
+            }
+        }
     }
     `)
 
@@ -36,10 +44,19 @@ module.exports.createPages = async ({ graphql, actions }) => {
     });
     res.data.allStrapiSchedule.edges.forEach( ({node}) => {
         createPage({
-            component: episodeTemplate,
+            component: programTemplate,
             path: `/schedule/${node.title_en.toLowerCase()}`,
             context: {
                 title: node.title_en
+            }
+        })
+    });
+    res.data.allStrapiEpisode.edges.forEach( ({node}) => {
+        createPage({
+            component: episodeTemplate,
+            path: `/episodes/${node.slug}`,
+            context: {
+                slug: node.slug
             }
         })
     });
