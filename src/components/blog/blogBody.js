@@ -7,15 +7,16 @@ import Styled from '@emotion/styled'
 import Blogpost from './blogPost'
 
 const Wrapper = Styled.div`
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 70px;
     width: 90%;
     max-width: 1250px;
     margin: 71px auto 101px;
 
     @media (max-width:1194px){
-    	justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 70px;
     }
 
     @media (max-width:858px){
