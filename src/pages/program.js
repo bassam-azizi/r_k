@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import Head from '../components/head'
 
-import Schedule from '../components/schedule/schedule'
+import Schedules_body from '../components/schedule/schedulesBody'
 
 
 
@@ -11,7 +11,7 @@ const Program = () =>{
     return (
         <Layout> 
         	<Head title="Our Schedule" />
-            <Schedule />
+            <Schedules_body />
         </Layout>
     )
 }

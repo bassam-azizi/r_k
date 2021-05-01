@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import { Wrapper } from './episodeTemplate_style'
+import { Wrapper } from './programTemplate_style'
 
 
 const Episode_Template = ({data}) =>{
@@ -10,20 +10,20 @@ const Episode_Template = ({data}) =>{
 		<Layout>
 			<Wrapper>
 				<div className="image">
-					<Img fluid={data.strapiSchedule.picture.childImageSharp.fluid} alt={data.strapiSchedule.title_en} />
+					<Img fluid={data.strapiEpisode.picture.childImageSharp.fluid} alt={data.strapiEpisode.title_en} />
 				</div>
 				<div className="header">
 					<div className="info_one">
-						<h1>{data.strapiSchedule.title_en}</h1>
-						<p>{data.strapiSchedule.serie_en}</p>
+						<h1>{data.strapiEpisode.title_en}</h1>
+						<p>{data.strapiEpisode.serie_en}</p>
 					</div>
 					<div className="info_two">
-						<h1>{data.strapiSchedule.start_time}</h1>
-						<p>{data.strapiSchedule.published_at}</p>
+						<h1>14</h1>
+						<p>{data.strapiEpisode.published_at}</p>
 					</div>
 				</div>
 					<div className="description">
-						<p>{data.strapiSchedule.description_en}</p>
+						<p>{data.strapiEpisode.description_en}</p>
 					</div>
 			</Wrapper>
 		</Layout>
@@ -32,9 +32,10 @@ const Episode_Template = ({data}) =>{
 
 export default Episode_Template
 
+
 export const pageQuery = graphql`
-	query($title : String!){
-		strapiSchedule( title_en : { eq : $title}){
+	query($slug : String!){
+		strapiEpisode( slug : { eq : $slug}){
 			id
 			title_en
 			title_fr
@@ -42,9 +43,7 @@ export const pageQuery = graphql`
 			serie_en
 		    serie_fr
 		    serie_ar
-		    start_time
 		    published_at(formatString:"MM/D/YYYY")
-		    episode_length
 		    description_en
 		    description_fr
 		    description_ar
@@ -55,10 +54,9 @@ export const pageQuery = graphql`
 			        }
 		        }
 	      	}
-	        day_time{
-	        	time_en
-	        	}
-
+	      	author{
+	      		name
+	      	}
 		}
 	}
 `
