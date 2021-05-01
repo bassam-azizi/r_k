@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Episodes from '../components/episodes/episodesBody'
+import Episodes_body from '../components/episodes/episodesBody'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
@@ -13,7 +13,7 @@ const Emission = () =>{
     return (
         <Layout>
       		<Head title="past emission"></Head>
-            <Episodes  />
+            <Episodes_body  />
         </Layout>
 
     )
