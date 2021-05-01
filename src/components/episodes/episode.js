@@ -8,7 +8,7 @@ import Img from 'gatsby-image'
 const Episode = ({data}) =>{
 	return(
 		<Wrapper key={data.node.id}>
-			<Link to={`/episodes/${data.node.$slug}`}>
+			<Link to={`/episodes/${data.node.slug}`}>
 				<div className="pic">
 					<Img fluid={data.node.picture.childImageSharp.fluid} alt={data.node.title_en} />
 				</div>
