@@ -2,6 +2,12 @@ import Styled from '@emotion/styled'
 
 export const Wrapper = Styled.div`
 
+	:hover{
+		transform: scale(1.02);
+		border-radius: 4px;
+		box-shadow: 0px 35px 49px -22px #B3AC6542;
+	}
+
 	a{
 		font-size: 18px;
 		margin-bottom: 60px;
@@ -17,7 +23,8 @@ export const Wrapper = Styled.div`
 	}
 
 	.info-container{
-		margin: 15px 5px;
+		margin: 15px 0;
+		padding: 0 10px;
 
 		.header{
 			display: flex;
