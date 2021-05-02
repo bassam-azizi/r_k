@@ -140,7 +140,7 @@ const Schedules_Body = () =>{
 	)};
 	return(
 		<Wrapper>
-			<h1>Today is <Today_is /></h1>
+			<h1 className="today">Today is <Today_is /></h1>
 			{data.morning.nodes.length>0?
 									schedule_render(data.morning.nodes, "Morning")				
 									:
