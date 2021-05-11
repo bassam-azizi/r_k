@@ -5,8 +5,11 @@ import Styled from '@emotion/styled'
 
 const Wrapper = Styled.div `
   align-self: flex-end;
-  padding: 0 0 10px;
+  padding: 0 0 14px;
   letter-spacing: 0.2px;
+  display: flex;
+  justify-content: space-between;
+  width: 55%;
 
   .activeLink{
     color: #33391589;
@@ -27,15 +30,16 @@ const Wrapper = Styled.div `
 
   @media (max-width: 1188px){
     letter-spacing: 0;
-    padding: 0;
-    margin-bottom: 10px;
+    padding: 0 0 10px;
   }
-  @media (max-width: 1079px) {
+  @media (max-width: 1078px) {
     margin-bottom: 0;
+    width: 70%;
   }
   @media (max-width: 916px){
-    margin-top: 30px;
+    margin-top: 40px;
     align-self: center;
+    width: 100%;
   }
   @media (max-width: 768px){
     display: none;
@@ -50,7 +54,7 @@ const Navlink = Styled(Link)`
   color: #555;
   display: inline-block;
   white-space: nowrap;
-  margin: 0 35px;
+  // margin: 0 35px;
   transition: all 200ms ease-in;
   position: relative;
   
