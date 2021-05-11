@@ -3,6 +3,11 @@ import Styled from '@emotion/styled'
 
 export const Wrapper = Styled.div`
 	height: 380px;
+	width: 240px;
+
+	a{
+		text-decoration: none;
+	}
 
 	.pic{
 		height: 225px;
@@ -17,6 +22,7 @@ export const Wrapper = Styled.div`
 		h1{
 			font-size: 16px;
 			color: #C52127;
+			padding-top: 10px;
 		}
 		.serie{
 			display: block;
