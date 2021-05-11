@@ -80,6 +80,7 @@ export const H1 = Styled.h1`
             font-size: 36px;
         }
         @media (max-width: 1028px){
+            bottom: 164px;
             line-height: ${ ({locale}) => (locale==="en")? "unset" : "1.8"} ;
             font-size: 40px;
             width: 100%;
