@@ -6,10 +6,9 @@ import { Link } from "gatsby-plugin-intl"
 
 
 const LogoWrap = Styled(Link)`
-  margin: auto 0;
   min-width: 152px;
   min-height:104px;
-  margin: 0 0 10px 20px;
+  margin: 0 0 .1px 0;
 
   @media (max-width: 768px){
     align-self: center;
