@@ -6,11 +6,14 @@ const Wrapper = Styled.div `
     display: none;
     cursor: pointer;
     margin-top: 28px;
-    margin-left: 49px;
+    margin-left: 40px;
     z-index: 20;
 
     @media (max-width: 768px){
         display: block;
+    }
+    @media (max-width: 370px){
+        margin-left: 28px;
     }
 
 `
