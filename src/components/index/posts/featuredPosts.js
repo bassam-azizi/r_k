@@ -5,12 +5,16 @@ import Styled from '@emotion/styled'
 
 // Component Style
 const Wrapper = Styled.div`
+    grid-column: 5 / -1 ;
     position: relative;
-    width: 62.6%;
     padding: 2.4rem 0 0;
 
+    @media (max-width: 1178px){
+        grid-column: 5 / -1 ;
+    }
     @media (max-width: 1028px){
-        width: 100%;
+        grid-column: 1 / -1 ;
+        padding-top: 70px;
     }
 
 `
