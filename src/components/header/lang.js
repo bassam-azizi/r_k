@@ -11,15 +11,34 @@ const LangWrapper = Styled.div `
         align-self: flex-end;
         margin-bottom: 9px;
 
+        span{
+                padding: .2rem .4rem;
+                border: 1.1px solid #fff;
+                cursor: pointer;
+                background-color: #7F8A64aa;
+                text-decoration: none;
+                color: #fff;
+                border-radius: 38%;
+
+                :hover{
+                    color: #C52127;
+                    background-color: #7F8A64;
+                }
+
+            }
 
 
         @media (max-width: 1188px){
-            margin-bottom: 10px;
+            span{
+                padding: .17rem .4rem;
+                border-radius: unset;
+                border: none;
+                }
         }
         @media (max-width: 1078px){
             position: absolute;
             top: 0;
-            right: 53px;
+            right: 0;
         }
         @media (max-width: 916px){
             bottom: 0;
@@ -35,22 +54,7 @@ const LangWrapper = Styled.div `
             display: none;
 
         }
-        span{
-            padding: .2rem .4rem;
-            border: 1.1px solid #fff;
-            cursor: pointer;
-            background-color: #7F8A64aa;
-            text-decoration: none;
-            color: #fff;
-            border-radius: 38%;
-
-
-            :hover{
-                color: #C52127;
-                background-color: #7F8A64;
-            }
-
-        }
+        
         `
 
 const Lan = Styled.div`
