@@ -11,9 +11,17 @@ export const Wrapper = Styled.div`
     top: 62px;
     transition: ${(props)=>(props.cast? 'opacity 1.4s linear 1s' : 'opacity .1s linear')};
 
-    @media (max-width: 600px){
-        align-items: flex-start;
+    @media (max-width: 1276px){
+        left: 44px;
     }
+    @media (max-width: 1100px){
+        left: 33px;
+    }
+    @media  (max-width: 500px){
+        left: 83px;
+    }
+
+    
 `
 
 
@@ -27,9 +35,7 @@ export const Progress_bar = Styled.div`
         font-size: 1.2em;
     }
 
-    @media (max-width: 600px){
-        align-self: flex-start;
-    }
+    
 
     ` 
 export const BarContainer = Styled.div`
@@ -42,9 +48,11 @@ export const BarContainer = Styled.div`
     justify-content: space-between;
     align-items: center;
     color: #fff;
-    @media (max-width:600px){
-        width: 250px;
+    
+    @media (max-width: 1276px){
+        width: 239px;
     }
+
     @media (max-width:500px){
         width: 230px;
     }
@@ -68,6 +76,15 @@ export const P = Styled.p`
     align-self: stretch;
     text-transform: capitalize;
     width: 289px;
+
+    @media (max-width: 1276px){
+        padding: 10px 0 0 50px;
+        line-height: 1.6;
+        text-align: unset;
+        span{
+            display: block;
+        }
+    }
     @media (max-width:500px){
         display: none;
     }
