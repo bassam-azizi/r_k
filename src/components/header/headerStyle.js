@@ -1,23 +1,30 @@
 import Styled from '@emotion/styled'
 
 export const Wrapper = Styled.nav `
-        width: 100%;
         // background: #11ff1f09;
         // background: #F6F7F488;
         padding: 28px 0 0;
         z-index: 10;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
 
-        @media (max-width: 1028px){
+        @media (max-width: 1100px){
+            grid-template-columns: 50px repeat(12, 1fr) 50px;
             padding: 28px 0;
         }
+        @media (max-width: 916px){
+            grid-template-columns: 110px repeat(12, 1fr) 110px;
+        }
         @media (max-width: 768px){
+            grid-template-columns: 50px repeat(12, 1fr) 50px;
             padding: 28px 0 46px;
         }
         `
 export const Container = Styled.div `
-        max-width: 1320px;
-        margin: 0 auto 28px;
-        padding: 0 27px;
+        width: 100%;
+        grid-column: 2 / -2 ;
+        // max-width: 1320px;
+        margin-bottom: 28px;
         height: 104px;
         display: flex;
         justify-content: space-between;
@@ -26,14 +33,15 @@ export const Container = Styled.div `
         
 
         @media (max-width: 1188px){
-                padding : 0 20px;
+                // grid-column: 2 / -2 ;
+                padding : 0 ;
         }
         @media (max-width: 916px){
                 flex-direction: column;
                 align-items: flex-start;
-                width: 700px;
         }
         @media (max-width: 768px){
+            grid-column: 1/ -1;
             padding: 0; 
             position: static;
             width: 100%;
