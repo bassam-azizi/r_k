@@ -3,6 +3,8 @@ import { GoTriangleRight } from 'react-icons/all'
 import { IoMdPause } from 'react-icons/all'
 
 export const Wrapper = Styled.div`
+            grid-column: 2 / 4;
+            // grid-column: 2 / 4;
             margin: auto;
             align-self: center;
             position: relative;
@@ -13,26 +15,42 @@ export const Wrapper = Styled.div`
 
             
             @media (max-width: 1028px){
-                margin: 191px auto 97px;
+                margin: 140px 0 0;
+                grid-column: 2/-1;
+                display: grid;
+                width: auto;
+            }
+            @media (max-width: 768px){
+                grid-column: 1/-1;
             }
 
-            @media (max-width: 768px){
-                margin-top: 131px;
+            @media (max-width:470px){
+                margin: 191px 0 0 40px;
             }
-            @media (max-width:580px){
-                width: 300px;
-                margin-top: 191px;
-            }
-            @media (max-width: 438px){
-                width: 270px;
-            }
-            @media (max-width: 358px){
-                width: ${({cast}) => (cast? "260px" : "auto")};
+            @media (max-width: 370px){
+                margin: 191px 0 0 28px;
             }
             `
+export const Container = Styled.div`
+    position: relative;
+    display: grid;
+
+    // @media (max-width: 1028px){
+    //     justify-self: ${({cast}) => (cast? "auto" : "center") };
+    //     // grid-column: ${({cast}) => (cast? "2/ span 2" : "unset" ) };
+    // }
+    @media (max-width: 768px) {
+        justify-self: ${({locale}) => (locale !== "en") ? "unset" : "center" };
+        display: ${({locale}) => (locale !== "en" ? "grid" : "unset" ) };
+    }
+    @media (max-width: 470px){
+        grid-column:1/-1;
+        justify-self: unset;
+    }
+`
 export const H1 = Styled.h1`
         position: absolute;
-        bottom: 164px;
+        bottom: ${ ({cast}) => cast? "117px" : "164px" };
         width: 420px;
         font-size: 40px;
         font-weight: 290;
@@ -41,13 +59,66 @@ export const H1 = Styled.h1`
         direction: ${({locale}) => locale === "ar" ? "rtl" : "ltr"};
         right: ${({locale}) => locale === "ar" ? "0" : "auto"};
 
+        span{
+            display: ${({locale}) => ( locale === "fr" ? "block" : "inline")};
+        }
+
+        .styles_typicalWrapper__1_Uvh::after{
+            content:"";
+        }
+
 
             span{
                 color: #7F8A64ee;
             }
+        @media (max-width: 1330px){
+            .span{
+                display: block;
+            }
+        }
+        @media (max-width: 1100px){
+            font-size: 36px;
+        }
+        @media (max-width: 1028px){
+            line-height: ${ ({locale}) => (locale==="en")? "unset" : "1.8"} ;
+            font-size: 40px;
+            width: 100%;
+            span{
+                display: inline;
+                font-style: italic;
+            }
+        }
+        @media (max-width: 768px){
+            bottom: ${ ({locale}) => (locale==="en")? "160px" : "224px"} ;
+            line-height: 1.6;
+            font-size: 40px;
+            width: auto;
+            justify-self: center;
+            span{
+                display: ${ ({locale}) => (locale==="en")? "inline" : "block"} ;
+                position: absolute;
+            }
+        }
+
         @media (max-width: 580px){
-            width: 224px;
-            padding-left: 15px;
+            bottom: 218px;
+            span{
+                display: block;
+            }
+        }
+        @media (max-width: 470px){
+            justify-self: unset;
+        }
+        @media (max-width: 370px){
+            font-size: 36px;
+        }
+`
+
+export const BtnWrapper = Styled.div`
+        position: relative;
+        justify-self: center;
+        @media (max-width: 470px){
+            justify-self: unset;
         }
 `
 export const Button = Styled.button`
@@ -65,9 +136,21 @@ export const Button = Styled.button`
         border: ${({cast})=> (cast? 'none' : '1px solid #c5c5c5')};
         transform: ${({cast}) => (cast ? 'translateY(-7px)' : 'translateY(-.1px)')} ;
         transition: ${({cast})=>(cast? 'border-radius .7s linear, width .1s linear' : 'border-radius .1s linear, width .5s linear ')};
+        margin-right: ${({cast}) => (cast? "280px" : "unset")} ;
+        @media (max-width: 1120px){
+            width: ${({cast}) => (cast ? '71px' : '290px')};
+        }
+        @media (max-width: 900px){
+            width: ${({cast}) => (cast ? '71px' : '290px')};
+            margin-right: ${({cast}) => (cast? "230px" : "unset")} ;
+        }
         
         @media (max-width: 430px){
             width: ${({cast}) => (cast ? '71px' : '265px')};
+            margin-right: ${({cast}) => (cast? "170px" : "unset")} ;
+        }
+        @media (max-width: 315px){
+            width: ${({cast}) => (cast ? '71px' : '245px')};
         }
 
         &:hover{
@@ -91,9 +174,7 @@ export const Button = Styled.button`
                 // transform: ${({cast})=>(cast? 'translateY(-11em)' : 'translateY(0)')};
                 position: absolute;
                 top: 23%;
-                transition:  ${({cast})=>(cast? 'opacity: .1s ease, visibility .1s ease':'opacity .2s ease .3s , visibility .9s ease')};
-
-                
+                transition:  ${({cast})=>(cast? 'opacity: .1s ease, visibility .1s ease':'opacity .2s ease .3s , visibility .9s ease')}; 
             }
     `
     
@@ -128,10 +209,10 @@ export const P = Styled.p`
         text-transform: capitalize;
         padding-top: 15px;
 
-        @media (max-width: 350px){
-            width: 260px;
-            padding-left: 23px;
-        }
+        // @media (max-width: 350px){
+        //     // width: 260px;
+        //     padding-left: 23px;
+        // }
 
         span{
             display:block;
