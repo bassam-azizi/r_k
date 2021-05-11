@@ -77,7 +77,7 @@ const Liveplayer = ({ cast }) =>{
                 </BarContainer>
             </Progress_bar>
             {/* <P>{data.podcastRssFeedEpisode.item.title}</P> */}
-            <P>13h-14h One Hour Sport with Fedi Arfaoui</P>
+            <P><span>13h-14h</span> One Hour Sport with Fedi Arfaoui</P>
         </Wrapper>
         ) 
 }
