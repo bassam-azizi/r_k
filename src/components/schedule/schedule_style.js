@@ -21,7 +21,7 @@ export const Wrapper = Styled.div`
 		width: 273px;
 		margin: 10px 30px; 
 		
-		@media (max-wicth: 916px){
+		@media (max-width: 916px){
 			width: 50%;
 			margin: 10px 30px 10px 0;
 		}
