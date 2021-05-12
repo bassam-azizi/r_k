@@ -17,7 +17,7 @@ export const Wrapper = Styled.div`
 	.today{
 		font-size: 16px;
 		color: #83836D;
-		margin: 70px 0;
+		margin: 130px 0 40px;
 		grid-column: 2/-2;
 	}
 `
@@ -53,13 +53,13 @@ export const Container = Styled.div`
 		justify-self: center;
 
 		.time_title{
-			padding-right: 45px;
+			margin-left: 77px;
 			margin-bottom: 30px;
 			width: max-content;
 
 			::after{
-				right: 0;
-				top: 16px;
+				right: 160%;
+				top: -15px;
 				width: 1.2px;
 				transform: rotate(90deg);
 			}
