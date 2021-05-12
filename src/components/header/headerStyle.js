@@ -41,7 +41,7 @@ export const Container = Styled.div `
                 align-items: flex-start;
         }
         @media (max-width: 768px){
-            grid-column: 1/ -1;
+            grid-column: 2/ -2;
             padding: 0; 
             position: static;
             width: 100%;
