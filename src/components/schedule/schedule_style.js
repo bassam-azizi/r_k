@@ -20,11 +20,22 @@ export const Wrapper = Styled.div`
 	.image-container{
 		width: 273px;
 		margin: 10px 30px; 
+		
+		@media (max-wicth: 916px){
+			width: 50%;
+			margin: 10px 30px 10px 0;
+		}
 	}
+
 
 	.info-container{
 		margin: 15px 0;
 		padding: 0 10px;
+
+		@media (max-wicth: 916px){
+			padding: 0;
+			width: 50%
+		}
 
 		.header{
 			display: flex;
@@ -80,6 +91,10 @@ export const Wrapper = Styled.div`
 				height: 63px;
 				width: 450px;
 				overflow: hidden;
+
+				@media (max-width: 916px){
+					width: auto;
+				}
 			}
 		}
 	}
