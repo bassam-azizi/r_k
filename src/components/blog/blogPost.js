@@ -11,7 +11,7 @@ const Blogpost = ({data}) =>{
             <Wrapper key={data.node.Slug}>
                 <Lin to={`/blog/${data.node.Slug}`}>
                     <Picture>
-                        <Img fixed={data.node.featuredImg.childImageSharp.fixed} loading="lazy" alt={data.node.name} />
+                        <Img fluid={data.node.featuredImg.childImageSharp.fluid} loading="lazy" alt={data.node.name} />
                     </Picture>  
                     <Title>
                         <H1>{data.node.name}</H1>
