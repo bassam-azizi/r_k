@@ -28,7 +28,7 @@ const LangWrapper = Styled.div `
             }
 
 
-        @media (max-width: 1188px){
+        @media (max-width: 1078px){
             span{
                 padding: .17rem .4rem;
                 border-radius: unset;
