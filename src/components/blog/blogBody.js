@@ -8,24 +8,29 @@ import Blogpost from './blogPost'
 
 const Wrapper = Styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 70px;
-    width: 90%;
-    max-width: 1250px;
-    margin: 71px auto 101px;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 71px 0 101px;
 
-    @media (max-width:1194px){
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 70px;
+    @media (max-width: 1100px){
+            grid-template-columns: 50px repeat(12, 1fr) 50px;
     }
-
-    @media (max-width:858px){
-    	width: 96%;
+    @media (max-width: 916px){
+        grid-template-columns: 110px repeat(12, 1fr) 110px;
     }
-    @media (max-width: 350px){
-    	width: 100%;
+    @media (max-width: 768px){
+        grid-template-columns: 50px repeat(12, 1fr) 50px;
+    }
+    @media(max-width: 420px){
+        grid-template-columns: repeat(12,1fr);
     }
 `
+const Container = Styled.div`
+    grid-column: 2/-2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 35px;
+`
+    
 
 const Bloga = () =>{
     const data = useStaticQuery(graphql`
@@ -42,8 +47,8 @@ const Bloga = () =>{
                         pubdate
                         featuredImg{
                             childImageSharp{
-                                fixed(width: 464){
-                                    ...GatsbyImageSharpFixed
+                                fluid(maxWidth: 650){
+                                    ...GatsbyImageSharpFluid
                                 }
                             }
                         }
@@ -55,9 +60,11 @@ const Bloga = () =>{
     `)
     return(
         <Wrapper>
-            {data.allStrapiBlogpost.edges.map(edge => 
-                <Blogpost data={edge} />
-            )}
+            <Container>
+                {data.allStrapiBlogpost.edges.map(edge => 
+                    <Blogpost data={edge} />
+                )}
+            </Container>
         </Wrapper>
     )
 }
