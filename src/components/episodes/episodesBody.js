@@ -1,6 +1,6 @@
 import React from 'react'
 import {useStaticQuery, graphql} from 'gatsby'
-import { Wrapper } from './episodesBody_style'
+import { Wrapper, Container } from './episodesBody_style'
 import Episode from './episode'
 
 
@@ -43,9 +43,11 @@ const Episodes_body = () =>{
 	`)
 	return(
 		<Wrapper>
-			{data.allStrapiEpisode.edges.map(edge=>
-					<Episode data={edge} />
-				)}
+			<Container>
+				{data.allStrapiEpisode.edges.map(edge=>
+						<Episode data={edge} />
+					)}
+			</Container>
 		</Wrapper>
 		)
 }
