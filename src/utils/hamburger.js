@@ -6,7 +6,7 @@ const Wrapper = Styled.div `
     display: none;
     cursor: pointer;
     margin-top: 28px;
-    margin-left: 40px;
+    // margin-left: 40px;
     z-index: 20;
 
     @media (max-width: 768px){
