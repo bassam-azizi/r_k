@@ -15,6 +15,10 @@ export const Wrapper = Styled.div`
 		justify-content: center;
 		cursor: pointer;
 		text-decoration: none;
+
+		@media (max-width: 600px){
+			flex-direction: column;
+		}
 	}
 
 	.image-container{
@@ -25,6 +29,9 @@ export const Wrapper = Styled.div`
 			width: 50%;
 			margin: 10px 30px 10px 0;
 		}
+		@media (max-width: 600px){
+			width: 100%;
+		}
 	}
 
 
@@ -32,9 +39,13 @@ export const Wrapper = Styled.div`
 		margin: 15px 0;
 		padding: 0 10px;
 
-		@media (max-wicth: 916px){
+		@media (max-width: 916px){
 			padding: 0;
 			width: 50%
+		}
+
+		@media (max-width: 600px){
+			width: 100%;
 		}
 
 		.header{
