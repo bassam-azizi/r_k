@@ -19,6 +19,9 @@ export const Wrapper = Styled.nav `
             grid-template-columns: 50px repeat(12, 1fr) 50px;
             padding: 28px 0 46px;
         }
+        @media(max-width: 420px){
+            grid-template-columns: repeat(12,1fr);
+        }
         `
 export const Container = Styled.div `
         width: 100%;
