@@ -3,7 +3,6 @@ import Styled from '@emotion/styled'
 
 export const Wrapper = Styled.div`
 	height: 380px;
-	width: 240px;
 
 	a{
 		text-decoration: none;
