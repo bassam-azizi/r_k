@@ -12,9 +12,9 @@ const Wrapper = Styled.div `
     @media (max-width: 768px){
         display: block;
     }
-    @media (max-width: 370px){
-        margin-left: 28px;
-    }
+    // @media (max-width: 370px){
+    //     margin-left: 28px;
+    // }
 
 `
 const Bar = Styled.div `
