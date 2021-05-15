@@ -51,25 +51,20 @@ export const Wrapper = Styled.div`
 export const Picture = Styled.picture`
     width: 100%;
     margin: 0;
-    height: auto;
     div{
         border-radius: 4px;
+        height: 75%;
         }
 `
 export const Title = Styled.div`
     width: 100%;
-    height: auto;
-    max-height: 100px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
     padding: 4px 1px;
-    text-align: center;
     border-top: .5px solid #fff;
     background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 `
 export const H1 = Styled.h1`
     font-size: 16px;
