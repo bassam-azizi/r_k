@@ -53,26 +53,36 @@ export const Picture = Styled.picture`
     margin: 0;
     div{
         border-radius: 4px;
-        height: 75%;
-        }
+        height: 77%;
 `
 export const Title = Styled.div`
     width: 100%;
-    padding: 4px 1px;
-    border-top: .5px solid #fff;
+    padding: 12px 1px;
     background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    // border-top: .5px solid #fff;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // overflow: hidden;
 `
 export const H1 = Styled.h1`
     font-size: 16px;
     text-align: left;
     text-indent: 3px;
-    text-align: center;
-    padding-top: 5px;
     color: #666;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ". . .";
+
+    ::before{
+        content: "";
+        width: 3px;
+        height: 14px;
+        background: #C52127;
+        display: block;
+        position: absolute;
+        top: 5px;
+    }
 `
 export const Lin = Styled(Link)`
     text-decoration: none;
