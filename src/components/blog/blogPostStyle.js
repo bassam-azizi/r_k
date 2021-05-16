@@ -68,11 +68,12 @@ export const Title = Styled.div`
 export const H1 = Styled.h1`
     font-size: 16px;
     text-align: left;
-    text-indent: 3px;
+    text-indent: 10px;
     color: #666;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ". . .";
+    position: relative;
 
     ::before{
         content: "";
