@@ -14,6 +14,10 @@ const Blogpost = ({data}) =>{
                         <Img fluid={data.node.featuredImg.childImageSharp.fluid} loading="lazy" alt={data.node.name} />
                     </Picture>  
                     <Title>
+                        <div className="post-info">
+                            <span>Culture</span>
+                            <span className="post-date">12/05/2021</span>
+                        </div>
                         <H1>{data.node.name}</H1>
                     </Title>
                 </Lin>
