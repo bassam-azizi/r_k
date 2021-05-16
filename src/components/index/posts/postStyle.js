@@ -5,6 +5,9 @@ export const Deck = Styled.div `
         margin: 0;
         padding: 0;
         height: 331px;
+        a{
+            box-shadow: inset 0 0 80px rgba(0,0,0,0.5);
+        }
         &:nth-of-type(1){
             width: 44%;
             @media (max-width: 600px){
