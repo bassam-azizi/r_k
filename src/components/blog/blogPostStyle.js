@@ -59,11 +59,19 @@ export const Title = Styled.div`
     width: 100%;
     padding: 12px 1px;
     background-color: #ffffff;
-    // border-top: .5px solid #fff;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // overflow: hidden;
+    
+    .post-info{
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+
+        span:nth:of:type(1){
+            color: #7F8A64;
+        }
+        span:nth:of:type(2){
+            color: #666;
+        }
+    }
 `
 export const H1 = Styled.h1`
     font-size: 16px;
