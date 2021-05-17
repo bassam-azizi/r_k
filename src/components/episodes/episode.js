@@ -13,7 +13,10 @@ const Episode = ({data}) =>{
 					<Img fluid={data.node.picture.childImageSharp.fluid} alt={data.node.title_en} />
 				</div>
 				<div className="header">
-					<h1>{data.node.title_en}</h1>
+					<div className="info-header">
+						<h1>{data.node.title_en}</h1>
+						<span>{data.node.published_at}</span>
+					</div>
 					<span className="serie">{data.node.serie_en}</span>
 					<p className="description">{data.node.description_en}</p>
 				</div>
