@@ -18,16 +18,24 @@ export const Wrapper = Styled.div`
 	.header{
 		padding: 3px;
 
-		h1{
-			font-size: 16px;
-			color: #C52127;
-			padding-top: 10px;
+		.header-info{
+			display: flex;
+			justify-content: space-between;
+			h1{
+				font-size: 16px;
+				color: #C52127;
+				padding-top: 10px;
+			}
+			span{
+				color: #666;
+				font-size: 14px;
+			}
 		}
+		
 		.serie{
 			display: block;
 			font-size: 14px;
-			color: #222;
-			font-style: italic;
+			color: rgb(127, 138, 100);
 		}
 		.description{
 			overflow: hidden;
