@@ -3,8 +3,6 @@ import Styled from '@emotion/styled'
 
 
 export const Wrapper = Styled.div`
-	// width: 87%;
-	// max-width: 1270px;
 	margin: 90px 0;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -21,11 +19,22 @@ export const Wrapper = Styled.div`
     @media(max-width: 420px){
     	grid-template-columns: repeat(12,1fr);
     }
+    @media(max-width: 315px){
+    	grid-template-columns: 10px repeat(12,1fr) 10px;
+    }
 `
 
 export const Container = Styled.div`
 	grid-column: 2/-2;
 	display: grid;
-	grid-template-columns: repeat(auto-fit,minmax(240px, 1fr));
+	grid-template-columns: repeat(auto-fit,minmax(260px, 1fr));
 	grid-gap: 35px;
+
+	@media(max-width: 619px){
+		grid-column: 4/-4;
+	}
+	@media(max-width: 460px){
+		grid-column: 3/-3;
+	}
+	
 	`
