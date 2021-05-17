@@ -8,7 +8,6 @@ export const Wrapper = Styled.div`
     border: .5px solid #fff;
     height: 252px;
     position: relative;
-    margin-top: 70px;
     overflow: hidden;
 
     @media (max-width: 1194px){
@@ -19,13 +18,9 @@ export const Wrapper = Styled.div`
         height: 252px;
     }
 
-    @media (max-width: 858px){
-        margin-top: 88px;
-    }
 
     @media (max-width: 730px){
         height: 330px;
-        margin-top: 98px;
     }
 
     @media (max-width: 464px){
@@ -69,7 +64,7 @@ export const Title = Styled.div`
             color: #7F8A64;
         }
         span:nth-of-type(2){
-            color: #666;
+            color: #777;
         }
     }
 `
