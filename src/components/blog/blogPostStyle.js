@@ -65,10 +65,10 @@ export const Title = Styled.div`
         justify-content: space-between;
         font-size: 14px;
 
-        span:nth:of:type(1){
+        span:nth-of-type(1){
             color: #7F8A64;
         }
-        span:nth:of:type(2){
+        span:nth-of-type(2){
             color: #666;
         }
     }
