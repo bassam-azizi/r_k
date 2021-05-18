@@ -18,7 +18,7 @@ export const Wrapper = Styled.div`
 	.header{
 		padding: 3px;
 
-		.header-info{
+		.info-header{
 			display: flex;
 			justify-content: space-between;
 			h1{
