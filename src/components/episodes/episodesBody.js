@@ -4,7 +4,7 @@ import { Wrapper, Container } from './episodesBody_style'
 import Episode from './episode'
 
 
-const Episodes_body = () =>{
+const EpisodesBody = () =>{
 	const data = useStaticQuery(graphql`
 		query{
 			allStrapiEpisode{
@@ -12,27 +12,22 @@ const Episodes_body = () =>{
 					node{
 						id
 						slug
-						title_en
-						title_fr
-						title_ar
-						serie_en
-						serie_fr
-						serie_ar
-						description_en
-						description_fr
-						description_ar
+						title
+						serie
+						description
 						picture{
-							childImageSharp{
-								fluid(maxWidth:700){
-									...GatsbyImageSharpFluid
+							localFile{
+								childImageSharp{
+									gatsbyImageData(
+										layout: FULL_WIDTH
+									)
 								}
 							}
 						}
+						
 						author{
 							name
 						}
-						contributors_en
-						contributors_ar
 						published_at(formatString:"dd/mm/yyyy")
 					}
 				}
@@ -52,4 +47,4 @@ const Episodes_body = () =>{
 		)
 }
 
-export default Episodes_body
+export default EpisodesBody
