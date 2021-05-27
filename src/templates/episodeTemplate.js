@@ -1,16 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from '../components/layout'
 import { Wrapper } from './programTemplate_style'
 
 
-const Episode_Template = ({data}) =>{
+const EpisodeTemplate = ({data}) =>{
+	let image =getImage(data.strapiEpisode.picture.localFile) ;
 	return(
 		<Layout>
 			<Wrapper>
 				<div className="image">
-					<Img fluid={data.strapiEpisode.picture.childImageSharp.fluid} alt={data.strapiEpisode.title_en} />
+					<GatsbyImage image={image} alt={data.strapiEpisode.title_en} />
 				</div>
 				<div className="header">
 					<div className="info_one">
@@ -30,30 +31,27 @@ const Episode_Template = ({data}) =>{
 		)
 }
 
-export default Episode_Template
+export default EpisodeTemplate
 
 
 export const pageQuery = graphql`
-	query($slug : String!){
-		strapiEpisode( slug : { eq : $slug}){
+	query($id : String!){
+		strapiEpisode( id : { eq : $id}){
 			id
-			title_en
-			title_fr
-			title_ar
-			serie_en
-		    serie_fr
-		    serie_ar
+			title
+			serie
 		    published_at(formatString:"MM/D/YYYY")
-		    description_en
-		    description_fr
-		    description_ar
+		    description
 		    picture{
-			    childImageSharp{
-			    	fluid(maxWidth: 700){
-						...GatsbyImageSharpFluid
-			        }
-		        }
-	      	}
+				localFile{
+					childImageSharp{
+						gatsbyImageData(
+							layout: FULL_WIDTH
+						)
+					}
+				}
+			}
+		    
 	      	author{
 	      		name
 	      	}
