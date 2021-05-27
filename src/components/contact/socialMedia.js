@@ -1,7 +1,7 @@
 import React from 'react'
 import SocialMediaButtons from 'react-social-media-buttons';
  
-const Social_Media = () => {
+const SocialMedia = () => {
 
   const buttonStyle = {
     width: '73px', 
@@ -24,4 +24,4 @@ const Social_Media = () => {
   );
 }
 
-  export default Social_Media
+  export default SocialMedia
