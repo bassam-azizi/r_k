@@ -3,7 +3,7 @@ import NavLinks from "./navLinks"
 import Logo from "./logo"
 import Lang from "./lang"
 import Hamburger from '../../utils/hamburger'
-import Hamburger_menu from "./hamburger_menu"
+import HamburgerMenu from "./hamburger_menu"
 import { Wrapper, Container } from './headerStyle'
 import { useIntl } from "gatsby-plugin-intl"
 
@@ -22,7 +22,7 @@ const Header = () => {
                     <Logo />
                     <NavLinks locale={intl.locale}/>
                     <Hamburger toggleMenu={toggle} />
-                    <Hamburger_menu menu_open={menuOpen} toggleMenu={toggle} />
+                    <HamburgerMenu menu_open={menuOpen} toggleMenu={toggle} />
                     <Lang />
                 </Container>
         </Wrapper>
