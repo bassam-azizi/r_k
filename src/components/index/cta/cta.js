@@ -1,18 +1,14 @@
 import React, { useState } from 'react'
 import Liveplayer from './livePlayer'
 import { P , Pauseicon , Icon , Button , H1, BtnWrapper , Container, Wrapper } from './ctaStyle' 
-import { FormattedMessage, useIntl } from "gatsby-plugin-intl";
+import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
 import Typical from 'react-typical'
 
 
 const Cta = () => {
     const intl = useIntl();
     const [cast, castOn] = useState(false);
-    {/*const a = <FormattedMessage id="our_content" defaultMessage={['News', 'Updates', 'Cultures', 'Business', 'Arts']}*/}
-        // {intl.formattedMessage({
-        //   id: "our_content",
-        //   defaultMessage:"['News', 'Updates', 'Cultures', 'Business', 'Arts']"
-        // })};
+    
     return (
         <Wrapper cast={cast}>
             <Container cast={cast} locale={intl.locale}>
