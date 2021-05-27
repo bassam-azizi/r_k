@@ -3,7 +3,7 @@ import { graphql , useStaticQuery } from 'gatsby'
 import Timer from '../../../utils/timer'
 import AudioPlayer , {RHAP_UI} from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
-import { P , Bar, BarContainer, Progress_bar , Wrapper} from './livePlayerStyle'
+import { P , Bar, BarContainer, ProgressBar , Wrapper} from './livePlayerStyle'
 
 
 
@@ -70,12 +70,12 @@ const Liveplayer = ({ cast }) =>{
                 showJumpControls={false}
                 layout="horizontal-reverse"
             />
-            <Progress_bar>
+            <ProgressBar>
                 <BarContainer>
                     <Bar cast={cast}></Bar>
                     <Timer cast={cast}/>
                 </BarContainer>
-            </Progress_bar>
+            </ProgressBar>
             {/* <P>{data.podcastRssFeedEpisode.item.title}</P> */}
             <P><span>13h-14h</span> One Hour Sport with Fedi Arfaoui</P>
         </Wrapper>
