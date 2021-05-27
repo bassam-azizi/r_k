@@ -1,24 +1,25 @@
 import React from 'react'
 import { Link } from "gatsby-plugin-intl";
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Deck } from './postStyle'
 
 
-const Post = props =>{
+const Post = ({data}) =>{
+    let image= getImage(data.node.featuredImg.localFile);
     return(
         <Deck>
-            <Link className="postLink" to ={`/blog/${props.data.node.Slug}`}>
-                <Img fluid={props.data.node.featuredImg.childImageSharp.fluid} loading="lazy" alt={props.data.node.name} />
+            <Link className="postLink" to ={`/blog/${data.node.Slug}`}>
+                <GatsbyImage image={image} alt="A dinosaur" />
             </Link>
             <div className='info'>
                 <span>i</span>
-                <Link className="infoContent" to={`/blog/${props.data.node.Slug}`}>
-                    <h4>{props.data.node.name}</h4>
-                    <p>{props.data.node.pubdate}</p>
+                <Link className="infoContent" to={`/blog/${data.node.Slug}`}>
+                    <h4>{data.node.name}</h4>
+                    <p>{data.node.pubdate}</p>
                 </Link>
             </div>
             <div className="title">
-                <p>{props.data.node.name}</p>
+                <p>{data.node.name}</p>
             </div>
         </Deck>
     )
