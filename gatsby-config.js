@@ -43,35 +43,26 @@ module.exports = {
       options: {
         apiURL: "https://radiokhemir.herokuapp.com",
         // contentTypes must be lowercase and in singular
-        contentTypes: [
-          "blogpost",
-          "schedule",
-          "episode",
-          "author"
+        collectionTypes: [
+            {   
+              name: `blogpost`,
+              api: { qs: { _locale: `all` } }
+            },
+            {
+              name: `schedule`,
+              api: { qs: { _locale: `all` } }
+            },
+            {
+              name: `episode`,
+              api: { qs: { _locale: `all` } }
+            },
         ],
         queryLimit: 5000,
       },
     },    
-    // {
-    //   resolve: `gatsby-source-anchor`,
-    //   options:{
-    //     rss: 'https://anchor.fm/s/46ce3a74/podcast/rss'
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       `Poppins`,
-    //       `Roboto`,
-    //       'Rhodium Libre'
-    //     ],
-    //     display: 'swap'
-    //   }
-    // },
-    `gatsby-image`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-emotion`,
