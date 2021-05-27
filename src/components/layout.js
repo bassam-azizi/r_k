@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Global_style from '../styles/global'
+import GlobalStyle from '../styles/global'
 import Styled from '@emotion/styled'
 
 
@@ -8,7 +8,7 @@ import Header from './header/header'
 import Footer from './footer'
 
 
-const Meta_container = Styled.div`
+const MetaContainer = Styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -22,14 +22,14 @@ const Wrapper = Styled.div`
 const Layout = props =>{
     return(
         <>
-            <Global_style />
-            <Meta_container>
+            <GlobalStyle />
+            <MetaContainer>
                 <Wrapper>
                     <Header location={props.location}/>
                     {props.children}
                 </Wrapper>
                 <Footer />
-            </Meta_container>
+            </MetaContainer>
         </>
     )
 }
