@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Styled from '@emotion/styled'
 import {useStaticQuery, graphql} from 'gatsby'
 import { Link } from "gatsby-plugin-intl"
@@ -29,17 +29,15 @@ const Logo = () =>{
     const data = useStaticQuery(graphql`
         query{
             file(name: {eq: "logo"}, extension: {eq: "png"}){
-                childImageSharp{
-                    fixed(width: 160, quality: 80){
-                        ...GatsbyImageSharpFixed
-                    }
-                }
+                  childImageSharp {
+                    gatsbyImageData(layout: FULL_WIDTH)
+                  }
             }
         }
     `)
     return(
         <LogoWrap to='/'>
-            <Img fixed={data.file.childImageSharp.fixed} loading="eager"  alt="Radio Khemir" />
+            {<GatsbyImage image={getImage(data.file)} alt="A dinosaur" />}
         </LogoWrap>
     )
 }
