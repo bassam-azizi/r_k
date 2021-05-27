@@ -46,7 +46,7 @@ const Triangle = Styled.div`
 
 
 // The Component
-const Posts_Collection = () =>{
+const PostsCollection = () =>{
     const data = useStaticQuery(graphql`
         query{
             allStrapiBlogpost(
@@ -60,9 +60,13 @@ const Posts_Collection = () =>{
                         id
                         pubdate(formatString:"MMMM Do, YYYY")
                         featuredImg{
-                            childImageSharp{
-                                fluid(maxWidth: 650){
-                                    ...GatsbyImageSharpFluid
+                            localFile{
+                                childImageSharp{
+                                    gatsbyImageData(
+                                        layout: FULL_WIDTH
+                                        placeholder: BLURRED
+                                        formats: [AUTO, WEBP, AVIF]
+                                    )
                                 }
                             }
                         }
@@ -110,4 +114,4 @@ const Posts_Collection = () =>{
     )
 }
 
-export default Posts_Collection
+export default PostsCollection
