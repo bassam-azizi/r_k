@@ -1,6 +1,6 @@
 import React from 'react'
 import Cta from './cta/cta'
-import Posts_Collection from './posts/featuredPosts'
+import PostsCollection from './posts/featuredPosts'
 import ProgramBar from './programBar'
 import Styled from '@emotion/styled'
 
@@ -38,7 +38,7 @@ const IndexBody = () => {
         <Wrapper>
             <Container>
                 <Cta />
-                <Posts_Collection />
+                <PostsCollection />
             </Container>
             <ProgramBar /> 
         </Wrapper>
