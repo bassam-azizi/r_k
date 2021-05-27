@@ -1,20 +1,23 @@
 import React from 'react'
 import Reactmarkdown from "react-markdown"
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Wrapper } from './blogTemplate_style'
-import Share_Blog from './shareBlog'
+import ShareBlog from './shareBlog'
 import Head from "../components/head"
 
 
 import Layout from '../components/layout'
 
 
-const Blog_template = ({ data }) => {
-    const img = process.env.PUBLIC_URL + data.strapiBlogpost.featuredImg.childImageSharp.resize.src;
+const BlogTemplate = ({ data }) => {
+    // const img = process.env.PUBLIC_URL + data.strapiBlogpost.featuredImg.childImageSharp.resize.src;
+    let image = getImage(data.strapiBlogpost.featuredImg.localFile) ;
+    console.log(data.strapiBlogpost.body);
     return (
         <Layout>
-            <Head title={data.strapiBlogpost.name} image={img} path={data.site.siteMetadata.blogUrl}/>
+            <Head title={data.strapiBlogpost.name} image={image} path={data.site.siteMetadata.blogUrl}/>
+            <Head title={data.strapiBlogpost.name} path={data.site.siteMetadata.blogUrl}/>
             <Wrapper>
                 <div className="container">
                     <div className='header'>
@@ -22,17 +25,17 @@ const Blog_template = ({ data }) => {
                         <p className="pubdate">{data.strapiBlogpost.pubdate}</p>
                     </div>
                     <div className="body">
-                        <Img className='blogImg' fluid={data.strapiBlogpost.featuredImg.childImageSharp.fluid} alt='blog title' />
-                        <Reactmarkdown source={data.strapiBlogpost.body} />
+                        <GatsbyImage image={image} alt={data.strapiBlogpost.name} />
+                        <Reactmarkdown children={data.strapiBlogpost.body} />
                     </div>
                 </div>
-                <Share_Blog title={data.strapiBlogpost.name} img={data.strapiBlogpost.featuredImg.childImageSharp.fluid}/>
+                <ShareBlog title={data.strapiBlogpost.name} img={image}/>
             </Wrapper>
         </Layout>
     )
 }
 
-export default Blog_template
+export default BlogTemplate
 
 
 export const pageQuery = graphql`
@@ -45,17 +48,16 @@ export const pageQuery = graphql`
                     name
                 }
                 featuredImg{
-                            childImageSharp{
-                                fluid(maxWidth: 764){
-                                    ...GatsbyImageSharpFluid
-                                }
-                                resize(width:900, quality:90){
-                                    src
-                                }
-                            }
-                            publicURL
+                    localFile{
+                        childImageSharp{
+                            gatsbyImageData(
+                                layout: FULL_WIDTH
+                            )
                         }
+                    }
+                }
             }
+                
             site{
                 siteMetadata{
                     blogUrl
