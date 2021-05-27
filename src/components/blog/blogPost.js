@@ -1,5 +1,5 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage , getImage } from "gatsby-plugin-image"
 import {Wrapper, Picture, Title, H1, Lin} from './blogPostStyle'
 
 
@@ -7,11 +7,13 @@ import {Wrapper, Picture, Title, H1, Lin} from './blogPostStyle'
 
 
 const Blogpost = ({data}) =>{
+    let image = getImage(data.node.featuredImg.localFile) ;
     return(
             <Wrapper key={data.node.Slug}>
                 <Lin to={`/blog/${data.node.Slug}`}>
                     <Picture>
-                        <Img fluid={data.node.featuredImg.childImageSharp.fluid} loading="lazy" alt={data.node.name} />
+                        {/*<Img fluid={data.node.featuredImg.childImageSharp.fluid} loading="lazy" alt={data.node.name} />*/}
+                        <GatsbyImage image={image} alt={data.node.name} />
                     </Picture>  
                     <Title>
                         <div className="post-info">
