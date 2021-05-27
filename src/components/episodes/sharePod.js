@@ -1,5 +1,5 @@
 import React from 'react'
-import Social_Share from '../../utils/socialShare'
+import SocialShare from '../../utils/socialShare'
 import { useStaticQuery, graphql } from 'gatsby'
 // import { Link } from 'gatsby'
 import { Wrapper } from './sharePodStyle'
@@ -21,7 +21,7 @@ const Share_Podcast = ({ title }) => {
 
     return (
         <Wrapper>
-          <Social_Share title={title} path={data.site.siteMetadata.emissionUrl}/>
+          <SocialShare title={title} path={data.site.siteMetadata.emissionUrl}/>
         </Wrapper>
 
     )
