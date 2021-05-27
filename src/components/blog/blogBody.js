@@ -53,9 +53,11 @@ const Bloga = () =>{
                         id
                         pubdate
                         featuredImg{
-                            childImageSharp{
-                                fluid(maxWidth: 650){
-                                    ...GatsbyImageSharpFluid
+                            localFile{
+                                childImageSharp{
+                                    gatsbyImageData(
+                                        layout: FULL_WIDTH
+                                    )
                                 }
                             }
                         }
