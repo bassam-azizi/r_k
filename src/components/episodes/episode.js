@@ -1,24 +1,25 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import {Wrapper} from './episode_style'
-import Img from 'gatsby-image'
+import { GatsbyImage , getImage } from "gatsby-plugin-image"
 
 
 
 const Episode = ({data}) =>{
+	let image = getImage(data.node.picture.localFile);
 	return(
 		<Wrapper key={data.node.id}>
-			<Link to={`/episodes/${data.node.slug}`}>
+			<Link to={`/episodes/${data.node.title}`}>
 				<div className="pic">
-					<Img fluid={data.node.picture.childImageSharp.fluid} alt={data.node.title_en} />
+					<GatsbyImage image={image} alt={data.node.title} />
 				</div>
 				<div className="header">
 					<div className="info-header">
-						<h1>{data.node.title_en}</h1>
+						<h1>{data.node.title}</h1>
 						<span>{data.node.published_at}</span>
 					</div>
-					<span className="serie">{data.node.serie_en}</span>
-					<p className="description">{data.node.description_en}</p>
+					<span className="serie">{data.node.serie}</span>
+					<p className="description">{data.node.description}</p>
 				</div>
 			</Link>
 		</Wrapper>
