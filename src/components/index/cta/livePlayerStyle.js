@@ -25,7 +25,7 @@ export const Wrapper = Styled.div`
 `
 
 
-export const Progress_bar = Styled.div`
+export const ProgressBar = Styled.div`
     display: flex;
     align-items: center;
     margin: 27px 0 0;
