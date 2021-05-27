@@ -1,6 +1,6 @@
 
 
-export const Today_is = () =>{
+export const TodayIs = () =>{
 	let date = new Date();
 	return(
 		" " + date.toLocaleDateString('en-UK',{weekday:'long', day:'numeric', month:'numeric', year:'numeric'})
