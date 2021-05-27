@@ -1,10 +1,10 @@
 import React from 'react'
 import {Wrapper, Lin} from './style_hamburger_menu'
 
-const Hamburger_menu = props =>{
+const HamburgerMenu = props =>{
     return(
         <Wrapper menu={props.menu_open}>
-            <span onClick={ () => props.toggleMenu() }>X</span>
+            <span tabIndex={0} role="button" onClick={ () => props.toggleMenu() } onKeyDown={()=> props.toggleMenu()}>X</span>
             <Lin to="/aboutus">About us</Lin>
             <Lin to="/program">Program</Lin>
             <Lin to="/emission">Emission</Lin>
@@ -14,4 +14,4 @@ const Hamburger_menu = props =>{
     )
 }
 
-export default Hamburger_menu
+export default HamburgerMenu
