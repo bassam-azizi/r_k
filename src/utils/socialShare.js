@@ -2,7 +2,7 @@ import React from 'react'
 import { FacebookShareButton, FacebookIcon, LinkedinShareButton, LinkedinIcon, PinterestShareButton, PinterestIcon, TwitterShareButton, TwitterIcon } from "react-share";
 
 
-const Social_Share = ({ title, img , path}) => {
+const SocialShare = ({ title, img , path}) => {
     
     return (
     	<>
@@ -31,4 +31,4 @@ const Social_Share = ({ title, img , path}) => {
     )
 }
 
-export default Social_Share
+export default SocialShare
