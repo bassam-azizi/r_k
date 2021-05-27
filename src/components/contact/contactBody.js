@@ -4,7 +4,7 @@ import Styled from '@emotion/styled'
 
 import Form from './form'
 import Info from './info'
-import Social_Media from './socialMedia'
+import SocialMedia from './socialMedia'
 
 const Wrapper = Styled.div`
 
@@ -32,7 +32,7 @@ const Wrapper = Styled.div`
 `
 
 
-const Contact_Body = () =>{
+const ContactBody = () =>{
     return(
         <Wrapper>
             <div className="container">
@@ -40,11 +40,11 @@ const Contact_Body = () =>{
                 <Form />
             </div>
             <div className="smWrapper">
-                <Social_Media />
+                <SocialMedia />
             </div>
         </Wrapper>
 
     )
 }
 
-export default Contact_Body
+export default ContactBody
