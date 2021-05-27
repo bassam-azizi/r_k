@@ -18,7 +18,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
         allStrapiSchedule{
             edges{
                 node{
-                    title_en
+                    id
+                    title
                 }
             }
 
@@ -26,7 +27,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
         allStrapiEpisode{
             edges{
                 node{
-                    slug
+                    id
+                    title
                 }
             }
         }
@@ -45,18 +47,18 @@ module.exports.createPages = async ({ graphql, actions }) => {
     res.data.allStrapiSchedule.edges.forEach( ({node}) => {
         createPage({
             component: programTemplate,
-            path: `/schedule/${node.title_en.toLowerCase()}`,
+            path: `/schedule/${node.title.toLowerCase()}`,
             context: {
-                title: node.title_en
+                id: node.id
             }
         })
     });
     res.data.allStrapiEpisode.edges.forEach( ({node}) => {
         createPage({
             component: episodeTemplate,
-            path: `/episodes/${node.slug}`,
+            path: `/episodes/${node.title.toLowerCase()}`,
             context: {
-                slug: node.slug
+                id: node.id
             }
         })
     });
