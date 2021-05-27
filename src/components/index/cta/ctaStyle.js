@@ -1,6 +1,6 @@
 import Styled from '@emotion/styled'
-import { GoTriangleRight } from 'react-icons/all'
-import { IoMdPause } from 'react-icons/all'
+import { GoTriangleRight } from 'react-icons/go'
+import { IoMdPause } from 'react-icons/io'
 
 export const Wrapper = Styled.div`
             grid-column: 2 / 4;
