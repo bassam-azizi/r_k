@@ -1,127 +1,115 @@
 import React from 'react'
 import { useStaticQuery , graphql } from 'gatsby'
 import Schedule from './schedule'
-import {Today_is} from '../../utils/todayIs'
+import {TodayIs} from '../../utils/todayIs'
 import { Wrapper, Container } from './schedulesBody_style'
 
 
 
-const Schedules_Body = () =>{
+const SchedulesBody = () =>{
 	const data = useStaticQuery( graphql`
 		query{
 			morning: allStrapiSchedule(
 					sort:{ fields : [start_time] , order: ASC }
-				    filter: { day_time : { time_en : {eq: "Morning" }}}
+				    filter: { day_time : { time : {eq: "Morning" }}}
 					){
 						nodes{
 					    	id
-						    title_en
-						    title_fr
-						    title_ar
-						    serie_en
-						    serie_fr
-						    serie_ar
+						    title
+						    serie
 						    start_time
 						    episode_length
-						    description_en
-						    description_fr
-						    description_ar
+						    description
 						    picture{
-							    childImageSharp{
-							    	fluid(maxWidth: 700){
-										...GatsbyImageSharpFluid
-							        }
-						        }
-					      	}
+						    	localFile{
+						    		childImageSharp{
+						    			gatsbyImageData(
+						    				layout: FULL_WIDTH
+						    			)
+						    		}
+						    	}
+						    }
+						    
 					        day_time{
-					        	time_en
+					        	time
 					        	}
 				  			}
 				  		}
 			afterNoon: allStrapiSchedule(
 					sort:{ fields : [start_time] , order: ASC }
-				    filter: { day_time : { time_en : {eq: "AfterNoon" }}}
+				    filter: { day_time : { time : {eq: "AfterNoon" }}}
 					){
 						nodes{
 					    	id
-						    title_en
-						    title_fr
-						    title_ar
-						    serie_en
-						    serie_fr
-						    serie_ar
+						    title
+						    serie
 						    start_time
 						    episode_length
-						    description_en
-						    description_fr
-						    description_ar
+						    description
 						    picture{
-							    childImageSharp{
-							    	fluid(maxWidth: 700){
-										...GatsbyImageSharpFluid
-							        }
-						        }
-					      	}
+						    	localFile{
+						    		childImageSharp{
+						    			gatsbyImageData(
+						    				layout: FULL_WIDTH
+						    			)
+						    		}
+						    	}
+						    }
+						    
 					        day_time{
-					        	time_en
+					        	time
 					        	}
 					        }
 				  		}
 			evening: allStrapiSchedule(
 					sort:{ fields : [start_time] , order: ASC }
-				    filter: { day_time : { time_en : {eq: "evening" }}}
+				    filter: { day_time : { time : {eq: "evening" }}}
 					){
 						nodes{
 					    	id
-						    title_en
-						    title_fr
-						    title_ar
-						    serie_en
-						    serie_fr
-						    serie_ar
+						    title
+						    serie
 						    start_time
 						    episode_length
-						    description_en
-						    description_fr
-						    description_ar
+						    description
 						    picture{
-							    childImageSharp{
-							    	fluid(maxWidth: 700){
-										...GatsbyImageSharpFluid
-							        }
-						        }
-					      	}
+						    	localFile{
+						    		childImageSharp{
+						    			gatsbyImageData(
+						    				layout: FULL_WIDTH
+						    			)
+						    		}
+						    	}
+						    }
+						    
 					        day_time{
-					        	time_en
+					        	time
 					        	}
 					        }
 				  		}
 			late: allStrapiSchedule(
 					sort:{ fields : [start_time] , order: ASC }
-				    filter: { day_time : { time_en : {eq: "late" }}}
+				    filter: { day_time : { time : {eq: "late" }}}
 					){
 						nodes{
 					    	id
-						    title_en
-						    title_fr
-						    title_ar
-						    serie_en
-						    serie_fr
-						    serie_ar
+						    title
+						    serie
 						    start_time
 						    episode_length
-						    description_en
-						    description_fr
-						    description_ar
+						    description
 						    picture{
-							    childImageSharp{
-							    	fluid(maxWidth: 700){
-										...GatsbyImageSharpFluid
-							        }
-						        }
-					      	}
+						    	localFile{
+						    		childImageSharp{
+						    			gatsbyImageData(
+						    				layout: FULL_WIDTH
+						    			)
+						    		}
+						    	}
+						    }
+						    
 					        day_time{
-					        	time_en
+					        	time
 					        	}
 					        }
 				  		}
@@ -140,7 +128,7 @@ const Schedules_Body = () =>{
 	)};
 	return(
 		<Wrapper>
-			<h1 className="today">Today is <Today_is /></h1>
+			<h1 className="today">Today is <TodayIs /></h1>
 			{data.morning.nodes.length>0?
 									schedule_render(data.morning.nodes, "Morning")				
 									:
@@ -163,4 +151,4 @@ const Schedules_Body = () =>{
 	)
 }
 
-export default Schedules_Body
+export default SchedulesBody
