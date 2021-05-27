@@ -58,9 +58,9 @@ const ProgramBar = () =>{
                 edges{
                     node{
                         id
-                        title_en
-                        title_fr
-                        title_ar
+                        title
+                        title
+                        title
                         start_time
                     }
                 }
@@ -73,7 +73,7 @@ const ProgramBar = () =>{
                 {data.allStrapiSchedule.edges.map(edge=>
                     <div className="schedule-element" key={edge.node.id}>
                         <h4>{edge.node.start_time} - </h4>
-                        <h4>{edge.node.title_en}</h4>
+                        <h4>{edge.node.title}</h4>
                     </div>
                     )
                 }
