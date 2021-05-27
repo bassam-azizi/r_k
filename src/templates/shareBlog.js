@@ -1,10 +1,10 @@
 import React from 'react'
-import Social_Share from '../utils/socialShare'
+import SocialShare from '../utils/socialShare'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Wrapper } from "./styleShareBlog"
 
 
-const Share_Blog = ({ title, img }) => {
+const ShareBlog = ({ title, img }) => {
 	const data = useStaticQuery(graphql `
           query{
             site{
@@ -16,9 +16,9 @@ const Share_Blog = ({ title, img }) => {
           `)
     return (
         <Wrapper>
-			<Social_Share title={title} img={img} path={data.site.siteMetadata.blogUrl+"/"+title}/>
+			<SocialShare title={title} img={img} path={data.site.siteMetadata.blogUrl+"/"+title}/>
 		</Wrapper>
     )
 }
 
-export default Share_Blog
+export default ShareBlog
