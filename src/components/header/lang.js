@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // import { Link } from "gatsby"
 import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 import Styled from '@emotion/styled'
-import Lang_menu from './lang_menu'
+import LangMenu from './lang_menu'
 
 const LangWrapper = Styled.div `
         display: flex;
@@ -101,7 +101,10 @@ const Lang = () => {
                           languages.filter(language => (language!==currentLocale)).map(language => (
                             <span
                               key={language}
+                              role = "button"
                               onClick={() => changeLocale(language)}
+                              onKeyDown={() => changeLocale(language)}
+                              tabIndex={0}
                             >
                                 {languageName[language]}
                             </span>
@@ -110,7 +113,7 @@ const Lang = () => {
                   </IntlContextConsumer>
             </LangWrapper> 
             <Lan onClick={toggle_menu}><h3>En</h3></Lan>
-            <Lang_menu menu_open = { openMenu } toggle = { toggle_menu }/> 
+            <LangMenu menu_open = { openMenu } toggle = { toggle_menu }/> 
         </>
     )
 }
