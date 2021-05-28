@@ -6,10 +6,11 @@ import { GatsbyImage , getImage } from "gatsby-plugin-image"
 
 
 const Episode = ({data}) =>{
+	let episode_path = data.node.title.toLowerCase() ;
 	let image = getImage(data.node.picture.localFile);
 	return(
 		<Wrapper key={data.node.id}>
-			<Link to={`/episodes/${data.node.title}`}>
+			<Link to={`/episodes/${episode_path}`}>
 				<div className="pic">
 					<GatsbyImage image={image} alt={data.node.title} />
 				</div>
