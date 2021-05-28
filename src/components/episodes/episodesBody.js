@@ -28,7 +28,7 @@ const EpisodesBody = () =>{
 						author{
 							name
 						}
-						published_at(formatString:"dd/mm/yyyy")
+						published_at(formatString:"MM/D/YYYY")
 					}
 				}
 			}
