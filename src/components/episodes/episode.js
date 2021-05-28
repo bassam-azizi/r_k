@@ -15,11 +15,13 @@ const Episode = ({data}) =>{
 					<GatsbyImage image={image} alt={data.node.title} />
 				</div>
 				<div className="header">
-					<div className="info-header">
+					<div className="header-title">
 						<h1>{data.node.title}</h1>
-						<span>{data.node.published_at}</span>
 					</div>
-					<span className="serie">{data.node.serie}</span>
+					<div className="header-info">
+						<span>{data.node.published_at}</span>
+						<span className="serie">{data.node.serie}</span>
+					</div>
 					<p className="description">{data.node.description}</p>
 				</div>
 			</Link>
