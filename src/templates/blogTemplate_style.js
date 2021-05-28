@@ -2,10 +2,9 @@ import Styled from '@emotion/styled'
 
 
 export const Wrapper = Styled.div `
-	background: #11ff1f09; 
+	// background: #11ff1f09; 
 	
 	.container{
-		background: #fff;
 		position: relative;
 		max-width: 770px;
 		padding: 94px 45px;
@@ -34,10 +33,16 @@ export const Wrapper = Styled.div `
 	}
 
 	.header{
-		padding: 70px 0;
+		padding: 70px 0 50px;
 		display: block;
 		text-align: left;
 	    font-size: 24px;
+
+	    h1{
+	    	font-size: 36px;
+	    	color: rgb(40,40,40);
+	    	letter-spacing: 1.009px;
+	    }
 	  }
 
 	.pubdate{
@@ -49,17 +54,24 @@ export const Wrapper = Styled.div `
 		padding: 0 0 98px;
 	    color: #333;
 
-	    .blogImg{
-			max-width: 720px;
-			margin: 0 0 70px;
-			border-radius: 10px;
-		}
+	    .img{
+	    	display: grid;
+	    	justify-content: center;
+
+		    .gatsby-image-wrapper{
+				max-width: 720px;
+				margin: 0 0 20px;
+				border-radius: 10px;
+			}
+	    }
 
 	    & > p{
-	        line-height: 52px;
+	        line-height: 44px;
 	        font-weight: 400;
-	        padding: 0;
+	        margin: 36px 0;
+	        letter-spacing: 1.007px;
 	        font-size: 17px;
+	        text-indent: 2px;
 	    }
 	  }
 `
