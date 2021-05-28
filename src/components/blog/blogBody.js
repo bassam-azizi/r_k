@@ -51,7 +51,7 @@ const Bloga = () =>{
                         name
                         Slug
                         id
-                        pubdate
+                        pubdate(formatString:"MM/D/YYYY")
                         featuredImg{
                             localFile{
                                 childImageSharp{
