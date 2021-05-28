@@ -16,7 +16,6 @@ export const Wrapper = Styled.div`
 	}
 
 	.header{
-		padding: 3px;
 		padding-top: 10px;				
 
 		.header-title{
