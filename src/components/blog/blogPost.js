@@ -18,7 +18,7 @@ const Blogpost = ({data}) =>{
                     <Title>
                         <div className="post-info">
                             <span>Culture</span>
-                            <span className="post-date">12/05/2021</span>
+                            <span className="post-date">{data.node.pubdate}</span>
                         </div>
                         <H1>{data.node.name}</H1>
                     </Title>
