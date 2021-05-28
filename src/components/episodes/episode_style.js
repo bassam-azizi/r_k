@@ -17,15 +17,19 @@ export const Wrapper = Styled.div`
 
 	.header{
 		padding: 3px;
+		padding-top: 10px;				
 
-		.info-header{
-			display: flex;
-			justify-content: space-between;
+		.header-title{
 			h1{
 				font-size: 16px;
 				color: #C52127;
-				padding-top: 10px;
 			}
+		}
+
+		.header-info{
+			display: flex;
+			justify-content: space-between;
+
 			span{
 				color: #666;
 				font-size: 14px;
