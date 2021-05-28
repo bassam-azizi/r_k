@@ -25,7 +25,9 @@ const BlogTemplate = ({ data }) => {
                         <p className="pubdate">{data.strapiBlogpost.pubdate}</p>
                     </div>
                     <div className="body">
-                        <GatsbyImage image={image} alt={data.strapiBlogpost.name} />
+                        <div className="img">
+                            <GatsbyImage image={image} alt={data.strapiBlogpost.name} />
+                        </div>
                         <Reactmarkdown children={data.strapiBlogpost.body} />
                     </div>
                 </div>
@@ -51,7 +53,7 @@ export const pageQuery = graphql`
                     localFile{
                         childImageSharp{
                             gatsbyImageData(
-                                layout: FULL_WIDTH
+                                layout: CONSTRAINED
                             )
                         }
                     }
