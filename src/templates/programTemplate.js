@@ -1,8 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Layout from '../components/layout'
+import Reactmarkdown from "react-markdown"
+
 import { Wrapper } from './programTemplate_style'
+import Podcast from '../utils/podcast/podcastPlayer'
+import Layout from '../components/layout'
 
 
 const ProgramTemplate = ({data}) =>{
@@ -15,17 +18,20 @@ const ProgramTemplate = ({data}) =>{
 				</div>
 				<div className="header">
 					<div className="info_one">
-						<h1>{data.strapiSchedule.title_en}</h1>
-						<p>{data.strapiSchedule.serie_en}</p>
+						<h1>{data.strapiSchedule.title}</h1>
+						<p>{data.strapiSchedule.serie}</p>
 					</div>
 					<div className="info_two">
 						<h1>{data.strapiSchedule.start_time}</h1>
 						<p>{data.strapiSchedule.published_at}</p>
 					</div>
 				</div>
-					<div className="description">
-						<p>{data.strapiSchedule.description_en}</p>
-					</div>
+				<div className="podcast">
+					<Podcast data={data.podcastRssFeedEpisode} />
+				</div>
+				<div className="description">
+                    <Reactmarkdown children={data.strapiSchedule.description} />
+				</div>
 			</Wrapper>
 		</Layout>
 		)
@@ -34,7 +40,7 @@ const ProgramTemplate = ({data}) =>{
 export default ProgramTemplate
 
 export const pageQuery = graphql`
-	query($id : String!){
+	query($id : String!, $title: String){
 		strapiSchedule( id : { eq : $id}){
 			id
 			title
@@ -46,16 +52,32 @@ export const pageQuery = graphql`
 	        day_time{
 	        	time
 	        }
+	        author{
+	        	name
+	        }
+	        contributors{
+	        	name
+	        }
 	        picture{
 		    	localFile{
 		    		childImageSharp{
 		    			gatsbyImageData(
-		    				layout: FULL_WIDTH
+		    				layout: CONSTRAINED
+		    				
 		    			)
 		    		}
 		    	}
 		    }
-
 		}
+		podcastRssFeedEpisode(item: {title : {eq: $title}}){
+			item{
+				title
+				enclosure{
+					url
+				}
+				isoDate
+			}
+		}
+
 	}
 `
