@@ -49,7 +49,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
             component: programTemplate,
             path: `/schedule/${node.title.toLowerCase()}`,
             context: {
-                id: node.id
+                id: node.id,
+                title: node.title
             }
         })
     });
@@ -58,7 +59,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
             component: episodeTemplate,
             path: `/episodes/${node.title.toLowerCase()}`,
             context: {
-                id: node.id
+                id: node.id,
+                title: node.title
             }
         })
     });
