@@ -44,7 +44,7 @@ export const pageQuery = graphql`
         query ($slug:String!) {
             strapiBlogpost( Slug : { eq: $slug}){
                 name
-                pubdate(formatString:"MMMM Do, YYYY")
+                pubdate(formatString:"MMMM,D,YYYY")
                 body
                 categories{
                     name
