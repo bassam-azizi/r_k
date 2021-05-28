@@ -19,7 +19,7 @@ const EpisodesBody = () =>{
 							localFile{
 								childImageSharp{
 									gatsbyImageData(
-										layout: FULL_WIDTH
+										layout: CONSTRAINED
 									)
 								}
 							}
