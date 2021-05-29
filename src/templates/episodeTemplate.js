@@ -59,9 +59,6 @@ export const pageQuery = graphql`
 				}
 			}
 		    
-	      	author{
-	      		name
-	      	}
 		}
 		podcastRssFeedEpisode(item: {title : {eq: $title}}){
 			item{
