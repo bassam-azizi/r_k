@@ -20,7 +20,7 @@ const EpisodeTemplate = ({data}) =>{
 				<div className="header">
 					<div className="info_one">
 						<h1>{data.strapiEpisode.title}</h1>
-						<p>{data.strapiEpisode.author.name}</p>
+						{/*<p>{data.strapiEpisode.author.name}</p>*/}
 					</div>
 					<div className="info_two">
 						<h1>{data.strapiEpisode.serie}</h1>
