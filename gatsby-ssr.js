@@ -1,6 +1,6 @@
 var React = require("react");
 
-export const onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
+exports.onPreRenderHTML = ({getHeadComponents, replaceHeadComponents }) => {
     /**
      * @type {any[]} headComponents
      */
