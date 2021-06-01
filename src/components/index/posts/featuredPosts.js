@@ -1,6 +1,8 @@
 import React from "react"
-import Post from './post'
 import { graphql, useStaticQuery} from 'gatsby'
+import { useIntl } from "gatsby-plugin-intl"
+
+import Post from './post'
 import Styled from '@emotion/styled'
 
 // Component Style
@@ -49,9 +51,68 @@ const Triangle = Styled.div`
 const PostsCollection = () =>{
     const data = useStaticQuery(graphql`
         query{
-            allStrapiBlogpost(
+            enPosts : allStrapiBlogpost(
                 sort: { order: DESC, fields: [pubdate] }
-                limit: 1000
+                limit: 4
+                filter: {
+                    locale: { eq : "en"}
+                }
+            ){
+                edges{
+                    node{
+                        name
+                        Slug
+                        id
+                        pubdate(formatString:"MMMM Do, YYYY")
+                        featuredImg{
+                            localFile{
+                                childImageSharp{
+                                    gatsbyImageData(
+                                        layout: FULL_WIDTH
+                                        placeholder: BLURRED
+                                        formats: [AUTO, WEBP, AVIF]
+                                    )
+                                }
+                            }
+                        }
+                        body
+                    }
+                }
+            }
+            frPosts : allStrapiBlogpost(
+                sort: { order: DESC, fields: [pubdate] }
+                limit: 4
+                filter: {
+                    locale: { eq : "fr"}
+                }
+            ){
+                edges{
+                    node{
+                        name
+                        Slug
+                        id
+                        pubdate(formatString:"MMMM Do, YYYY")
+                        featuredImg{
+                            localFile{
+                                childImageSharp{
+                                    gatsbyImageData(
+                                        layout: FULL_WIDTH
+                                        placeholder: BLURRED
+                                        formats: [AUTO, WEBP, AVIF]
+                                    )
+                                }
+                            }
+                        }
+                        body
+                    }
+                }
+            }
+            arPosts : allStrapiBlogpost(
+                sort: { order: DESC, fields: [pubdate] }
+                limit: 4
+                filter: {
+                    locale: { eq : "ar"}
+                }
             ){
                 edges{
                     node{
@@ -77,8 +138,8 @@ const PostsCollection = () =>{
         }
     `)   
     
-    const allposts = data.allStrapiBlogpost.edges ;
-    const posts = allposts.slice(0,4);
+    // const allposts = data.allStrapiBlogpost.edges ;
+    // const posts = allposts.slice(0,4);
     // const post1 = allposts.slice(0,4) ;
     // const x = useRef(0);
     // const t = useRef([...post1]);
@@ -101,11 +162,25 @@ const PostsCollection = () =>{
     //     }, 5000);
     //     return () => clearInterval(interval);
     // })
+    const strapiPosts = (locale) =>{
+            switch(locale){
+                case("fr"):
+                    console.log(data.frPosts)
+                    return data.frPosts;
+                case("ar"):
+                    console.log(data.arPosts)
+                    return data.arPosts;
+                default:
+                    console.log(data.enPosts)
+                    return data.enPosts;
+            }
+
+        }
     
     return(
         <Wrapper>
             <Container>
-                {posts.map(post=>(
+                {strapiPosts(useIntl().locale).edges.map(post=>(
                     <Post data={post} key={post.node.id} />
                 ))}
             <Triangle />
