@@ -1,6 +1,6 @@
 import React from 'react'
 import {useStaticQuery, graphql} from 'gatsby'
-// import Reactmarkdown from 'react-markdown'
+import { useIntl } from "gatsby-plugin-intl"
 import {keyframes} from '@emotion/react'
 import Styled from '@emotion/styled'
 
@@ -52,8 +52,43 @@ const Wrapper = Styled.div`
 const ProgramBar = () =>{
     const data = useStaticQuery(graphql`
         query{
-            allStrapiSchedule(
+            enSchedule : allStrapiSchedule(
                 sort:{ fields : [start_time] , order: ASC }
+                filter: {
+                    locale:{eq : "en"}
+                }
+            ){
+                edges{
+                    node{
+                        id
+                        title
+                        title
+                        title
+                        start_time
+                    }
+                }
+            }
+            frSchedule : allStrapiSchedule(
+                sort:{ fields : [start_time] , order: ASC }
+                filter: {
+                    locale:{eq : "en"}
+                }
+            ){
+                edges{
+                    node{
+                        id
+                        title
+                        title
+                        title
+                        start_time
+                    }
+                }
+            }
+            arSchedule : allStrapiSchedule(
+                sort:{ fields : [start_time] , order: ASC }
+                filter: {
+                    locale:{eq : "en"}
+                }
             ){
                 edges{
                     node{
@@ -67,10 +102,20 @@ const ProgramBar = () =>{
             }
         }
     `)
+    const strapiSchedule = (locale) =>{
+            switch(locale){
+                case("fr"):
+                    return data.frSchedule;
+                case("ar"):
+                    return data.arSchedule;
+                default:
+                    return data.enSchedule;
+            }
+        }
     return(
         <Wrapper>
             <div className="container">
-                {data.allStrapiSchedule.edges.map(edge=>
+                {strapiSchedule(useIntl().locale).edges.map(edge=>
                     <div className="schedule-element" key={edge.node.id}>
                         <h4>{edge.node.start_time} - </h4>
                         <h4>{edge.node.title}</h4>
