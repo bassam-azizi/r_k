@@ -1,6 +1,6 @@
 import React from 'react'
-import { graphql , useStaticQuery } from 'gatsby'
-import { useIntl } from "gatsby-plugin-intl"
+// import { graphql , useStaticQuery } from 'gatsby'
+// import { useIntl } from "gatsby-plugin-intl"
 
 
 
@@ -41,105 +41,13 @@ const Container = Styled.div`
 `
     
 
-const Bloga = () =>{
-    const data = useStaticQuery(graphql`
-        query{
-            enPosts : allStrapiBlogpost(
-                sort: { order: DESC, fields: [pubdate] }
-                limit: 1000
-                filter: {
-                    locale: { eq : "en"}
-                }
-              ){
-                edges{
-                    node{
-                        name
-                        Slug
-                        id
-                        pubdate(formatString:"MM/D/YYYY")
-                        featuredImg{
-                            localFile{
-                                childImageSharp{
-                                    gatsbyImageData(
-                                        layout: FULL_WIDTH
-                                    )
-                                }
-                            }
-                        }
-                        body
-                    }
-                }
-            }
-            frPosts : allStrapiBlogpost(
-                sort: { order: DESC, fields: [pubdate] }
-                limit: 1000
-                filter: {
-                    locale: { eq : "fr"}
-                }
-              ){
-                edges{
-                    node{
-                        name
-                        Slug
-                        id
-                        pubdate(formatString:"MM/D/YYYY")
-                        featuredImg{
-                            localFile{
-                                childImageSharp{
-                                    gatsbyImageData(
-                                        layout: FULL_WIDTH
-                                    )
-                                }
-                            }
-                        }
-                        body
-                    }
-                }
-            }
-            arPosts : allStrapiBlogpost(
-                sort: { order: DESC, fields: [pubdate] }
-                limit: 1000
-                filter: {
-                    locale: { eq : "ar"}
-                }
-              ){
-                edges{
-                    node{
-                        name
-                        Slug
-                        id
-                        pubdate(formatString:"MM/D/YYYY")
-                        featuredImg{
-                            localFile{
-                                childImageSharp{
-                                    gatsbyImageData(
-                                        layout: FULL_WIDTH
-                                    )
-                                }
-                            }
-                        }
-                        body
-                    }
-                }
-            }
-        }
-    `)
-        const strapiBlogpost = (locale) =>{
-            switch(locale){
-                case("fr"):
-                    return data.frPosts;
-                case("ar"):
-                    return data.arPosts;
-                default:
-                    return data.enPosts;
-            }
-
-        }
+const Bloga = ({data})  =>{
+    const posts = data.data.allStrapiBlogpost;
     return(
         <Wrapper>
             <Container>
-                {strapiBlogpost(useIntl().locale).edges.map(edge => 
-                    <Blogpost data={edge} />
+                {posts.edges.map(edge => 
+                    <Blogpost data={edge} key={edge.node.id}/>
                 )}
             </Container>
         </Wrapper>
@@ -147,3 +55,4 @@ const Bloga = () =>{
 }
 
 export default Bloga
+
