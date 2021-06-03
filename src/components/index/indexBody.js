@@ -33,12 +33,12 @@ const Container = Styled.div`
     }
 `
 
-const IndexBody = () => {
+const IndexBody = ({data}) => {
     return(
         <Wrapper>
             <Container>
                 <Cta />
-                <PostsCollection />
+                <PostsCollection data={data}/>
             </Container>
             <ProgramBar /> 
         </Wrapper>
