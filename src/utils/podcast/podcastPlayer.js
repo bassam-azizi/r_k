@@ -15,6 +15,7 @@ const Play = <PlayBtn />
 const Podcast = props => {
 
 
+
     const [width, setWidth] = useState(0);
 
     useEffect(() => {
@@ -24,7 +25,9 @@ const Podcast = props => {
         return () => window.removeEventListener('resize', handelWindowResize);
     }, [])
 
-    const mp3 = props.data.item.enclosure.url
+    if(!props.data) return null;
+
+    const mp3 = (props.data!==null)? props.data.item.enclosure.url : '' ;
     let t;
     let playerA = <
         >
