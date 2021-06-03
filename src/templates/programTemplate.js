@@ -2,14 +2,18 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Reactmarkdown from "react-markdown"
+// import loadable from '@loadable/component'
 
 import { Wrapper } from './programTemplate_style'
-import Podcast from '../utils/podcast/podcastPlayer'
+// import Podcast from '../utils/podcast/podcastPlayer'
 import Layout from '../components/layout'
 
 
+// const PodcastPlayer = loadable( () => import('../utils/podcast/podcastPlayer'));
+
 const ProgramTemplate = ({data}) =>{
 	let image = getImage(data.strapiSchedule.picture.localFile);
+
 	return(
 		<Layout>
 			<Wrapper>
@@ -27,7 +31,8 @@ const ProgramTemplate = ({data}) =>{
 					</div>
 				</div>
 				<div className="podcast">
-					<Podcast data={data.podcastRssFeedEpisode} />
+					{/*<Podcast data={dataFetched.podcastRssFeedEpisode} />*/}
+					{/*// <PodcastPlayer data={dataFetched.podcastRssFeedEpisode} />*/}
 				</div>
 				<div className="description">
                     <Reactmarkdown children={data.strapiSchedule.description} />
