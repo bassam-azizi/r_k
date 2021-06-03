@@ -1,5 +1,20 @@
 const path = require("path")
 
+// pages locale
+module.exports.onCreatePage = ({ page, actions }) => {
+    const { createPage, deletePage } = actions
+    deletePage(page)
+    // console.log(page.context.intl.language)
+    // You can access the variable "locale" in your page queries now
+    createPage({
+        ...page,
+        context: {
+            ...page.context,
+            locale: page.context.intl.language
+        },
+    })
+}
+
 module.exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
     const blogTemplate = path.resolve('./src/templates/blogTemplate.js');
@@ -60,8 +75,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
             path: `/episodes/${node.title.toLowerCase()}`,
             context: {
                 id: node.id,
-                title: node.title
-            }
+                title: node.title            }
         })
     });
 }
