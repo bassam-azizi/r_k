@@ -1,6 +1,4 @@
 import React from "react"
-import { graphql, useStaticQuery} from 'gatsby'
-import { useIntl } from "gatsby-plugin-intl"
 
 import Post from './post'
 import Styled from '@emotion/styled'
@@ -48,96 +46,25 @@ const Triangle = Styled.div`
 
 
 // The Component
-const PostsCollection = () =>{
-    const data = useStaticQuery(graphql`
-        query{
-            enPosts : allStrapiBlogpost(
-                sort: { order: DESC, fields: [pubdate] }
-                limit: 4
-                filter: {
-                    locale: { eq : "en"}
-                }
-            ){
-                edges{
-                    node{
-                        name
-                        Slug
-                        id
-                        pubdate(formatString:"MMMM Do, YYYY")
-                        featuredImg{
-                            localFile{
-                                childImageSharp{
-                                    gatsbyImageData(
-                                        layout: FULL_WIDTH
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        body
-                    }
-                }
-            }
-            frPosts : allStrapiBlogpost(
-                sort: { order: DESC, fields: [pubdate] }
-                limit: 4
-                filter: {
-                    locale: { eq : "fr"}
-                }
-            ){
-                edges{
-                    node{
-                        name
-                        Slug
-                        id
-                        pubdate(formatString:"MMMM Do, YYYY")
-                        featuredImg{
-                            localFile{
-                                childImageSharp{
-                                    gatsbyImageData(
-                                        layout: FULL_WIDTH
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        body
-                    }
-                }
-            }
-            arPosts : allStrapiBlogpost(
-                sort: { order: DESC, fields: [pubdate] }
-                limit: 4
-                filter: {
-                    locale: { eq : "ar"}
-                }
-            ){
-                edges{
-                    node{
-                        name
-                        Slug
-                        id
-                        pubdate(formatString:"MMMM Do, YYYY")
-                        featuredImg{
-                            localFile{
-                                childImageSharp{
-                                    gatsbyImageData(
-                                        layout: FULL_WIDTH
-                                        placeholder: BLURRED
-                                        formats: [AUTO, WEBP, AVIF]
-                                    )
-                                }
-                            }
-                        }
-                        body
-                    }
-                }
-            }
-        }
-    `)   
+const PostsCollection = ({data}) =>{
+    const posts = data.data.allStrapiBlogpost;    
     
+    return(
+        <Wrapper>
+            <Container>
+                {posts.edges.map(post=>(
+                    <Post data={post} key={post.node.id} />
+                ))}
+            <Triangle />
+            </Container>
+        </Wrapper>
+    )
+}
+
+export default PostsCollection
+
+// **********Function used for dynamic featured posts******************
+
     // const allposts = data.allStrapiBlogpost.edges ;
     // const posts = allposts.slice(0,4);
     // const post1 = allposts.slice(0,4) ;
@@ -162,31 +89,3 @@ const PostsCollection = () =>{
     //     }, 5000);
     //     return () => clearInterval(interval);
     // })
-    const strapiPosts = (locale) =>{
-            switch(locale){
-                case("fr"):
-                    console.log(data.frPosts)
-                    return data.frPosts;
-                case("ar"):
-                    console.log(data.arPosts)
-                    return data.arPosts;
-                default:
-                    console.log(data.enPosts)
-                    return data.enPosts;
-            }
-
-        }
-    
-    return(
-        <Wrapper>
-            <Container>
-                {strapiPosts(useIntl().locale).edges.map(post=>(
-                    <Post data={post} key={post.node.id} />
-                ))}
-            <Triangle />
-            </Container>
-        </Wrapper>
-    )
-}
-
-export default PostsCollection
