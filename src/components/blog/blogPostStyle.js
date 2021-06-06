@@ -9,6 +9,7 @@ export const Wrapper = Styled.div`
     height: 252px;
     position: relative;
     overflow: hidden;
+    max-width: 400px;
 
     @media (max-width: 1194px){
         height: 300px;
