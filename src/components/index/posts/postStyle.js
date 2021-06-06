@@ -5,6 +5,7 @@ export const Deck = Styled.div `
         margin: 0;
         padding: 0;
         height: 331px;
+        position: static;
         a{
             box-shadow: inset 0 0 80px rgba(0,0,0,0.5);
         }
@@ -50,112 +51,139 @@ export const Deck = Styled.div `
             }
         }
 
-        .info{
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 35px;
-            height: 35px;
-            font-family: 'Rhodium Libre';
-            border-radius: 50%;
-            background-color: #f2f2f2;
-            color: #7F8A64;
+        .post-title{
             position: absolute;
-            top: 50%;
-            right: 50%;
-            font-weight: 400;
-            font-size: 22px;
-            opacity: 1;
-            cursor: pointer;
-            z-index: 5;
-            outline: none;
+            color: #5d724c;
+            z-index: 20;
+            bottom: 20px;
+            right: 0;
+            max-width: 70%;
+            background-color: #fffb;
+            border-radius: 10px 0 0;
+            padding: 5px;
 
-            &:hover {
-                right: 0;
-                top: 0;
-                width: 60%;
-                height: 100%;
-                border-radius: 0;
-                transition: .4s linear;
-                background-color: #f2f2f2cc;
-                cursor: default;
-            }
-
-            span{
-                margin-left: 27px;
-            }
-
-            &:hover span{
-                display: none;
-            }
-
-            .infoContent{
-                outline: none;
-                list-style: none;
-                position: relative;
-                align-self: flex-start;
-                width: 100%;
-                margin: 14px 14px;
-                color: #373737;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 0;
-                opacity: 0;
-                visibility: hidden;
-            }
-            :hover .infoContent{
-                height: 100%;
-                opacity: 1;
-                visibility: visible;
-                transition: All .7 linear;
-            }
-
-            a h4{
-                opacity:0;
-                visibility: hidden;
-                padding: 10px 2px;
+            p{
                 overflow: hidden;
-                position: absolute;
-                top: 0;
-                left: 0;
+                text-overflow: '...';
+                white-space: nowrap; 
             }
-
-            &:hover a h4{
-                opacity: 1;
-                visibility:  visible;
-                transition: .7s linear;
-                display: block;
-            }
-
-            &:hover a p{
-                opacity: 1;
-                visibility: visible;
-            }
-
-            a p{
-                position: absolute;
-                font-size: 12px;
-                color: #373737cc;
-                opacity: 0;
-                visibility: hidden;
-                transition: .9s linear;
-                top: 0;
-                right: 0;
-            }
-
         }
+
+        :hover .post-title{
+            padding: 10px 35px 10px 7px;
+            // color: #7F8A64;
+
+            p{
+                white-space: normal; 
+            }
+        }
+
+        // .info{
+        //     overflow: hidden;
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     width: 35px;
+        //     height: 35px;
+        //     font-family: 'Rhodium Libre';
+        //     border-radius: 50%;
+        //     background-color: #f2f2f2;
+        //     color: #7F8A64;
+        //     position: absolute;
+        //     top: 50%;
+        //     right: 50%;
+        //     font-weight: 400;
+        //     font-size: 22px;
+        //     opacity: 1;
+        //     cursor: pointer;
+        //     z-index: 5;
+        //     outline: none;
+
+        //     &:hover {
+        //         right: 0;
+        //         top: 0;
+        //         width: 60%;
+        //         height: 100%;
+        //         border-radius: 0;
+        //         transition: .4s linear;
+        //         background-color: #f2f2f2cc;
+        //         cursor: default;
+        //     }
+
+        //     span{
+        //         margin-left: 27px;
+        //     }
+
+        //     &:hover span{
+        //         display: none;
+        //     }
+
+        //     .infoContent{
+        //         outline: none;
+        //         list-style: none;
+        //         position: relative;
+        //         align-self: flex-start;
+        //         width: 100%;
+        //         margin: 14px 14px;
+        //         color: #373737;
+        //         display: flex;
+        //         flex-direction: column;
+        //         justify-content: center;
+        //         align-items: center;
+        //         height: 0;
+        //         opacity: 0;
+        //         visibility: hidden;
+        //     }
+        //     :hover .infoContent{
+        //         height: 100%;
+        //         opacity: 1;
+        //         visibility: visible;
+        //         transition: All .7 linear;
+        //     }
+
+        //     a h4{
+        //         opacity:0;
+        //         visibility: hidden;
+        //         padding: 10px 2px;
+        //         overflow: hidden;
+        //         position: absolute;
+        //         top: 0;
+        //         left: 0;
+        //     }
+
+        //     &:hover a h4{
+        //         opacity: 1;
+        //         visibility:  visible;
+        //         transition: .7s linear;
+        //         display: block;
+        //     }
+
+        //     &:hover a p{
+        //         opacity: 1;
+        //         visibility: visible;
+        //     }
+
+        //     a p{
+        //         position: absolute;
+        //         font-size: 12px;
+        //         color: #373737cc;
+        //         opacity: 0;
+        //         visibility: hidden;
+        //         transition: .9s linear;
+        //         top: 0;
+        //         right: 0;
+        //     }
+
+        // }
         
-        .title{
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            text-align: center;
-            background-color: #fff;
-            padding: 3px 0;
-            opacity: 1;
-            display: none;
-        }
+        // .title{
+        //     width: 100%;
+        //     position: absolute;
+        //     bottom: 0;
+        //     text-align: center;
+        //     background-color: #fff;
+        //     padding: 3px 0;
+        //     opacity: 1;
+        //     display: none;
+        // }
 `
