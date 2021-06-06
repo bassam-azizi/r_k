@@ -1,9 +1,4 @@
 import React from 'react'
-// import { graphql , useStaticQuery } from 'gatsby'
-// import { useIntl } from "gatsby-plugin-intl"
-
-
-
 import Styled from '@emotion/styled'
 
 import Blogpost from './blogPost'
