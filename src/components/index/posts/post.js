@@ -11,16 +11,19 @@ const Post = ({data}) =>{
             <Link className="postLink" to ={`/blog/${data.node.Slug}`}>
                 <GatsbyImage image={image} alt="A dinosaur" />
             </Link>
-            <div className='info'>
+            {/*<div className='info'>
                 <span>i</span>
                 <Link className="infoContent" to={`/blog/${data.node.Slug}`}>
                     <h4>{data.node.name}</h4>
                     <p>{data.node.pubdate}</p>
                 </Link>
-            </div>
-            <div className="title">
+            </div>*/}
+            <div className="post-title">
                 <p>{data.node.name}</p>
             </div>
+            {/*<div className="title">
+                <p>{data.node.name}</p>
+            </div>*/}
         </Deck>
     )
 }
