@@ -52,13 +52,14 @@ export const Deck = Styled.div `
         }
 
         .post-title{
+            cursor:pointer;
             position: absolute;
             color: #5d724c;
             z-index: 20;
             bottom: 20px;
             right: 0;
             max-width: 70%;
-            background-color: #fffb;
+            background-color: #fff9;
             border-radius: 10px 0 0;
             padding: 5px;
 
@@ -70,6 +71,7 @@ export const Deck = Styled.div `
         }
 
         :hover .post-title{
+            background-color: #fffc;
             padding: 10px 35px 10px 7px;
             // color: #7F8A64;
 
