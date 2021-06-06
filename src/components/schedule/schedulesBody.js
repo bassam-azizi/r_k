@@ -6,10 +6,7 @@ import { Wrapper, Container } from './schedulesBody_style'
 
 
 const SchedulesBody = ({data}) =>{
-	// console.log(data);
 	const schedules = data.data;
-	// console.log(`schedule is ${schedules}`)
-	console.log(schedules);
 	
 	const schedule_render = (schedules,title) =>{
 		return (
