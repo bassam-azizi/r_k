@@ -2,16 +2,23 @@ import Styled from '@emotion/styled'
 
 
 export const Wrapper = Styled.div`
-	height: 380px;
+	width: 273px;
+	margin: 10px 30px; 
+	max-width: 400px;
+
+	:hover{
+		transform: scale(1.02);
+		border-radius: 4px;
+		box-shadow: 0px 35px 49px -22px #B3AC6542;
+	}
 
 	a{
 		text-decoration: none;
 	}
 
 	.pic{
-		height: 225px;
 		.gatsby-image-wrapper{
-			height: 100%;
+			height: 100%;			
 		}
 	}
 
