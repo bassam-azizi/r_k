@@ -11,25 +11,23 @@ export const Wrapper = Styled.div`
     overflow: hidden;
     max-width: 400px;
 
-    @media (max-width: 1194px){
-        height: 300px;
-    }
+    // @media (max-width: 1194px){
+    //     height: 300px;
+    // }
 
-    @media (max-width: 1030px){
-        height: 252px;
-    }
+    // @media (max-width: 1030px){
+    //     height: 252px;
+    // }
 
 
-    @media (max-width: 730px){
-        height: 330px;
-    }
+    // @media (max-width: 730px){
+    //     height: 330px;
+    // }
 
-    @media (max-width: 464px){
-        height: 280px;
-    }
+    // @media (max-width: 464px){
+    //     height: 280px;
+    // }
 
-    @media (max-width: 426px){
-    }
 
     @media (max-width: 350px){
         :hover{
