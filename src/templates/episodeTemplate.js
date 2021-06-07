@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Reactmarkdown from "react-markdown"
-import { Wrapper } from './programTemplate_style'
+import { Wrapper } from './episodeTemplate_style'
 import Podcast from '../utils/podcast/podcastPlayer'
 
 import Layout from '../components/layout'
@@ -10,7 +10,7 @@ import Layout from '../components/layout'
 
 const EpisodeTemplate = ({data}) =>{
 	let image =getImage(data.strapiEpisode.picture.localFile) ;
-	console.log(data.podcastRssFeedEpisode);
+	let authorImage = getImage(data.strapiEpisode.author.picture.localFile) ;
 	return(
 		<Layout>
 			<Wrapper>
@@ -32,6 +32,10 @@ const EpisodeTemplate = ({data}) =>{
 				</div>
 				<div className="description">
 					<Reactmarkdown children={data.strapiEpisode.description} />
+				</div>
+				<div className="author-section">
+					<GatsbyImage image={authorImage} alt={data.strapiEpisode.author.name}/>
+					<h4>{data.strapiEpisode.author.name}</h4>
 				</div>
 			</Wrapper>
 		</Layout>
@@ -56,6 +60,18 @@ export const pageQuery = graphql`
 							layout: CONSTRAINED
 						)
 					}
+				}
+			}
+			author{
+				name
+				picture{
+					localFile{
+					childImageSharp{
+						gatsbyImageData(
+							layout: CONSTRAINED
+						)
+					}
+				}
 				}
 			}
 		    
