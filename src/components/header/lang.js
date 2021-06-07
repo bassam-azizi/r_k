@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import { Link } from "gatsby"
-import { IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
+import { useIntl, IntlContextConsumer, changeLocale } from "gatsby-plugin-intl"
 import Styled from '@emotion/styled'
 import LangMenu from './lang_menu'
 
@@ -112,8 +112,8 @@ const Lang = () => {
                     }
                   </IntlContextConsumer>
             </LangWrapper> 
-            <Lan onClick={toggle_menu}><h3>En</h3></Lan>
-            <LangMenu menu_open = { openMenu } toggle = { toggle_menu }/> 
+            <Lan onClick={toggle_menu}><h3>{useIntl().locale}</h3></Lan>
+            <LangMenu menu_open = { openMenu } toggle = { toggle_menu } changeLang={(locale) => changeLocale(locale)}/> 
         </>
     )
 }
