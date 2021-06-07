@@ -1,5 +1,5 @@
 import Styled from '@emotion/styled'
-import { Link } from "gatsby-plugin-intl"
+// import { Link } from "gatsby-plugin-intl"
 
 export const Wrapper = Styled.div `
     background: rgb(128, 138, 102);
@@ -28,7 +28,7 @@ export const Close = Styled.span `
     }
     cursor: pointer;
 `
-export const Lin = Styled(Link)
+export const Span = Styled.span
 `
     font-size: 24px;
     display: block;
@@ -38,8 +38,9 @@ export const Lin = Styled(Link)
     text-decoration: none;
     color: #fff;
     border-bottom: 1px solid #cfcfcf12;
+    
     :hover{
-        color: #fff ;
+        color: #8A6D63 ;
         background: #2E3224;
         opacity: .7;
     }
