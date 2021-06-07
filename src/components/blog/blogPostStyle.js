@@ -9,7 +9,13 @@ export const Wrapper = Styled.div`
     height: 252px;
     position: relative;
     overflow: hidden;
-    max-width: 400px;
+    max-width: 350px;
+
+    :hover{
+        transform: scale(1.02);
+        border-radius: 4px;
+        box-shadow: 0px 35px 49px -22px #B3AC6542;
+    }
 
     // @media (max-width: 1194px){
     //     height: 300px;
