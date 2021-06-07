@@ -113,7 +113,7 @@ const Lang = () => {
                   </IntlContextConsumer>
             </LangWrapper> 
             <Lan onClick={toggle_menu}><h3>{useIntl().locale}</h3></Lan>
-            <LangMenu menu_open = { openMenu } toggle = { toggle_menu } changeLang={(locale) => changeLocale(locale)}/> 
+            <LangMenu menu_open = { openMenu } toggle = { toggle_menu } /> 
         </>
     )
 }
