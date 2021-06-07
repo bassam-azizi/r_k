@@ -63,4 +63,23 @@ export const Wrapper = Styled.div`
 		}
 	}
 
+	.author-section{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 30px 0;
+
+		.gatsby-image-wrapper{
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+		}
+		h4{
+			font-size: 16px;
+			letter-spacing: 1.003px;
+			padding-left: 17px;
+			color: #7F8A64;
+		}
+	}
+
 `
