@@ -10,6 +10,8 @@ export const Container = Styled.div `
     color: #FFF;
     font-size: 14px;
     flex-shrink:0;
+    direction: ${props => props.locale === "ar"? "rtl" : "ltr"};
+
 
     @media (max-width: 768px){
         padding: 37px 46px;
