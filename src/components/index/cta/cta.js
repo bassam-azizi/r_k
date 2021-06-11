@@ -13,6 +13,9 @@ const Cta = () => {
         <Wrapper cast={cast}>
             <Container cast={cast} locale={intl.locale}>
                 <H1 locale={intl.locale} cast={cast}>
+                    <span>
+                        <FormattedMessage id="deliver" defaultMessage="we" />{' '}
+                    </span>
                     <FormattedMessage id="deliver" defaultMessage="deliver" />{' '}
                     <Typical 
                             steps={[intl.formatMessage({id:"deliverableA"}), 4000,
