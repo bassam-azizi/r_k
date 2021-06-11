@@ -128,12 +128,13 @@ export const BtnWrapper = Styled.div`
             justify-self: unset;
         }
 `
+    // width of button: 280 !::::! p svg transform(180deg) / right 202
 export const Button = Styled.button`
         margin-top: 84px;
         z-index: 20;
         overflow: hidden;
         position: relative;
-        width: ${({cast}) => (cast ? '71px' : '330px')};
+        width: ${({cast,locale}) => (cast ? '71px' : (locale==='ar'? '286px' : '330px'))};
         height: 71px;
         background: ${({cast}) => (cast ? '#C52127' : '#C52127')};
         border-radius: ${({cast}) => (cast ? "50%" : "10px")};
@@ -184,11 +185,11 @@ export const Button = Styled.button`
                 transition:  ${({cast})=>(cast? 'opacity: .1s ease, visibility .1s ease':'opacity .2s ease .3s , visibility .9s ease')}; 
             }
     `
-    
 export const Icon = Styled(GoTriangleRight)`
         box-sizing: content-box;
         position: absolute;
-        right: ${({locale}) => ( locale === "ar" ? "242px" : "-50px")};
+        right: ${({locale}) => ( locale === "ar" ? "202px" : "-50px")};
+        transform: ${({locale}) => ( locale === "ar" ? "rotate(180deg)" : "unset")};
         top: 5px;
         font-size: 30px;
         color: #fff;
