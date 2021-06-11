@@ -3,6 +3,8 @@ import Cta from './cta/cta'
 import PostsCollection from './posts/featuredPosts'
 import ProgramBar from './programBar'
 import Styled from '@emotion/styled'
+import { useIntl } from "gatsby-plugin-intl"
+
 
 const Wrapper = Styled.div`
     display: flex;
@@ -12,9 +14,7 @@ const Wrapper = Styled.div`
 const Container = Styled.div`
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    // display: flex;
-    // // margin-top: 64px;
-    // justify-content: flex-end;
+    direction: ${props => props.locale === "ar"? "rtl" : "ltr"};
 
     @media (max-width: 1350px){
         grid-template-columns: repeat(11,1fr);
@@ -22,8 +22,6 @@ const Container = Styled.div`
 
     @media (max-width: 1108px) {
         grid-template-columns: 50px repeat(11, 1fr);
-        // flex-direction: column;
-        // justify-content: center;
     }
     @media (max-width: 916px){
         grid-template-columns: 110px repeat(11, 1fr);
@@ -35,8 +33,8 @@ const Container = Styled.div`
 
 const IndexBody = ({data}) => {
     return(
-        <Wrapper>
-            <Container>
+        <Wrapper >
+            <Container locale={useIntl().locale}>
                 <Cta />
                 <PostsCollection data={data}/>
             </Container>
