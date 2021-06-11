@@ -1,4 +1,5 @@
 import React from "react"
+import { useIntl } from "gatsby-plugin-intl"
 
 import Post from './post'
 import Styled from '@emotion/styled'
@@ -27,16 +28,34 @@ const Container = Styled.div`
     @media (max-width: 600px){
         flex-direction: column;
     }
+
+    .emptyDiv{
+        height: 662px;
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        background: #8B7C6564;
+        z-index: 100;
+
+        p{
+            color: #fff;
+            letter-spacing: 1.1px;
+            text-shadow: .07px 0.0007px #fff;
+        }
+    }
 `
 const Triangle = Styled.div`
     width: 0;
     height: 0;
     border-right: 130px solid transparent;
-    border-top: 660px solid #fff;
+    border-top: 660px solid #fff ;
     position: absolute;
-    transform: rotateZ(0deg);
+    transform: ${props => props.locale === "ar"? "scaleX(-1)" : "unset" };
     top: 0;
-    left: 0;
+    left: ${props => props.locale ==="ar"? "unset":"0"};
+    right: ${props => props.locale ==="ar"? "0":"unset"};
+    z-index: 200;
 
     @media (max-width:1028px){
         display: none;
@@ -49,13 +68,20 @@ const Triangle = Styled.div`
 const PostsCollection = ({data}) =>{
     const posts = data.data.allStrapiBlogpost;    
     
+    const postsRender= () =>{
+            if(posts.edges.length<4){
+                    return <div className="emptyDiv"><p>Sorry!, There's no blog posts yet</p></div>
+                }
+            else{
+                    return posts.edges.map(post=>(
+                        <Post data={post} key={post.node.id} />
+                    ))}
+                }
     return(
         <Wrapper>
             <Container>
-                {posts.edges.map(post=>(
-                    <Post data={post} key={post.node.id} />
-                ))}
-            <Triangle />
+                {postsRender()}
+            <Triangle locale={useIntl().locale}/>
             </Container>
         </Wrapper>
     )
