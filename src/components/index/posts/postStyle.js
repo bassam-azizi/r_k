@@ -54,32 +54,36 @@ export const Deck = Styled.div `
         .post-title{
             cursor:pointer;
             position: absolute;
-            color: #5d724c;
+            color: #373737;
             z-index: 20;
             bottom: 20px;
             right: 0;
             max-width: 70%;
-            background-color: #fff9;
+            background-color: #fff;
             border-radius: 10px 0 0;
             padding: 5px;
+            padding: 10px 35px 10px 7px;
 
             p{
                 overflow: hidden;
                 text-overflow: '...';
-                white-space: nowrap; 
-            }
-        }
-
-        :hover .post-title{
-            background-color: #fffc;
-            padding: 10px 35px 10px 7px;
-            // color: #7F8A64;
-
-            p{
                 white-space: normal; 
             }
         }
 
+        :hover .post-title{
+            background-color: #fff;
+            transform: scale(1.1, 1.1);
+            transform-origin: right;
+
+            // p{
+            //     white-space: normal; 
+            // }
+        }
+
+
+
+// ******************** old design style ***********************
         // .info{
         //     overflow: hidden;
         //     display: flex;
