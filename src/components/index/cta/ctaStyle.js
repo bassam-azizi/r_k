@@ -51,7 +51,7 @@ export const H1 = Styled.h1`
         position: absolute;
         bottom: ${ ({cast}) => cast? "117px" : "164px"};
         width: 420px;
-        font-size: 36px;
+        font-size: ${ ({locale}) => locale==='ar' ? "46px" : "36px" } ;
         font-weight: 290;
         color: #373737;
         font-family: ${({locale}) => locale === "ar" ? "Almarai" : "Poppins"};
@@ -59,12 +59,12 @@ export const H1 = Styled.h1`
         right: ${({locale}) => locale === "ar" ? "0" : "auto"};
 
         span{
-            display: block;
-            font-size: 32px;
+            font-size: ${ ({locale}) => locale==='ar' ? "46px" : "32px" } ;
+            display: ${ ({locale}) => locale==="fr" ? 'inline' : 'block';
         }
         h3{
             display: ${({locale}) => ( locale === "fr" ? "block" : "inline")};
-            font-size: 40px;
+            font-size: ${ ({locale}) => locale==='ar' ? "50px" : "40px" } ;
             background: linear-gradient( 180deg, #8A6D63, #7f8a64);
             background-clip: text;
             text-fill-color: transparent;
