@@ -4,7 +4,6 @@ import { IoMdPause } from 'react-icons/io'
 
 export const Wrapper = Styled.div`
             grid-column: 2 / 4;
-            // grid-column: 2 / 4;
             margin: auto;
             align-self: center;
             position: relative;
@@ -50,9 +49,9 @@ export const Container = Styled.div`
 `
 export const H1 = Styled.h1`
         position: absolute;
-        bottom: ${ ({cast}) => cast? "117px" : "164px" };
+        bottom: ${ ({cast}) => cast? "117px" : "164px"};
         width: 420px;
-        font-size: 40px;
+        font-size: 36px;
         font-weight: 290;
         color: #373737;
         font-family: ${({locale}) => locale === "ar" ? "Almarai" : "Poppins"};
@@ -60,7 +59,16 @@ export const H1 = Styled.h1`
         right: ${({locale}) => locale === "ar" ? "0" : "auto"};
 
         span{
+            display: block;
+            font-size: 32px;
+        }
+        h3{
             display: ${({locale}) => ( locale === "fr" ? "block" : "inline")};
+            font-size: 40px;
+            background: linear-gradient( 180deg, #8A6D63, #7f8a64);
+            background-clip: text;
+            text-fill-color: transparent;
+            color: #7f8a64;
         }
 
         .styles_typicalWrapper__1_Uvh::after{
@@ -68,9 +76,7 @@ export const H1 = Styled.h1`
         }
 
 
-            span{
-                color: #7F8A64ee;
-            }
+            
         @media (max-width: 1330px){
             .span{
                 display: block;
