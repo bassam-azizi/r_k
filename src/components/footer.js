@@ -1,10 +1,10 @@
 import React from 'react'
-import { FormattedMessage } from "gatsby-plugin-intl";
+import { FormattedMessage, useIntl } from "gatsby-plugin-intl";
 import { Container } from './footerStyle'
 
 const Footer = () => {
     return (
-        <Container>
+        <Container locale={useIntl().locale}>
             <p className='footerItem contact'>contact@radiokhemir.fr</p>
             <div>
                 <p className="footerItem firstItem">contact@radiokhemir.fr</p>
