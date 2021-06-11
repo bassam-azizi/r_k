@@ -1,12 +1,11 @@
 import Styled from '@emotion/styled'
 
 export const Wrapper = Styled.nav `
-        // background: #11ff1f09;
-        // background: #F6F7F488;
         padding: 28px 0 0;
         z-index: 10;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
+        direction: ${props => props.locale === "ar"? "rtl" : "ltr"};
 
         @media (max-width: 1100px){
             grid-template-columns: 50px repeat(12, 1fr) 50px;
