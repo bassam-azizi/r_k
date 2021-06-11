@@ -14,7 +14,7 @@ const Cta = () => {
             <Container cast={cast} locale={intl.locale}>
                 <H1 locale={intl.locale} cast={cast}>
                     <span>
-                        <FormattedMessage id="deliver" defaultMessage="we" />{' '}
+                        <FormattedMessage id="we" defaultMessage="we" />{' '}
                     </span>
                     <FormattedMessage id="deliver" defaultMessage="deliver" />{' '}
                     <Typical 
