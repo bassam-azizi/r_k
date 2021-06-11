@@ -17,7 +17,7 @@ const Header = () => {
         toggleMenu(!menuOpen);
     }
     return (
-        <Wrapper>
+        <Wrapper locale={intl.locale}>
                 <Container>
                     <Logo />
                     <NavLinks locale={intl.locale}/>
