@@ -13,7 +13,7 @@ const Cta = () => {
         <Wrapper cast={cast}>
             <Container cast={cast} locale={intl.locale}>
                 <H1 locale={intl.locale} cast={cast}>
-                    <FormattedMessage id="deliver" defaultMessage="We deliver " />{' '}
+                    <FormattedMessage id="deliver" defaultMessage="deliver" />{' '}
                     <Typical 
                             steps={[intl.formatMessage({id:"deliverableA"}), 4000,
                             intl.formatMessage({id:"deliverableB"}), 4000,
@@ -21,7 +21,7 @@ const Cta = () => {
                             intl.formatMessage({id:"deliverableD"}), 4000,
                             intl.formatMessage({id:"deliverableE"}), 3500]}
                     		loop={Infinity} 
-                    		wrapper='span'
+                    		wrapper='h3'
                     		/>
                 </H1>
                 <BtnWrapper>
