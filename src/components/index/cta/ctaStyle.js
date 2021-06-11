@@ -60,7 +60,7 @@ export const H1 = Styled.h1`
 
         span{
             font-size: ${ ({locale}) => locale==='ar' ? "46px" : "32px" } ;
-            display: ${ ({locale}) => locale==="fr" ? 'inline' : 'block';
+            display: ${ ({locale}) => locale==="fr" ? 'inline' : 'block'};
         }
         h3{
             display: ${({locale}) => ( locale === "fr" ? "block" : "inline")};
